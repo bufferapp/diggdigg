@@ -1,0 +1,176 @@
+.dd-not-support{
+	color:#A9A9A9;
+	font-size:0.7em;
+}
+
+.dd-free{
+	color:#FF0000;
+	font-weight:bold;
+}
+
+#dd_plugin_title{
+	font-size:20px;
+	font-weight:bold;	
+}
+
+#dd_admin_block{
+	padding:16px;
+}
+
+#dd_admin_left_block{
+	float:left;
+	width:700px;
+	margin-right:16px;
+}
+
+#dd_admin_right_block{
+	float:left;
+	width:335px;
+}
+
+#dd_head_block{
+	margin:8px 0 24px 0;
+}
+
+#dd_head_block h2{
+	margin:0 0 16px 0;
+	font-size:20px;
+}
+
+.dd-table {
+	border: 0px;
+	border-collapse:collapse;
+	margin:16px 0;
+} 
+
+.dd-table tr {
+	background-color: #F9F9F9;
+}
+
+.dd-table tr.striped {
+	background-color: #ffffff;
+}
+
+.dd-table th{
+	background:none repeat scroll 0 0 #E5E5E5;
+	border:1px solid #BBBBBB;
+	padding:0.6em;
+	text-align:center;
+}
+
+.dd-table td{
+	border:1px solid #DDDDDD;
+	padding:0.6em;
+	text-align:center;
+}
+
+.dd-table .left{
+	text-align:left;
+}
+
+.readme{
+	padding:16px;
+	margin:8px 0px 16px 0px;
+	border:1px solid red;
+}
+
+.dd-block{
+	-moz-border-radius:6px 6px 6px 6px;
+	border-style:solid;
+	border-width:1px;
+	line-height:1;
+	border:1px solid silver;
+	margin-bottom:16px;
+	background-color: #FFFFFF;
+}
+
+.dd-title{
+	-moz-border-radius-topleft:6px;
+	-moz-border-radius-topright:6px;
+	color:#464646;
+	padding:8px;
+	margin:0;
+	background-color: #DFDFDF;
+	text-shadow:0 1px 0 #FFFFFF;
+}
+
+.dd-title h2{
+	padding:0;
+	margin:0;
+	font-size:14px;
+}
+
+.dd-insider{
+	padding:16px;
+}
+
+.dd-insider-block{
+	margin-bottom : 16px;
+}
+
+#dd-insider-block-category{
+	margin-top:8px;
+}
+
+.dd-button{
+	float:right;
+}
+
+p{
+	margin:0px;
+	padding: 0 0 8px 0;
+}
+
+.dd-note{
+	font-weight:bold;
+	font-size:11px;
+}
+
+.dd-note-blue{
+	color:blue;
+}
+
+.dd-remark{
+	font-style:italic;
+	margin-bottom:8px;
+	padding-left:16px;
+}
+
+.dd-donation{
+	font-weight: bold; 
+	color: rgb(255, 69, 0);
+}
+
+.dd-enabled{
+	font-weight:bold;
+	color:blue;
+}
+
+.dd-disabled{
+	font-weight:bold;
+	color:red;
+}
+
+.dd_table_manual{
+	width:100%;
+}
+
+.dd_table_manual td{
+	text-align:left;
+}
+
+.dd-block-faq li{
+	padding:16px;
+}
+
+.dd-block-faq li li{
+	padding:0px;
+}
+
+.dd-block-faq blockquote {
+	background-color:#F0F2F4;
+	border-left:5px solid #D6DBE0;
+	margin:0 20px 10px 10px;
+	padding:10px 15px;
+}
+
