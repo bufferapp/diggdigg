@@ -115,6 +115,7 @@ define('DD_BUTTON_COMMENTS','dd_button_comments');
 define('DD_BUTTON_SERPD','dd_button_serpd');
 define('DD_BUTTON_FBLIKE_XFBML','dd_button_fblike_xfbml');
 define('DD_BUTTON_GOOGLE1','dd_button_google1');
+define('DD_BUTTON_BUFFER','dd_button_buffer');
 
 /****************************************
  * Digg Digg Global Display (Start)
@@ -218,7 +219,8 @@ $ddNormalButtons = array(
 		DD_BUTTON_LINKEDIN => new DD_Linkedin(),
 		DD_BUTTON_SERPD => new DD_Serpd(),
 		DD_BUTTON_FBLIKE_XFBML => new DD_FbLike_XFBML(),
-		DD_BUTTON_GOOGLE1 => new DD_Google1()
+		DD_BUTTON_GOOGLE1 => new DD_Google1(),
+		DD_BUTTON_BUFFER => new DD_Buffer()
 	),
 	DD_NORMAL_BUTTON_FINAL => array()
 );
@@ -352,7 +354,8 @@ $ddFloatButtons = array(
 		DD_BUTTON_LINKEDIN => new DD_Linkedin(),
 		DD_BUTTON_SERPD => new DD_Serpd(),
 		DD_BUTTON_FBLIKE_XFBML => new DD_FbLike_XFBML(),
-		DD_BUTTON_GOOGLE1 => new DD_Google1()
+		DD_BUTTON_GOOGLE1 => new DD_Google1(),
+		DD_BUTTON_BUFFER => new DD_Buffer()
 	),
 	DD_FLOAT_BUTTON_FINAL => array()
 );

@@ -39,7 +39,7 @@ function dd_hook_wp_content($content = ''){
 	$postlink = get_permalink($id); //get post link
 	$commentcount = $post->comment_count; //get post comment count
 	$title = trim($post->post_title); // get post title
-	$link = split(DD_DASH,$postlink); //split the link with '#', for comment link
+	$link = explode(DD_DASH,$postlink); //split the link with '#', for comment link 
 	$url = $link[0];
 
 	$dd_global_config = get_option(DD_GLOBAL_CONFIG);
@@ -527,7 +527,8 @@ function dd_admin_init_setting() {
 }
 
 //$dd_current_version = 2;
-$dd_current_version = 3;
+//$dd_current_version = 3;
+$dd_current_version = 4;
 function dd_check_if_client_need_upgrade_setting() {
 
 	global $dd_current_version;
@@ -550,7 +551,7 @@ function dd_check_if_client_need_upgrade_setting() {
 		if($dd_current_version > $dd_client_version){
 			
 			//print_r('<h1>setting is upgrading.....</h1>');
-			dd_upgrade_setting_version_3();
+			dd_upgrade_setting_version_4();
 			update_option('dd_client_version', $dd_current_version);
 			
 		}else{

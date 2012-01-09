@@ -1840,4 +1840,85 @@ class DD_Serpd extends BaseDD{
         parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
     }    
 }
+
+/******************************************************************************************
+ * Buffer Button
+ * http://bufferapp.com/goodies/button
+ *
+ */
+class DD_Buffer extends BaseDD{
+	
+	const NAME = "Buffer";
+	const URL_WEBSITE = "http://bufferapp.com/";
+	const URL_API = "http://bufferapp.com/goodies/button/";
+	const DEFAULT_BUTTON_WEIGHT = "100";
+	
+	var $isEncodeRequired = false;
+	
+	const BASEURL = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL">Buffer</a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>';
+	//const BASEURL = "<script type='text/javascript' src='https://apis.google.com/js/plusone.js'></script><g:plusone size='VOTE_BUTTON_DESIGN' href='VOTE_URL'></g:plusone>";
+
+	const BASEURL_LAZY = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL">Buffer</a>';
+	const BASEURL_LAZY_SCRIPT = "function loadBuffer_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-buffer-POST_ID').remove();\$.getScript('http://static.bufferapp.com/js/button.js'); }); }";
+	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadBuffer_POST_ID()',SCHEDULER_TIMER);";
+	const SCHEDULER_LAZY_TIMER = "1000";
+    
+	const OPTION_APPEND_TYPE = "dd_buffer_appendType";
+	const OPTION_BUTTON_DESIGN = "dd_buffer_buttonDesign";
+	const OPTION_BUTTON_WEIGHT = "dd_buffer_button_weight";
+	const OPTION_AJAX_LEFT_FLOAT = "dd_buffer_ajax_left_float";
+	const OPTION_LAZY_LOAD = "dd_buffer_lazy_load";
+	
+	var $buttonLayout = array(
+		"Vertical" => "vertical",
+		"Horizontal" => "horizontal",
+		"No Count" => "none"
+	);
+    
+	var $buttonLayoutLazy = array(
+		"Vertical" => "vertical",
+		"Horizontal" => "horizontal",
+		"No Count" => "none"
+	);
+	
+	// Old-style constructor
+    public function DD_Buffer() {
+    	
+		$this->option_append_type = self::OPTION_APPEND_TYPE;
+		$this->option_button_design = self::OPTION_BUTTON_DESIGN;
+		$this->option_button_weight = self::OPTION_BUTTON_WEIGHT;
+		$this->option_ajax_left_float = self::OPTION_AJAX_LEFT_FLOAT;
+		$this->option_lazy_load = self::OPTION_LAZY_LOAD;
+		
+		$this->baseURL_lazy = self::BASEURL_LAZY;
+    	$this->baseURL_lazy_script = self::BASEURL_LAZY_SCRIPT;
+    	$this->scheduler_lazy_script = self::SCHEDULER_LAZY_SCRIPT;
+    	$this->scheduler_lazy_timer = self::SCHEDULER_LAZY_TIMER;
+    	
+		$this->button_weight_value = self::DEFAULT_BUTTON_WEIGHT;
+		
+        parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
+      
+    }
+    
+	public function constructLazyLoadURL($url, $title,$button, $postId){
+    	
+    	$finalURL_lazy = $this->baseURL_lazy;
+    	$finalURL_lazy = str_replace(parent::VOTE_URL,$url,$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::VOTE_BUTTON_DESIGN,$this->getButtonDesignLazy($button),$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
+    	$this->finalURL_lazy = $finalURL_lazy;
+    	
+    	$finalURL_lazy_script = $this->baseURL_lazy_script;
+    	$finalURL_lazy_script = str_replace(parent::POST_ID,$postId,$finalURL_lazy_script);
+    	$this->finalURL_lazy_script = $finalURL_lazy_script;
+    	
+    	$final_scheduler_lazy_script = $this->scheduler_lazy_script;
+    	$final_scheduler_lazy_script = str_replace(parent::SCHEDULER_TIMER,$this->scheduler_lazy_timer,$final_scheduler_lazy_script);
+    	$final_scheduler_lazy_script = str_replace(parent::POST_ID,$postId,$final_scheduler_lazy_script);
+    	$this->final_scheduler_lazy_script =  $final_scheduler_lazy_script;
+    	
+    }
+    
+}
 ?>

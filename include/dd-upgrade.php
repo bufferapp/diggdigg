@@ -24,6 +24,14 @@ function dd_upgrade_setting_version_3() {
 	
 }
 
+
+function dd_upgrade_setting_version_4() {
+
+	dd_clear_form_global_config(DD_FUNC_TYPE_RESET);
+	dd_add_button(DD_BUTTON_BUFFER,new DD_Buffer());
+	
+}
+
 function dd_remove_button($button_nama=''){
 	
 	$dd_normal_buttons = get_option(DD_NORMAL_BUTTON);
