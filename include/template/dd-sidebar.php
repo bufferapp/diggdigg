@@ -4,15 +4,16 @@
 		<div class="dd-title"><h2>Plugin Info</h2></div>
 		<div class="dd-insider">
 			<p>Name : Digg Digg v<?php echo DD_VERSION ?>
-			<p>Author : Yong Mook Kim</p>
+			<p>Author : Buffer, Inc</p>
 			<p>Plugin : 
-			<a href="http://www.diggdigg2u.com/" target="_blank">Visit Site</a> | 
-			<a href="http://www.diggdigg2u.com/user-guide/" target="_blank">User Guide</a> |
-			<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AWXCPTQXB7YAS" target="_blank">Donation</a>
+			<a href="http://bufferapp.com/" target="_blank">Visit Site</a> | 
+			<a href="http://bufferapp.com/diggdigg" target="_blank">User Guide</a> |
+			<a href="mailto:diggdigg@bufferapp.com">Plugin Support</a>
 			</p>
 		</div>
 	</div>
 
+<!-- Getting rid of trashy ads
 	<div class="dd-block">
 		<div class="dd-title"><h2>Sponsor</h2></div>
 		<div class="dd-insider">
@@ -39,16 +40,6 @@ target="_blank">www.webhostinghub.com</a></p>
 		
 	</div>
 	
-	
-<div class="dd-block">
-	<div class="dd-title"><h2>Like Digg Digg</h2></div>
-	<div class="dd-insider">
-
-<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FDigg-Digg%2F155719201166501&amp;width=300&amp;colorscheme=light&amp;show_faces=true&amp;border_color=&amp;stream=false&amp;header=false&amp;height=240" 
-scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:240px;" allowTransparency="true"></iframe>
-
-	</div>
-</div>		
 
 	<div class="dd-block">
 		<div class="dd-title"><h2>Wordpress Theme</h2></div>
@@ -71,6 +62,18 @@ scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px;
 		</div>
 		
 	</div>
+-->
+	
+	<!-- XXX: Do we have control of the Facebook page too? -->
+	<div class="dd-block">
+		<div class="dd-title"><h2>Like Digg Digg</h2></div>
+		<div class="dd-insider">
+	
+	<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FDigg-Digg%2F155719201166501&amp;width=300&amp;colorscheme=light&amp;show_faces=true&amp;border_color=&amp;stream=false&amp;header=false&amp;height=240" 
+	scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:240px;" allowTransparency="true"></iframe>
+	
+		</div>
+	</div>		
 	
 	
 </div>

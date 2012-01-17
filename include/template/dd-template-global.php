@@ -69,20 +69,17 @@ function dd_print_global_form($ddGlobalConfig){
 		<div class="dd-insider">
 		
 			<p>
-			1.1 FaceBook language (locale) : <input type="text" 
+			1.1 Language (locale) : <input type="text" 
 			value="<?php echo $ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_LOCALE]; ?>" 
 			name="<?php echo DD_GLOBAL_FACEBOOK_OPTION_LOCALE;?>" /> e.g English(en_US), French(fr_FR)...
 			</p>
-			<p class="dd-remark">
-				See all Facebook supported locale here -  
-				<a href="http://www.facebook.com/translations/FacebookLocales.xml" target="_blank">XML</a> file. 
-				Copy locale code in between the "&lt;representation&gt;" tag.
-			</p>
+			<p class="dd-remark">See all locales supported by Facebook <a href="http://www.facebook.com/translations/FacebookLocales.xml" target="_blank">here</a> (XML).</p>
+			<p class="dd-remark">Copy the locale code from the "&lt;representation&gt;" tag, e.g. &lt;representation&gt;<strong>en_US</strong>&lt;/representation&gt;.</p>
 			
 			<br />
 
 			<p>
-			1.2 FaceBook "send" button (XFBML only) : 
+			1.2 Include Send button (XFBML only) : 
 			<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_SEND ?>" 
 			<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_SEND]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 			Enable
@@ -91,7 +88,7 @@ function dd_print_global_form($ddGlobalConfig){
 			<br />
 			
 			<p>
-			1.3 FaceBook "show" face : 
+			1.3 Show faces : 
 			<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_FACE ?>" 
 			<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_FACE]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 			Enable
@@ -100,7 +97,7 @@ function dd_print_global_form($ddGlobalConfig){
 			<br />
 			
 			<p>
-			1.4 DiggDigg crawls your post's image as thumbnail : 
+			1.4 Use post images in Facebook wall thumbnail : 
 			<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_THUMB ?>" 
 			<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_THUMB]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 			Enable
@@ -133,7 +130,7 @@ function dd_print_global_form($ddGlobalConfig){
 			2.1 Twitter account : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWITTER_OPTION][DD_GLOBAL_TWITTER_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TWITTER_OPTION_SOURCE;?>" /> (without @ symbol)
 			</p>
 			<p class="dd-remark">
-			This user will be @ mentioned in the suggested Tweet.
+			This user will be @ mentioned in the suggested tweet.
 			</p>
 			<div class="dd-button">
 				<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
@@ -161,7 +158,7 @@ function dd_print_global_form($ddGlobalConfig){
 			3.3 URL Shortener API Key : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SERVICE_API]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SERVICE_API;?>" /> 			
 			</p>
 			<p class="dd-remark">
-			API Key for use with URL Shortener (If any). Bit.ly Pro requires the API Key to be in the format 'user_name:api_key'. Where user_name is your username and api_key is your API Key.
+			API Key for use with URL Shortener (If any). Bit.ly Pro requires the API Key to be in the format 'user_name:api_key'.
 			</p>
 			<p class="dd-note">
 			Note : If you do not required the URL shortner service, just leave it blank.
@@ -180,12 +177,12 @@ function dd_print_global_form($ddGlobalConfig){
 			4.1 Topsy source : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TOPSY_OPTION][DD_GLOBAL_TOPSY_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TOPSY_OPTION_SOURCE;?>" /> 
 			</p>
 			<p class="dd-remark">
-			Please put your twitter username.
+			Please put your Twitter username.
 			</p>
 			<p>
 			4.2 Theme : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TOPSY_OPTION][DD_GLOBAL_TOPSY_OPTION_THEME]; ?>" name="<?php echo DD_GLOBAL_TOPSY_OPTION_THEME;?>" /></p> 
 			<p class="dd-remark">
-			Please <a href="http://labs.topsy.com/button/retweet-button/" target="_blank">check here</a> for all the available Topsy color theme, <strong>default is blue</strong>.
+			Please <a href="http://labs.topsy.com/button/retweet-button/" target="_blank">check here</a> for all the available Topsy color themes, <strong>default is blue</strong>.
 			</p>
 			<p>
 			<div class="dd-button">
@@ -199,19 +196,20 @@ function dd_print_global_form($ddGlobalConfig){
 		<div class="dd-title"><h2>5. Reset Global Configuration Settings</h2></div>
 		<div class="dd-insider">
 			<p>
-			Reset all "Global Configuration" settings to default value.
+			Reset all "Global Configuration" settings to their default values.
 			</p>
-			<input class="button-primary" onclick="if (confirm('Are you sure to reset \'Global Configuration\' settings to default value?'))return true;return false" name="<?php echo DD_FORM_CLEAR; ?>" value="Reset Global Config Settings" type="submit" style="width:200px;"/>
+			<input class="button-primary" onclick="if (confirm('Are you sure you want to reset \'Global Configuration\' settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR; ?>" value="Reset Global Config Settings" type="submit" style="width:200px;"/>
 		</div>
 	</div>
 	
+	<?php // XXX: This seems pretty drastic... I doubt many people do this one! ?>
 	<div class="dd-block">
 		<div class="dd-title"><h2>6. Reset Everything</h2></div>
 		<div class="dd-insider">
 			<p>
-			Reset all settings (everything) to default value.
+			Reset all settings (everything) to their default values.
 			</p>
-			<input class="button-primary" onclick="if (confirm('Are you sure to reset all settings \'everyting\' to default value?'))return true;return false" name="<?php echo DD_FORM_CLEAR_ALL; ?>" value="Reset All Settings" type="submit" style="width:200px;"/>
+			<input class="button-primary" onclick="if (confirm('Are you sure you want to reset all settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR_ALL; ?>" value="Reset All Settings" type="submit" style="width:200px;"/>
 		</div>
 	</div>
 	

@@ -106,7 +106,7 @@ function checkCategory(){
 <div id="dd_admin_block">
 
 	<div id="dd_head_block">
-		<span id="dd_plugin_title">Digg Digg - Floating Button Configuration</span>
+		<span id="dd_plugin_title">Digg Digg - Floating Button Bar Configuration</span>
 	</div>
 
 <!-- start of dd_admin_left_block -->
@@ -144,11 +144,11 @@ function checkCategory(){
 		<div class="dd-insider">
 		
 			<div class="dd-insider-block">
-				<span>2.1. Buttons are display in vertical order.</span>
+				<span>2.1. Buttons are always displayed in vertically in the floating bar.</span>
 			</div>
 			
 			<div class="dd-insider-block">
-			<p>2.2 Buttons are allow to display in...</p>
+			<p>2.2 Buttons are allowed to display on...</p>
 			<p>
 			<?php 
 				foreach($ddFloatDisplay[DD_DISPLAY_OPTION] as $key => $value){
@@ -200,7 +200,7 @@ function checkCategory(){
 					$dd_extra_option_default_width = $ddFloatDisplay[DD_EXTRA_OPTION][DD_EXTRA_OPTION_SCREEN_WIDTH];
 				?>
 				<p>
-				2.4 Hide buttons if browser's width &lt; 
+				2.4 Hide buttons if browser's width less than 
 				<input type="text" size="10" value="<?php echo $dd_extra_option_default_width; ?>" 
 				name="<?php echo DD_EXTRA_OPTION_SCREEN_WIDTH;?>" /> px
 				</p>
@@ -217,16 +217,16 @@ function checkCategory(){
 	</div>
 	
 	<div class="dd-block">
-		<div class="dd-title"><h2>3. Buttons Selection</h2></div>
+		<div class="dd-title"><h2>3. Button Selection</h2></div>
 		<div class="dd-insider">
-			<p>Choose and customize the button layout to display.</p>
+			<p>Choose which buttons to display and how they should appear.</p>
 	
 				<table border="1" width="100%" class="dd-table">
 				<tr>
 				    <th width="3%"></th>
 					<th width="30%" class="left">Website</th>
 					<th width="5%">Weight</th>
-					<th width="15%">Ajax Floating</th>
+					<th width="15%">Enabled</th>
 					<th width="15%">Lazy Loading</th>
 				</tr>
 				
@@ -258,10 +258,10 @@ function checkCategory(){
 								<?php
 									}else{
 										if($obj->name == "Facebook Like (XFBML)"){
-											echo "<span class='dd-not-support'>Build-in Support</span>";	
+											echo "<span class='dd-not-support'>Built-in Support</span>";	
 										}
 										else{
-											echo "<span class='dd-not-support'>Not Support</span>";	
+											echo "<span class='dd-not-support'>Not Supported</span>";	
 										}
 									}
 								?> 
@@ -340,24 +340,24 @@ function checkCategory(){
 		<div class="dd-insider">
 
 			<p>
-			Due to different theme layout design, high chance the pre-defined settings are not suitable. So, you may need to configure the <strong>initial position</strong> and <strong>scolling position</strong> below. 
+			Due to the different structure and design of different themes, there's a good chance these pre-defined settings are not suitable. So, you may need to configure the <strong>initial position</strong> and <strong>scolling position</strong> below. 
 			</p>
 			
 			<h4>5.1 Initial Position</h4> 
 			
 			<p>
-				This is the position where buttons initial display, try change the default "<span class="dd-note">margin-left:-120</span>" value to suit your theme.
+				This is the position where buttons initially display. If it's too close to your main column or overlapping, decrease this number "<span class="dd-note">margin-left:-120</span>" to suit your theme.
 			</p>
-			<p class="dd-note dd-note-blue">Note : Edit the initial value in below box directly and save the changes, not in the css file</p>
+			<p class="dd-note dd-note-blue">Note : Be sure to edit this value here, not in your CSS</p>
 			<p>
 				<textarea name="<?php echo DD_FLOAT_OPTION_INITIAL_POSITION;?>" rows="10" cols="88" style="background-color:#F9F9F9;"><?php echo $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION]; ?></textarea>
 			</p>
 			
 			<h4>5.2 Scrolling Position</h4> 
 			<p>
-			This is the position where buttons display while you scrolling the page, try change the default "<span class="dd-note">top:16</span>" value to suit your theme.
+			This is the position where buttons display when you scroll the page. If it doesn't feel right, adjust this value "<span class="dd-note">top:16</span>" to suit your theme.
 			</p>
-			<p class="dd-note dd-note-blue">Note : Edit the scrolling value in below box directly and save the changes, not in the css file</p>
+			<p class="dd-note dd-note-blue">Note : e sure to edit this value here, not in your CSS</p>
 			<p>
 			<textarea name="<?php echo DD_FLOAT_OPTION_SCROLLING_POSITION;?>" rows="38" cols="88" style="background-color:#F9F9F9;"><?php echo 	$ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_SCROLLING_POSITION]; ?></textarea>
 			</p>
@@ -371,6 +371,7 @@ function checkCategory(){
 		</div>	
 	</div>
 
+	<!-- Hiding disable credit link function
 	<div class="dd-block">
 		<div class="dd-title"><h2>6. Credit Link</h2></div>
 		<div class="dd-insider">
@@ -401,9 +402,10 @@ function checkCategory(){
 			<div style="clear:both"></div>
 		</div>
 	</div>
+	-->
 	
 	<div class="dd-block">
-		<div class="dd-title"><h2>7. Reset Floating Display Settings</h2></div>
+		<div class="dd-title"><h2>6. Reset Floating Display Settings</h2></div>
 		<div class="dd-insider">
 		<p>
 		Reset "Floating Display" settings to default value.

@@ -1,12 +1,15 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 4.5.3.4
- Plugin URI: http://www.mkyong.com/blog/digg-digg-wordpress-plugin
- Author: Yong Mook Kim
- Author URI: http://www.mkyong.com/
- Description: All-in-One social buttons [<a href="admin.php?page=dd_page_for_normal_display">Digg Digg Configuration</a>]
- */
+ Version: 4.6
+ Plugin URI: http://bufferapp.com/diggdigg
+ Author: Buffer, Inc
+ Author URI: http://bufferapp.com/
+ Description: Add a floating bar with share buttons to your blog. Just like Mashable!
+              Help your posts get more shares, help yourself get more traffic.
+              Simply Activate Digg Digg now to enhance your posts.
+*/
+
 /*
 ini_set('display_errors',1);
 error_reporting(E_ALL);
@@ -27,8 +30,8 @@ add_action('wp_head', 'dd_output_css_to_html');
 add_action('wp_head', 'dd_get_thumbnails_for_fb');
 add_filter('the_excerpt', 'dd_hook_wp_content');
 add_filter('the_content', 'dd_hook_wp_content');
-function dd_hook_wp_content($content = ''){
 
+function dd_hook_wp_content($content = ''){
 	if(dd_isThisPageExcluded($content)==true){
 		return $content;
 	}
@@ -81,7 +84,6 @@ function isNormalButtonAllowDisplay($ddNormalDisplay){
 }
 
 function getNormalButtonLineUpOption($ddNormalDisplay){
-	
 	//horizontal or vertical
 	return $ddNormalDisplay[DD_LINE_UP_OPTION][DD_LINE_UP_OPTION_SELECT]; 
 	
@@ -306,7 +308,7 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 			$dd_lazyLoad_scheduler_script.=$obj->final_scheduler_lazy_script;
 		}
 
-		$floatButtonsContainer .= "<div class='dd_button_v'>" . $finalURL . "</div><div style='clear:left'></div>" ;
+		$floatButtonsContainer .= "<div class='dd_button_v " . $obj::OPTION_AJAX_LEFT_FLOAT . "'>" . $finalURL . "</div><div style='clear:left'></div>" ;
 
 	}
 
@@ -354,7 +356,7 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 			$dd_lazyLoad_scheduler_script.=$obj->final_scheduler_lazy_script;
 		}
 
-		$floatButtonsContainer .= "<div class='dd_button_v'>" . $finalURL . "</div><div style='clear:left'></div>" ;
+		$floatButtonsContainer .= "<div class='dd_button_v " . $obj::OPTION_AJAX_LEFT_FLOAT . "'>" . $finalURL . "</div><div style='clear:left'></div>" ;
 
 	}
 
