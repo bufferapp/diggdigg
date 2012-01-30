@@ -4,13 +4,47 @@
 		<div class="dd-title"><h2>Plugin Info</h2></div>
 		<div class="dd-insider">
 			<p>Name : Digg Digg v<?php echo DD_VERSION ?>
-			<p>Author : Buffer, Inc</p>
+			<p>Author : Buffer</p>
 			<p>Plugin : 
-			<a href="http://bufferapp.com/" target="_blank">Visit Site</a> | 
-			<a href="http://bufferapp.com/diggdigg" target="_blank">User Guide</a> |
-			<a href="mailto:diggdigg@bufferapp.com">Plugin Support</a>
+			<a href="http://bufferapp.com/diggdigg" target="_blank">Visit Site</a> |
+			<a href="mailto:diggdigg@bufferapp.com">Email Us</a>
 			</p>
 		</div>
+	</div>
+	
+	<div class="dd-block" id="buffer-guys">
+		<div class="dd-title"><h2>Meet the Team</h2></div>
+		<div class="dd-insider">
+			<p>
+				We're the Buffer guys and we've just recently acquired Digg Digg.
+				We're super excited to make it the most powerful sharing plugin for your blog.
+			</p>
+			<ul>
+				<li>
+					<a href="http://twitter.com/joelgascoigne"><img src="https://si0.twimg.com/profile_images/1343773983/joel-spain-avatar_reasonably_small.png" width="95" height="95" /></a>
+					<p class="name">Joel Gascoigne, Founder</p>
+					<p>"I build Buffer and talk to users. I love startups and swimming." - @<a href="http://twitter.com/joelgascoigne">joelgascoigne</a></p>
+				</li>
+				<li>
+					<a href="http://twitter.com/LeoWid"><img src="https://si2.twimg.com/profile_images/1291501644/Leo3_reasonably_small.png" width="95" height="95" /></a>
+					<p class="name">Leo Widrich, Co-founder</p>
+					<p>"I do community, blogging and coverage for Buffer. I love writing and football." - @<a href="http://twitter.com/LeoWid">LeoWid</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="dd-block" id="try-buffer">
+		<div class="dd-title"><h2>Try <img src="http://bufferapp.com/images/logo-small.png" height="12" /></h2></div>
+		<div class="dd-insider">
+			<p>
+				Alongside Digg Digg, we also build Buffer. It's a new way to Tweet and share Facebook posts.
+				You add updates into your Buffer and it is posted for you at a better time, well spaced out over the day.
+				Give it a try and <a href="http://twitter.com/bufferapp">let us know what you think</a>.
+			</p>
+			<div class="signup">
+				<a href="http://bufferapp.com/?utm_source=diggdigg-admin&utm_medium=button&utm_campaign=diggdigg-admin-try-buffer" class="button">Sign up for free</a>
+			</div>
 	</div>
 
 <!-- Getting rid of trashy ads
@@ -64,7 +98,7 @@ target="_blank">www.webhostinghub.com</a></p>
 	</div>
 -->
 	
-	<!-- XXX: Do we have control of the Facebook page too? -->
+	<!--
 	<div class="dd-block">
 		<div class="dd-title"><h2>Like Digg Digg</h2></div>
 		<div class="dd-insider">
@@ -73,7 +107,8 @@ target="_blank">www.webhostinghub.com</a></p>
 	scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:240px;" allowTransparency="true"></iframe>
 	
 		</div>
-	</div>		
+	</div>
+	-->		
 	
 	
 </div>

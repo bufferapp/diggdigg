@@ -1,4 +1,5 @@
 <?php
+// XXX: NEW BUTTONS: Extend this base class. Set defaults as class properties
 class BaseDD {
 	
 	//String for replacement.
@@ -247,7 +248,7 @@ class BaseIFrameDD extends BaseDD{
 
 // DEFAULT BUTTONS (IN THEIR DEFAULT ORDER)
 
-
+// TODO: consider tidying this up by loading these classes from separate files
 
 /******************************************************************************************
  * 
@@ -725,7 +726,177 @@ class DD_Linkedin extends BaseDD{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // NON-DEFAULTS
+
+/******************************************************************************************
+ * 
+ * Pinterest
+ * http://pinterest.com/about/goodies/#button_for_websites
+ *
+ */
+class DD_Pinterest extends BaseDD{
+	const NAME = "Pinterest - Pin It Button";
+	const URL_WEBSITE = "http://pinterest.com";
+	const URL_API = "http://pinterest.com/about/goodies/#button_for_websites";
+	const DEFAULT_BUTTON_WEIGHT = "10";
+
+	const BASEURL = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE" class="pin-it-button" count-layout="VOTE_BUTTON_DESIGN">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>';
+	
+	const BASEURL_LAZY = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE" class="pin-it-button dd-pinterest-ajax-load dd-pinterest-POST_ID" count-layout="VOTE_BUTTON_DESIGN">Pin It</a>';
+	const BASEURL_LAZY_SCRIPT = "function loadPinterest_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('http://assets.pinterest.com/js/pinit.js'); }); }";
+	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadPinterest_POST_ID()',SCHEDULER_TIMER);";
+	const SCHEDULER_LAZY_TIMER = "1000";
+    
+	const OPTION_APPEND_TYPE = "dd_pinterest_appendType";
+	const OPTION_BUTTON_DESIGN = "dd_pinterest_buttonDesign";
+	const OPTION_BUTTON_WEIGHT = "dd_pinterest_button_weight";
+	const OPTION_AJAX_LEFT_FLOAT = "dd_pinterest_ajax_left_float";
+	const OPTION_LAZY_LOAD = "dd_pinterest_lazy_load";
+	
+	var $buttonLayout = array(
+		"Normal" => "vertical",
+		"Compact" => "horizontal",
+		"No Count" => "none"
+	);
+    
+	var $buttonLayoutLazy = array(
+		"Normal" => "vertical",
+		"Compact" => "horizontal",
+		"No Count" => "none" 
+	);
+	
+    public function DD_Pinterest() {
+    	
+		$this->option_append_type = self::OPTION_APPEND_TYPE;
+		$this->option_button_design = self::OPTION_BUTTON_DESIGN;
+		$this->option_button_weight = self::OPTION_BUTTON_WEIGHT;
+		$this->option_ajax_left_float = self::OPTION_AJAX_LEFT_FLOAT;
+		$this->option_lazy_load = self::OPTION_LAZY_LOAD;
+		
+		$this->baseURL_lazy = self::BASEURL_LAZY;
+    	$this->baseURL_lazy_script = self::BASEURL_LAZY_SCRIPT;
+    	$this->scheduler_lazy_script = self::SCHEDULER_LAZY_SCRIPT;
+    	$this->scheduler_lazy_timer = self::SCHEDULER_LAZY_TIMER;
+    	
+		$this->button_weight_value = self::DEFAULT_BUTTON_WEIGHT;
+		
+        parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
+      
+    }
+    
+	public function constructLazyLoadURL($url, $title,$button, $postId){
+    	
+    	$finalURL_lazy = $this->baseURL_lazy;
+    	$finalURL_lazy = str_replace(parent::VOTE_BUTTON_DESIGN,$this->getButtonDesignLazy($button),$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
+    	$this->finalURL_lazy = $finalURL_lazy;
+    	
+    	$finalURL_lazy_script = $this->baseURL_lazy_script;
+    	$finalURL_lazy_script = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy_script);
+    	$finalURL_lazy_script = str_replace(parent::VOTE_URL,$url,$finalURL_lazy_script);
+    	$finalURL_lazy_script = str_replace(parent::POST_ID,$postId,$finalURL_lazy_script);
+    	$this->finalURL_lazy_script = $finalURL_lazy_script;
+    	
+    	$final_scheduler_lazy_script = $this->scheduler_lazy_script;
+    	$final_scheduler_lazy_script = str_replace(parent::SCHEDULER_TIMER,$this->scheduler_lazy_timer,$final_scheduler_lazy_script);
+    	$final_scheduler_lazy_script = str_replace(parent::POST_ID,$postId,$final_scheduler_lazy_script);
+    	$this->final_scheduler_lazy_script =  $final_scheduler_lazy_script;
+    	
+    }
+    
+}
+
+/******************************************************************************************
+ * 
+ * Flattr
+ * http://developers.flattr.net/button/
+ *
+ */
+class DD_Flattr extends BaseDD{
+	const NAME = "Flattr";
+	const URL_WEBSITE = "http://flattr.com";
+	const URL_API = "http://developers.flattr.net/button/";
+	const DEFAULT_BUTTON_WEIGHT = "10";
+
+	const BASEURL = '<script src="http://api.flattr.com/js/0.6/load.js?mode=auto&amp;uid=flattr"></script><a href="VOTE_URL" class="FlattrButton" title="VOTE_TITLE" data-flattr-button="VOTE_BUTTON_DESIGN"></a>';
+	
+	const BASEURL_LAZY = '<a href="VOTE_URL" class="FlattrButton" title="VOTE_TITLE" data-flattr-button="VOTE_BUTTON_DESIGN"></a>';
+	const BASEURL_LAZY_SCRIPT = "function loadFlattr_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('http://api.flattr.com/js/0.6/load.js?mode=auto&amp;uid=flattr'); }); }";
+	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadFlattr_POST_ID()',SCHEDULER_TIMER);";
+	const SCHEDULER_LAZY_TIMER = "1000";
+    
+	const OPTION_APPEND_TYPE = "dd_flattr_appendType";
+	const OPTION_BUTTON_DESIGN = "dd_flattr_buttonDesign";
+	const OPTION_BUTTON_WEIGHT = "dd_flattr_button_weight";
+	const OPTION_AJAX_LEFT_FLOAT = "dd_flattr_ajax_left_float";
+	const OPTION_LAZY_LOAD = "dd_flattr_lazy_load";
+	
+	var $buttonLayout = array(
+		"Normal" => "default",
+		"Compact" => "compact"
+	);
+    
+	var $buttonLayoutLazy = array(
+		"Normal" => "default",
+		"Compact" => "compact"
+	);
+	
+    public function DD_Flattr() {
+    	
+		$this->option_append_type = self::OPTION_APPEND_TYPE;
+		$this->option_button_design = self::OPTION_BUTTON_DESIGN;
+		$this->option_button_weight = self::OPTION_BUTTON_WEIGHT;
+		$this->option_ajax_left_float = self::OPTION_AJAX_LEFT_FLOAT;
+		$this->option_lazy_load = self::OPTION_LAZY_LOAD;
+		
+		$this->baseURL_lazy = self::BASEURL_LAZY;
+    	$this->baseURL_lazy_script = self::BASEURL_LAZY_SCRIPT;
+    	$this->scheduler_lazy_script = self::SCHEDULER_LAZY_SCRIPT;
+    	$this->scheduler_lazy_timer = self::SCHEDULER_LAZY_TIMER;
+    	
+		$this->button_weight_value = self::DEFAULT_BUTTON_WEIGHT;
+		
+        parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
+      
+    }
+    
+	public function constructLazyLoadURL($url, $title,$button, $postId){
+    	
+    	$finalURL_lazy = $this->baseURL_lazy;
+    	$finalURL_lazy = str_replace(parent::VOTE_BUTTON_DESIGN,$this->getButtonDesignLazy($button),$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
+    	$this->finalURL_lazy = $finalURL_lazy;
+    	
+    	$finalURL_lazy_script = $this->baseURL_lazy_script;
+    	$finalURL_lazy_script = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy_script);
+    	$finalURL_lazy_script = str_replace(parent::VOTE_URL,$url,$finalURL_lazy_script);
+    	$finalURL_lazy_script = str_replace(parent::POST_ID,$postId,$finalURL_lazy_script);
+    	$this->finalURL_lazy_script = $finalURL_lazy_script;
+    	
+    	$final_scheduler_lazy_script = $this->scheduler_lazy_script;
+    	$final_scheduler_lazy_script = str_replace(parent::SCHEDULER_TIMER,$this->scheduler_lazy_timer,$final_scheduler_lazy_script);
+    	$final_scheduler_lazy_script = str_replace(parent::POST_ID,$postId,$final_scheduler_lazy_script);
+    	$this->final_scheduler_lazy_script =  $final_scheduler_lazy_script;
+    	
+    }
+    
+}
 
 
 /******************************************************************************************

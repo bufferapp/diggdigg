@@ -78,7 +78,7 @@
 	-moz-border-radius:6px 6px 6px 6px;
 	border-style:solid;
 	border-width:1px;
-	line-height:1;
+	/*line-height:1;*/
 	border:1px solid silver;
 	margin-bottom:16px;
 	background-color: #FFFFFF;
@@ -174,3 +174,82 @@ p{
 	padding:10px 15px;
 }
 
+/** "Meet the Team" styles **/
+#buffer-guys ul {
+	list-style-type: none;
+}
+
+#buffer-guys li {
+	border: 1px solid #ddd;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background: #eee;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+#buffer-guys img {
+	clear: left;
+	float: left;
+	margin: 5px 10px 5px 5px;
+}
+
+#buffer-guys li p.name {
+	font-size: 14px !important;
+	margin-top: 7px;
+	color: #666;
+	margin-bottom: 2px;
+}
+
+/** "Try Buffer" styles **/
+#try-buffer div.signup {
+	margin: 20px auto;
+	text-align: center;
+}
+
+#try-buffer a.button {
+	background-color: #7AC054;
+	background-image: -moz-linear-gradient(top, #a7ed82, #549a2f);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a7ed82),color-stop(1, #549a2f));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#a7ed82', EndColorStr='#549a2f');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#a7ed82', EndColorStr='#549a2f')";
+	color: #333333 !important;
+	border: 1px solid #999999;
+	cursor: pointer;
+	position: relative;
+	outline: 0;
+	-moz-box-shadow: 0 1px 1px #cdcdcd;
+	-webkit-box-shadow: 0 1px 1px #cdcdcd;
+	box-shadow: 0 1px 1px #cdcdcd;
+	-webkit-text-shadow: none;
+	-moz-text-shadow: none;
+	text-shadow: none;
+	font-size: 18px !important;
+	font-weight: bold;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	border-radius: 45px;
+	padding: 10px 15px;
+}
+
+#try-buffer a.button:hover {
+	-moz-box-shadow: 0 0 5px #666;
+	-webkit-box-shadow: 0 0 5px #666;
+	box-shadow: 0 0 5px #666;
+	border: 1px solid #666;
+}
+
+#try-buffer a.button:active {
+	background-color: #7AC054;
+	background-image: -moz-linear-gradient(top, #549a2f, #a7ed82);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #549a2f),color-stop(1, #a7ed82));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#549a2f', EndColorStr='#a7ed82');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#549a2f', EndColorStr='#a7ed82')";
+	outline: 0;
+	top: 0px;
+	-moz-box-shadow: 0 0 5px #666;
+	-webkit-box-shadow: 0 0 5px #666;
+	box-shadow: 0 0 5px #666;
+	border: 1px solid #666;
+}

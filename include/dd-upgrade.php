@@ -24,6 +24,8 @@ function dd_upgrade_setting_version_3() {
 function dd_upgrade_setting_version_4() {
 	dd_clear_form_global_config(DD_FUNC_TYPE_RESET);
 	dd_add_button(DD_BUTTON_BUFFER,new DD_Buffer());
+	dd_add_button(DD_BUTTON_PINTEREST,new DD_Pinterest());
+	dd_add_button(DD_BUTTON_FLATTR,new DD_Flattr());
 }
 
 function dd_remove_button($button_nama=''){

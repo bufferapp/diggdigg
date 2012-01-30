@@ -3,7 +3,7 @@ Contributors: joelg87, flipstorm
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 4.6
+Stable tag: 5.0
 
 Add a floating bar with share buttons to your blog. Just like Mashable! Help your posts get more shares, help yourself get more traffic.
 
@@ -44,6 +44,8 @@ Some FAQs and a link to an online user guide
 
 == Changelog ==
 
-= Digg Digg v4.6 - //2012 =
+= Digg Digg v5.0 - 2012-01- =
 * Welcome to Digg Digg by Buffer!
-* Fixed an outstanding issue with
+* Plugin now starts with a default set of buttons enabled in the floating bar
+* Buffer button enabled for all existing users
+* Pinterest and Flattr buttons added

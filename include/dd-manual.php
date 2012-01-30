@@ -1,5 +1,6 @@
 <?php
 
+// XXX: NEW BUTTONS: Add declarations to $dd_manual_code array, and functions below to initialise class
 /***********************************Advance Usage*********************************/
 global $dd_manual_code;
 $dd_manual_code = array(
@@ -10,7 +11,7 @@ $dd_manual_code = array(
 	"Buffer" => array(
 		"Normal" => "dd_buffer_generate('Normal')",
 		"Compact" => "dd_buffer_generate('Compact')",
-		"Compact" => "dd_buffer_generate('Compact')"
+		"No Count" => "dd_buffer_generate('No Count')"
 	),
 	"FaceBook Like" => array(
 		"Like Standard" => "dd_fblike_generate('Like Standard')",
@@ -107,6 +108,14 @@ $dd_manual_code = array(
 	),
 	"Serpd" => array(
 		"Normal" => "dd_serpd_generate('Normal')"
+	),
+	"Pinterest" => array(
+		"Normal" => "dd_pinterest_generate('Normal')",
+		"Compact" => "dd_pinterest_generate('Compact')"
+	),
+	"Flattr" => array(
+		"Normal" => "dd_flattr_generate('Normal')",
+		"Compact" => "dd_flattr_generate('Compact')"
 	),
 );		
 	
@@ -328,6 +337,24 @@ function dd_buffer_generate($buttonDesign='Normal'){
     $dd_buffer->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false);
     
 	echo $dd_buffer->finalURL;
+}
+
+function dd_pinterest_generate($buttonDesign='Normal'){
+	$post_data = dd_getPostData();
+    
+    $dd_pinterest = new DD_Pinterest();
+    $dd_pinterest->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false);
+    
+	echo $dd_pinterest->finalURL;
+}
+
+function dd_flattr_generate($buttonDesign='Normal'){
+	$post_data = dd_getPostData();
+    
+    $dd_flattr = new DD_Flattr();
+    $dd_flattr->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false);
+    
+	echo $dd_flattr->finalURL;
 }
 
 function dd_getPostData() {
