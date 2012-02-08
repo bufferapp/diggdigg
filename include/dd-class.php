@@ -366,7 +366,7 @@ class DD_Twitter extends BaseDD{
  *
  */
 class DD_Buffer extends BaseDD{
-	var $append_type = 'left_float';
+	var $append_type = 'after_content';
 	var $button_design = 'Normal';
 	var $ajax_left_float = 'on';
 	var $lazy_load = false;
@@ -374,7 +374,7 @@ class DD_Buffer extends BaseDD{
 	const NAME = "Buffer";
 	const URL_WEBSITE = "http://bufferapp.com/";
 	const URL_API = "http://bufferapp.com/goodies/button/";
-	const DEFAULT_BUTTON_WEIGHT = "109";
+	const DEFAULT_BUTTON_WEIGHT = "99";
 	
 	var $isEncodeRequired = false;
 	
@@ -462,7 +462,7 @@ class DD_FbLike_XFBML extends BaseDD{
 	const BASEURL = "<script src=\"http://connect.facebook.net/FACEBOOK_LOCALE/all.js#xfbml=1\"></script><fb:like href=\"VOTE_URL\" FACEBOOK_SEND FACEBOOK_SHOW_FACE VOTE_BUTTON_DESIGN ></fb:like>";
 		
 	const FB_LOCALES = "http://www.facebook.com/translations/FacebookLocales.xml";
-	const DEFAULT_BUTTON_WEIGHT = "108";
+	const DEFAULT_BUTTON_WEIGHT = "96";
 	
 	const OPTION_APPEND_TYPE = "dd_fblike_xfbml_appendType";
 	const OPTION_BUTTON_DESIGN = "dd_fblike_xfbml_buttonDesign";
@@ -566,7 +566,7 @@ class DD_Google1 extends BaseDD{
 	const NAME = "Google +1";
 	const URL_WEBSITE = "http://www.google.com/+1/button/";
 	const URL_API = "http://code.google.com/apis/+1button/";
-	const DEFAULT_BUTTON_WEIGHT = "107";
+	const DEFAULT_BUTTON_WEIGHT = "95";
 	
 	var $isEncodeRequired = false;
 	
@@ -651,7 +651,7 @@ class DD_Linkedin extends BaseDD{
 	const NAME = "Linkedin";
 	const URL_WEBSITE = "http://www.linkedin.com";
 	const URL_API = "http://www.linkedin.com/publishers";
-	const DEFAULT_BUTTON_WEIGHT = "106";
+	const DEFAULT_BUTTON_WEIGHT = "94";
 	
 	const BASEURL = "<script type='text/javascript' src='http://platform.linkedin.com/in.js'></script><script type='IN/share' data-url='VOTE_URL' data-counter='VOTE_BUTTON_DESIGN'></script>";
 	
@@ -751,7 +751,7 @@ class DD_Linkedin extends BaseDD{
  *
  */
 class DD_Pinterest extends BaseDD{
-	const NAME = "Pinterest - Pin It Button";
+	const NAME = "Pinterest";
 	const URL_WEBSITE = "http://pinterest.com";
 	const URL_API = "http://pinterest.com/about/goodies/#button_for_websites";
 	const DEFAULT_BUTTON_WEIGHT = "10";
@@ -911,7 +911,7 @@ class DD_FbLike extends BaseIFrameDD{
 	const BASEURL = "<iframe src='http://www.facebook.com/plugins/like.php?href=VOTE_URL&amp;locale=FACEBOOK_LOCALE&amp;VOTE_BUTTON_DESIGN' scrolling='no' frameborder='0' style='border:none; overflow:hidden; EXTRA_VALUE' allowTransparency='true'></iframe>";
 	
 	const FB_LOCALES = "http://www.facebook.com/translations/FacebookLocales.xml";
-	const DEFAULT_BUTTON_WEIGHT = "108";
+	const DEFAULT_BUTTON_WEIGHT = "96";
 	
 	const OPTION_APPEND_TYPE = "dd_fblike_appendType";
 	const OPTION_BUTTON_DESIGN = "dd_fblike_buttonDesign";

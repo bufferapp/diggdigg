@@ -1,9 +1,9 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 4.6
+ Version: 5.0.2
  Plugin URI: http://bufferapp.com/diggdigg
- Author: Buffer, Inc
+ Author: Buffer
  Author URI: http://bufferapp.com/
  Description: Add a floating bar with share buttons to your blog. Just like Mashable!
               Help your posts get more shares, help yourself get more traffic.
@@ -308,7 +308,7 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 			$dd_lazyLoad_scheduler_script.=$obj->final_scheduler_lazy_script;
 		}
 
-		$floatButtonsContainer .= "<div class='dd_button_v " . $obj::OPTION_AJAX_LEFT_FLOAT . "'>" . $finalURL . "</div><div style='clear:left'></div>" ;
+		$floatButtonsContainer .= "<div class='dd_button_v " . $obj->dd_twitter_ajax_left_float . "'>" . $finalURL . "</div><div style='clear:left'></div>";
 
 	}
 
@@ -356,7 +356,7 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 			$dd_lazyLoad_scheduler_script.=$obj->final_scheduler_lazy_script;
 		}
 
-		$floatButtonsContainer .= "<div class='dd_button_v " . $obj::OPTION_AJAX_LEFT_FLOAT . "'>" . $finalURL . "</div><div style='clear:left'></div>" ;
+		$floatButtonsContainer .= "<div class='dd_button_v " . $obj->dd_twitter_ajax_left_float . "'>" . $finalURL . "</div><div style='clear:left'></div>";
 
 	}
 
@@ -530,7 +530,7 @@ function dd_admin_init_setting() {
 
 //$dd_current_version = 2;
 //$dd_current_version = 3;
-$dd_current_version = 4;
+$dd_current_version = 5;
 function dd_check_if_client_need_upgrade_setting() {
 
 	global $dd_current_version;
@@ -553,7 +553,7 @@ function dd_check_if_client_need_upgrade_setting() {
 		if($dd_current_version > $dd_client_version){
 			
 			//print_r('<h1>setting is upgrading.....</h1>');
-			dd_upgrade_setting_version_4();
+			dd_upgrade_setting_version_5();
 			update_option('dd_client_version', $dd_current_version);
 			
 		}else{

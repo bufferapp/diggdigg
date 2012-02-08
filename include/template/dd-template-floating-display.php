@@ -4,6 +4,9 @@ function dd_page_for_floating_display(){
 	global $ddFloatDisplay,$ddFloatButtons;
 	
 	if (isset($_POST[DD_FORM_SAVE])) {
+		
+		if(isset($_POST[DD_STATUS_OPTION_DISPLAY])) $ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY] = DD_DISPLAY_ON;
+		else $ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY] = DD_DISPLAY_OFF;
 
 		foreach(array_keys($ddFloatDisplay) as $key){
 	    	
@@ -371,7 +374,6 @@ function checkCategory(){
 		</div>	
 	</div>
 
-	<!-- Hiding disable credit link function
 	<div class="dd-block">
 		<div class="dd-title"><h2>6. Credit Link</h2></div>
 		<div class="dd-insider">
@@ -389,20 +391,12 @@ function checkCategory(){
 			<?php echo ($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_CREDIT]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>> Disabled digg digg credit link (The small text link at the end of the floating box). 
 			</p>
 			
-			<div>
-				<span style="font-style: italic;font-weight: bold">Consider
-				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AWXCPTQXB7YAS" target="_blank">DONATE</a>
-				 before remove this credit link, much appreciated :)
-				</span>
-			</div>
-			
 			<div class="dd-button">
 				<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
 			</div>
 			<div style="clear:both"></div>
 		</div>
 	</div>
-	-->
 	
 	<div class="dd-block">
 		<div class="dd-title"><h2>6. Reset Floating Display Settings</h2></div>
