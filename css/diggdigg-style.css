@@ -106,9 +106,9 @@
 	-moz-background-clip:padding;
 	-webkit-background-clip:padding-box;
 	background-clip:padding-box;
-	-webkit-box-shadow:1px 0px 15px #cccccc;
-	-moz-box-shadow:1px 0px 15px #cccccc;
-	box-shadow:1px 0px 15px #cccccc;
+	-webkit-box-shadow:1px 0px 15px rgba(0,0,0,0.2);
+	-moz-box-shadow:1px 0px 15px rgba(0,0,0,0.2);
+	box-shadow:1px 0px 15px rgba(0,0,0,0.2);
 	padding:5px;
 }
 
