@@ -3,7 +3,7 @@ Contributors: joelg87, flipstorm
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 5.0.2
+Stable tag: 5.0.3
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -42,6 +42,11 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.0.3 - 27/02/2012 =
+* Fixed: Pinterest button let's people pin the featured image for the blog post.
+* Fixed: The vertical Tweet button width has been set to 55px, to fix a current issue from Twitter.
+* Fixed: The floating bar shadow is now set using alpha transparency, to avoid a "glow" effect on dark backgrounds.
 
 = Digg Digg v5.0.2 - 08/02/2012 =
 * Fixed: Added back the ability to disable the credit link.
