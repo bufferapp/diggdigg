@@ -827,7 +827,9 @@ class DD_Pinterest extends BaseDD{
 		$finalURL = str_replace(parent::VOTE_TITLE,$title,$finalURL);
     	$finalURL = str_replace(parent::VOTE_URL,$url,$finalURL);
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'thumbnail' );
-		if($thumb) $finalURL = str_replace(parent::VOTE_IMAGE,$thumb[0],$finalURL);
+		if($thumb) $image = $thumb[0];
+		else $image = '';
+		$finalURL = str_replace(parent::VOTE_IMAGE,$image,$finalURL);
     	$this->finalURL = $finalURL;
     }
     
@@ -839,7 +841,9 @@ class DD_Pinterest extends BaseDD{
 		$finalURL_lazy = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy);
     	$finalURL_lazy = str_replace(parent::VOTE_URL,$url,$finalURL_lazy);
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'thumbnail' );
-		if($thumb) $finalURL_lazy = str_replace(parent::VOTE_IMAGE,$thumb[0],$finalURL_lazy);
+		if($thumb) $image = $thumb[0];
+		else $image = '';
+		$finalURL_lazy = str_replace(parent::VOTE_IMAGE,$image,$finalURL_lazy);
     	$this->finalURL_lazy = $finalURL_lazy;
     	
     	$finalURL_lazy_script = $this->baseURL_lazy_script;
