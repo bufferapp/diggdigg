@@ -5,6 +5,7 @@ class BaseDD {
 	//String for replacement.
 	const VOTE_URL = 'VOTE_URL'; 
 	const VOTE_TITLE = 'VOTE_TITLE';
+	const VOTE_IMAGE = 'VOTE_IMAGE';
 	const VOTE_BUTTON_DESIGN = 'VOTE_BUTTON_DESIGN';
 	const SCHEDULER_TIMER = 'SCHEDULER_TIMER';
 	const POST_ID = 'POST_ID';
@@ -756,9 +757,8 @@ class DD_Pinterest extends BaseDD{
 	const URL_API = "http://pinterest.com/about/goodies/#button_for_websites";
 	const DEFAULT_BUTTON_WEIGHT = "10";
 
-	const BASEURL = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE" class="pin-it-button" count-layout="VOTE_BUTTON_DESIGN">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>';
-	
-	const BASEURL_LAZY = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE" class="pin-it-button dd-pinterest-ajax-load dd-pinterest-POST_ID" count-layout="VOTE_BUTTON_DESIGN">Pin It</a>';
+	const BASEURL = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button" count-layout="VOTE_BUTTON_DESIGN">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>';
+	const BASEURL_LAZY = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button dd-pinterest-ajax-load dd-pinterest-POST_ID" count-layout="VOTE_BUTTON_DESIGN">Pin It</a>';
 	const BASEURL_LAZY_SCRIPT = "function loadPinterest_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('http://assets.pinterest.com/js/pinit.js'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadPinterest_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";
@@ -782,7 +782,7 @@ class DD_Pinterest extends BaseDD{
 	);
 	
     public function DD_Pinterest() {
-    	
+
 		$this->option_append_type = self::OPTION_APPEND_TYPE;
 		$this->option_button_design = self::OPTION_BUTTON_DESIGN;
 		$this->option_button_weight = self::OPTION_BUTTON_WEIGHT;
@@ -799,18 +799,54 @@ class DD_Pinterest extends BaseDD{
         parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
       
     }
+
+	//construct base URL, based on $lazy value
+ 	public function constructURL($url, $title, $button, $postId, $lazy, $globalcfg = ''){
+ 		//rawurlencode - replace space with %20
+    	//urlencode - replace space with + 
+ 		if($this->isEncodeRequired) {
+ 			$title = rawurlencode($title);
+    		$url = rawurlencode($url);
+ 		}
+ 		
+    	if($lazy==DD_EMPTY_VALUE || $lazy==false){
+    		$this->constructNormalURL($url, $title,$button, $postId);
+    	}else{
+    		$this->constructLazyLoadURL($url, $title,$button, $postId);
+    	}
+    	
+    }
+    
+	public function constructNormalURL($url, $title,$button, $postId){
+		
+    	$finalURL = $this->baseURL;
+    	$finalURL = str_replace(self::VOTE_BUTTON_DESIGN,$this->getButtonDesign($button),$finalURL);
+    	$finalURL = str_replace(self::VOTE_TITLE,$title,$finalURL);
+    	$finalURL = str_replace(self::VOTE_URL,$url,$finalURL);
+		$finalURL = str_replace(parent::POST_ID,$postId,$finalURL);
+		$finalURL = str_replace(parent::VOTE_TITLE,$title,$finalURL);
+    	$finalURL = str_replace(parent::VOTE_URL,$url,$finalURL);
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'thumbnail' );
+		if($thumb) $finalURL = str_replace(parent::VOTE_IMAGE,$thumb[0],$finalURL);
+    	$this->finalURL = $finalURL;
+    }
     
 	public function constructLazyLoadURL($url, $title,$button, $postId){
     	
     	$finalURL_lazy = $this->baseURL_lazy;
     	$finalURL_lazy = str_replace(parent::VOTE_BUTTON_DESIGN,$this->getButtonDesignLazy($button),$finalURL_lazy);
     	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
+		$finalURL_lazy = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::VOTE_URL,$url,$finalURL_lazy);
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'thumbnail' );
+		if($thumb) $finalURL_lazy = str_replace(parent::VOTE_IMAGE,$thumb[0],$finalURL_lazy);
     	$this->finalURL_lazy = $finalURL_lazy;
     	
     	$finalURL_lazy_script = $this->baseURL_lazy_script;
     	$finalURL_lazy_script = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy_script);
     	$finalURL_lazy_script = str_replace(parent::VOTE_URL,$url,$finalURL_lazy_script);
     	$finalURL_lazy_script = str_replace(parent::POST_ID,$postId,$finalURL_lazy_script);
+
     	$this->finalURL_lazy_script = $finalURL_lazy_script;
     	
     	$final_scheduler_lazy_script = $this->scheduler_lazy_script;
