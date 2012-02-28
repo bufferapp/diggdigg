@@ -3,7 +3,7 @@ Contributors: joelg87, flipstorm
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 5.0.3
+Stable tag: 5.0.4
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -14,7 +14,7 @@ With Digg Digg by Buffer you will get an all in one social sharing plugin displa
 
 * Display all popular social sharing buttons with count, such as Twitter, Buffer, Facebook Share, Facebook Like, Digg, LinkedIn, Google +1, Reddit, dZone, TweetMeme, Topsy, Yahoo Buzz, StumbleUpon, Del.icio.us, Sphinn, Designbump, WebBlend, BlogEngage and Serpd, Pinterest.
 * Facebook Like (Iframe or XFBML), support thumbnail generation, multiple languages, show faces and send button.
-* Great customization options. Choose a floating bar (like here: http://blog.bufferapp.com), sharing buttons at the top of the post, or at the bottom of it.
+* Great customization options. Choose a floating bar like here: http://blog.bufferapp.com or sharing buttons at the top or bottom of the post.
 * Lazy loading to increase website performance.
 * Left or right scrolling effect like Mashable.com.
 * Support in excerpt mode.
@@ -42,6 +42,11 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.0.4 - 28/02/2012 =
+* Fixed: Flattr button. You can choose your Flattr username from the global configuration page.
+* Fixed: You can now choose a Twitter username to be mentioned when people use the Buffer button. Set it in the global configuration page.
+* Fixed: Bug where "Buffer" and "Pin It" appeared at the start of excerpts.
 
 = Digg Digg v5.0.3 - 27/02/2012 =
 * Fixed: Pinterest button let's people pin the featured image for the blog post.
