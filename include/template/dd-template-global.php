@@ -139,9 +139,25 @@ function dd_print_global_form($ddGlobalConfig){
 		</div>	
 	</div>
 	
+	<div class="dd-block">
+		<div class="dd-title"><h2>3. Flattr configuration</h2></div>
+		<div class="dd-insider">
+			<p>
+			2.1 Flattr username : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_FLATTR_OPTION][DD_GLOBAL_FLATTR_OPTION_UID]; ?>" name="<?php echo DD_GLOBAL_FLATTR_OPTION_UID;?>" />
+			</p>
+			<p class="dd-remark">
+			This Flattr username will be credited when people use the Flattr button.
+			</p>
+			<div class="dd-button">
+				<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+			</div>
+			<div style="clear:both"></div>
+		</div>	
+	</div>
+	
 	
 	<div class="dd-block">
-		<div class="dd-title"><h2>3. TweetMeme configuration</h2></div>
+		<div class="dd-title"><h2>4. TweetMeme configuration</h2></div>
 		<div class="dd-insider">
 			<p>
 			3.1 TweetMeme source RT @ : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SOURCE;?>" /> 
@@ -171,7 +187,7 @@ function dd_print_global_form($ddGlobalConfig){
 	</div>
 	
 	<div class="dd-block">
-		<div class="dd-title"><h2>4. Topsy configuration</h2></div>
+		<div class="dd-title"><h2>5. Topsy configuration</h2></div>
 		<div class="dd-insider">
 			<p>
 			4.1 Topsy source : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TOPSY_OPTION][DD_GLOBAL_TOPSY_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TOPSY_OPTION_SOURCE;?>" /> 
@@ -193,7 +209,7 @@ function dd_print_global_form($ddGlobalConfig){
 	</div>
 	
 	<div class="dd-block">
-		<div class="dd-title"><h2>5. Reset Global Configuration Settings</h2></div>
+		<div class="dd-title"><h2>6. Reset Global Configuration Settings</h2></div>
 		<div class="dd-insider">
 			<p>
 			Reset all "Global Configuration" settings to their default values.
@@ -204,7 +220,7 @@ function dd_print_global_form($ddGlobalConfig){
 	
 	<?php // XXX: This seems pretty drastic... I doubt many people do this one! ?>
 	<div class="dd-block">
-		<div class="dd-title"><h2>6. Reset Everything</h2></div>
+		<div class="dd-title"><h2>7. Reset Everything</h2></div>
 		<div class="dd-insider">
 			<p>
 			Reset all settings (everything) to their default values.

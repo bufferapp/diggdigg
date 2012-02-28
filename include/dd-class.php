@@ -874,13 +874,12 @@ class DD_Flattr extends BaseDD{
 	const URL_API = "http://developers.flattr.net/button/";
 	const DEFAULT_BUTTON_WEIGHT = "10";
 
-	const BASEURL = '<script src="http://api.flattr.com/js/0.6/load.js?mode=auto&amp;uid=flattr"></script><a href="VOTE_URL" class="FlattrButton" title="VOTE_TITLE" data-flattr-button="VOTE_BUTTON_DESIGN"></a>';
-	
-	const BASEURL_LAZY = '<a href="VOTE_URL" class="FlattrButton" title="VOTE_TITLE" data-flattr-button="VOTE_BUTTON_DESIGN"></a>';
-	const BASEURL_LAZY_SCRIPT = "function loadFlattr_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('http://api.flattr.com/js/0.6/load.js?mode=auto&amp;uid=flattr'); }); }";
+	const BASEURL = '<script src="http://api.flattr.com/js/0.6/load.js?mode=auto"></script><a class="FlattrButton" href="VOTE_URL" style="display:none;" title="VOTE_TITLE" data-flattr-uid="VOTE_FLATTR_UID" data-flattr-button="VOTE_BUTTON_DESIGN" data-flattr-category="text"></a>';
+	const BASEURL_LAZY = '<a class="FlattrButton" href="VOTE_URL" style="display:none;" title="VOTE_TITLE" data-flattr-uid="VOTE_FLATTR_UID" data-flattr-button="VOTE_BUTTON_DESIGN" data-flattr-category="text"></a>';
+	const BASEURL_LAZY_SCRIPT = "function loadFlattr_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('http://api.flattr.com/js/0.6/load.js?mode=auto'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadFlattr_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";
-    
+
 	const OPTION_APPEND_TYPE = "dd_flattr_appendType";
 	const OPTION_BUTTON_DESIGN = "dd_flattr_buttonDesign";
 	const OPTION_BUTTON_WEIGHT = "dd_flattr_button_weight";
@@ -897,6 +896,8 @@ class DD_Flattr extends BaseDD{
 		"Compact" => "compact"
 	);
 	
+	const VOTE_FLATTR_UID = 'VOTE_FLATTR_UID';
+	
     public function DD_Flattr() {
     	
 		$this->option_append_type = self::OPTION_APPEND_TYPE;
@@ -905,6 +906,7 @@ class DD_Flattr extends BaseDD{
 		$this->option_ajax_left_float = self::OPTION_AJAX_LEFT_FLOAT;
 		$this->option_lazy_load = self::OPTION_LAZY_LOAD;
 		
+		$this->baseURL = self::BASEURL;
 		$this->baseURL_lazy = self::BASEURL_LAZY;
     	$this->baseURL_lazy_script = self::BASEURL_LAZY_SCRIPT;
     	$this->scheduler_lazy_script = self::SCHEDULER_LAZY_SCRIPT;
@@ -915,17 +917,47 @@ class DD_Flattr extends BaseDD{
         parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
       
     }
+
+	//construct base URL, based on $lazy value
+ 	public function constructURL($url, $title, $button, $postId, $lazy, $globalcfg = ''){
+	
+		$flattr_uid = 'flattr';
+ 		if($globalcfg!=''){
+ 			$flattr_uid = $globalcfg[DD_GLOBAL_FLATTR_OPTION][DD_GLOBAL_FLATTR_OPTION_UID];
+			if(empty($flattr_uid)) $flattr_uid = 'flattr';
+ 		}
+
+    	if($lazy==DD_EMPTY_VALUE || $lazy==false){
+			$this->baseURL = str_replace(self::VOTE_FLATTR_UID, $flattr_uid, $this->baseURL);
+    		$this->constructNormalURL($url, $title, $button, $postId);
+
+    	}else{
+    		$this->baseURL_lazy = str_replace(self::VOTE_FLATTR_UID, $flattr_uid, $this->baseURL_lazy);
+    		$this->constructLazyLoadURL($url, $title, $button, $postId);
+    	}
+    	
+    }
     
-	public function constructLazyLoadURL($url, $title,$button, $postId){
+	public function constructNormalURL($url, $title, $button, $postId){
+		
+    	$finalURL = $this->baseURL;
+    	$finalURL = str_replace(self::VOTE_BUTTON_DESIGN,$this->getButtonDesign($button),$finalURL);
+    	$finalURL = str_replace(self::VOTE_TITLE,$title,$finalURL);
+    	$finalURL = str_replace(self::VOTE_URL,$url,$finalURL);
+		$finalURL = str_replace(parent::POST_ID,$postId,$finalURL);
+    	$this->finalURL = $finalURL;
+    }
+
+	public function constructLazyLoadURL($url, $title, $button, $postId){
     	
     	$finalURL_lazy = $this->baseURL_lazy;
     	$finalURL_lazy = str_replace(parent::VOTE_BUTTON_DESIGN,$this->getButtonDesignLazy($button),$finalURL_lazy);
+		$finalURL_lazy = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::VOTE_URL,$url,$finalURL_lazy);
     	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
     	$this->finalURL_lazy = $finalURL_lazy;
     	
     	$finalURL_lazy_script = $this->baseURL_lazy_script;
-    	$finalURL_lazy_script = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy_script);
-    	$finalURL_lazy_script = str_replace(parent::VOTE_URL,$url,$finalURL_lazy_script);
     	$finalURL_lazy_script = str_replace(parent::POST_ID,$postId,$finalURL_lazy_script);
     	$this->finalURL_lazy_script = $finalURL_lazy_script;
     	
