@@ -379,9 +379,9 @@ class DD_Buffer extends BaseDD{
 	
 	var $isEncodeRequired = false;
 	
-	const BASEURL = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL">Buffer</a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>';
+	const BASEURL = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"><span>Buffer</span></a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>';
 
-	const BASEURL_LAZY = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL">Buffer</a>';
+	const BASEURL_LAZY = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"><span>Buffer</span></a>';
 	const BASEURL_LAZY_SCRIPT = "function loadBuffer_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-buffer-POST_ID').remove();\$.getScript('http://static.bufferapp.com/js/button.js'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadBuffer_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";
@@ -391,6 +391,8 @@ class DD_Buffer extends BaseDD{
 	const OPTION_BUTTON_WEIGHT = "dd_buffer_button_weight";
 	const OPTION_AJAX_LEFT_FLOAT = "dd_buffer_ajax_left_float";
 	const OPTION_LAZY_LOAD = "dd_buffer_lazy_load";
+	
+	const VOTE_BUFFER_SOURCE = "VOTE_BUFFER_SOURCE";
 	
 	var $buttonLayout = array(
 		"Normal" => "vertical",
@@ -423,7 +425,44 @@ class DD_Buffer extends BaseDD{
         parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
       
     }
+
+	public function constructURL($url, $title, $button, $postId, $lazy, $globalcfg = ''){
+    	
+ 		if($this->isEncodeRequired){
+ 			$title = rawurlencode($title);
+    		$url = rawurlencode($url);
+ 		}
+ 		
+ 		$buffer_source = '';
+ 		if($globalcfg!=''){
+ 			$buffer_source = $globalcfg[DD_GLOBAL_BUFFER_OPTION][DD_GLOBAL_BUFFER_OPTION_SOURCE];
+ 		}
+
+    	if($lazy==DD_EMPTY_VALUE || $lazy==false){
+    		//format twitter source
+    		$this->baseURL = str_replace(self::VOTE_BUFFER_SOURCE,$buffer_source,$this->baseURL);
+    		
+    		$this->constructNormalURL($url, $title,$button, $postId);
+    		
+    	}else{
+    		//format twitter source
+    		$this->baseURL_lazy = str_replace(self::VOTE_BUFFER_SOURCE,$buffer_source,$this->baseURL_lazy);
+    	
+    		$this->constructLazyLoadURL($url, $title,$button, $postId);
+    	}
+    	
+    }
     
+	public function constructNormalURL($url, $title, $button, $postId){
+		
+    	$finalURL = $this->baseURL;
+    	$finalURL = str_replace(self::VOTE_BUTTON_DESIGN,$this->getButtonDesign($button),$finalURL);
+    	$finalURL = str_replace(self::VOTE_TITLE,$title,$finalURL);
+    	$finalURL = str_replace(self::VOTE_URL,$url,$finalURL);
+		$finalURL = str_replace(parent::POST_ID,$postId,$finalURL);
+    	$this->finalURL = $finalURL;
+    }
+
 	public function constructLazyLoadURL($url, $title,$button, $postId){
     	
     	$finalURL_lazy = $this->baseURL_lazy;
@@ -757,8 +796,8 @@ class DD_Pinterest extends BaseDD{
 	const URL_API = "http://pinterest.com/about/goodies/#button_for_websites";
 	const DEFAULT_BUTTON_WEIGHT = "10";
 
-	const BASEURL = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button" count-layout="VOTE_BUTTON_DESIGN">Pin It</a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>';
-	const BASEURL_LAZY = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button dd-pinterest-ajax-load dd-pinterest-POST_ID" count-layout="VOTE_BUTTON_DESIGN">Pin It</a>';
+	const BASEURL = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button" count-layout="VOTE_BUTTON_DESIGN"><span>Pin It</span></a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>';
+	const BASEURL_LAZY = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button dd-pinterest-ajax-load dd-pinterest-POST_ID" count-layout="VOTE_BUTTON_DESIGN"><span>Pin It</span></a>';
 	const BASEURL_LAZY_SCRIPT = "function loadPinterest_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('http://assets.pinterest.com/js/pinit.js'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadPinterest_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";

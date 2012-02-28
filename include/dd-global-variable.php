@@ -126,8 +126,12 @@ define('DD_BUTTON_FLATTR','dd_button_flattr');
  * Digg Digg Global Display (Start)
  *******/
 define('DD_GLOBAL_CONFIG','dd_global_config');
+
 define('DD_GLOBAL_TWITTER_OPTION','dd_global_twitter_option');
 define('DD_GLOBAL_TWITTER_OPTION_SOURCE','dd_global_twitter_option_source');
+
+define('DD_GLOBAL_BUFFER_OPTION','dd_global_buffer_option');
+define('DD_GLOBAL_BUFFER_OPTION_SOURCE','dd_global_buffer_option_source');
 
 define('DD_GLOBAL_TWEETMEME_OPTION','dd_global_tweetmeme_option');
 define('DD_GLOBAL_TWEETMEME_OPTION_SOURCE','dd_global_tweetmeme_option_source');
@@ -153,6 +157,9 @@ global $ddGlobalConfig;
 $ddGlobalConfig = array(
 	DD_GLOBAL_TWITTER_OPTION => array(
 		DD_GLOBAL_TWITTER_OPTION_SOURCE => DD_EMPTY_VALUE
+	),
+	DD_GLOBAL_BUFFER_OPTION => array(
+		DD_GLOBAL_BUFFER_OPTION_SOURCE => DD_EMPTY_VALUE
 	),
 	DD_GLOBAL_TWEETMEME_OPTION => array(
 		DD_GLOBAL_TWEETMEME_OPTION_SOURCE => DD_EMPTY_VALUE,
