@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 5.0.5
+ Version: 5.1
  Plugin URI: http://bufferapp.com/diggdigg
  Author: Buffer
  Author URI: http://bufferapp.com/
@@ -15,6 +15,7 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 */
 
+// fix for the W3 Total Cache bug (fixed in Digg Digg 5.1)
 if(function_exists('w3tc_objectcache_flush')) w3tc_objectcache_flush();
 
 require_once 'include/dd-global-variable.php';
