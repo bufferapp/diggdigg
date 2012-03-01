@@ -15,6 +15,8 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 */
 
+if(function_exists('w3tc_objectcache_flush')) w3tc_objectcache_flush();
+
 require_once 'include/dd-global-variable.php';
 require_once 'include/dd-printform.php';
 require_once 'include/dd-helper.php';
