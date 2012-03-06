@@ -7,7 +7,7 @@
 			<p>Author : Buffer</p>
 			<p>Website : <a href="http://bufferapp.com" target="_blank">bufferapp.com</a></p>
 			<p>Email : <a href="mailto:diggdigg@bufferapp.com" target="_blank">diggdigg@bufferapp.com</a></p>
-			<p>Twitter : @<a href="http://twitter.com/bufferapp" target="_blank">bufferapp</a></p>
+			<p>Twitter : @<a href="http://twitter.com/diggdiggwp" target="_blank">diggdiggwp</a></p>
 			</p>
 		</div>
 	</div>
