@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 5.1
+ Version: 5.1.1
  Plugin URI: http://bufferapp.com/diggdigg
  Author: Buffer
  Author URI: http://bufferapp.com/
@@ -330,9 +330,9 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 		}
 		
 		$floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
-		$floatingJS = '<script type="text/javascript">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_SCROLLING_POSITION] . '</script>';
+		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 
-		$content =  $floatButtonsContainer . "<div class='dd_content_wrap'>" . $content . "</div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
+		$content =  "<div class='dd_content_wrap'>" . $floatButtonsContainer . "</div>" . $content . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
 	
 	}
 
@@ -378,9 +378,9 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 		}
 		
 		$floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
-		$floatingJS = '<script type="text/javascript">function dd_float_final(){' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_SCROLLING_POSITION] . '}</script>';
+		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 
-		$content =  $floatButtonsContainer . "<div class='dd_content_wrap'>" . $content . "</div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
+		$content =  "<div class='dd_content_wrap'>" . $floatButtonsContainer . "</div>" . $content . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
 	
 	}
 

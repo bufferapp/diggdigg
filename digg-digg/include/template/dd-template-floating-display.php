@@ -15,7 +15,7 @@ function dd_page_for_floating_display(){
 				//echo '<h2>$key : ' . $key . ' - $subkey : ' . $subkey . ' - [' . $_POST[$subkey] . ']</h2>';
 				if(isset($_POST[$subkey])){
 					
-					if($subkey==DD_FLOAT_OPTION_INITIAL_POSITION || $subkey==DD_FLOAT_OPTION_SCROLLING_POSITION){
+					if($subkey==DD_FLOAT_OPTION_INITIAL_POSITION){
 						$ddFloatDisplay[$key][$subkey] = dd_filter_weird_characters($_POST[$subkey]);
 					}else{
 						$ddFloatDisplay[$key][$subkey] = $_POST[$subkey];
@@ -354,15 +354,6 @@ function checkCategory(){
 			<p class="dd-note dd-note-blue">Note : Be sure to edit this value here, not in your CSS</p>
 			<p>
 				<textarea name="<?php echo DD_FLOAT_OPTION_INITIAL_POSITION;?>" rows="10" cols="88" style="background-color:#F9F9F9;"><?php echo $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION]; ?></textarea>
-			</p>
-			
-			<h4>5.2 Scrolling Position</h4> 
-			<p>
-			This is the position where buttons display when you scroll the page. If it doesn't feel right, adjust this value "<span class="dd-note">top:16</span>" to suit your theme.
-			</p>
-			<p class="dd-note dd-note-blue">Note : e sure to edit this value here, not in your CSS</p>
-			<p>
-			<textarea name="<?php echo DD_FLOAT_OPTION_SCROLLING_POSITION;?>" rows="38" cols="88" style="background-color:#F9F9F9;"><?php echo 	$ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_SCROLLING_POSITION]; ?></textarea>
 			</p>
 
 			<div class="dd-button">

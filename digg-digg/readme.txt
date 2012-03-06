@@ -3,12 +3,12 @@ Contributors: joelg87, flipstorm
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 5.1
+Stable tag: 5.1.1
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
 == Description ==
-With Digg Digg by Buffer you will get an all in one social sharing plugin displaying all social sharing buttons nicely on your blog. Make your blog look amazing, just like Mashable.
+With Digg Digg by Buffer, you have an all in one social sharing plugin for your blog. Display all social sharing buttons nicely on your blog and make it look amazing, just like Mashable.
 
 = Features =
 
@@ -42,6 +42,9 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.1.1 - 05/03/2012 =
+* Fixed: Inconsistencies with the scrolling behaviour of the floating bar amongst different themes. If the floating bar was acting odd for you, grab this update.
 
 = Digg Digg v5.1 - 01/03/2012 =
 * Critical Bug Fix: The horrible Fatal Error which resulted in the page stopping loading mid-way caused by conflict with W3 Total Cache. If you are using W3 Total Cache, you should definitely grab this update.
