@@ -268,8 +268,3 @@ html{overflow-y:scroll;}
 	color:#0000FF;
 	text-decoration:underline;
 }
-
-/* fix for Twitter vertical count style button width bug */
-.twitter-share-button {
-	width: 55px !important;
-}
