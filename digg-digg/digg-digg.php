@@ -33,6 +33,13 @@ add_action('wp_head', 'dd_output_css_to_html');
 add_action('wp_head', 'dd_get_thumbnails_for_fb');
 add_filter('the_excerpt', 'dd_hook_wp_content');
 add_filter('the_content', 'dd_hook_wp_content');
+add_action('wp_footer', 'dd_output_floating_bar');
+
+function dd_output_floating_bar()
+{
+	global $dd_floating_bar;
+	echo $dd_floating_bar;
+}
 
 function dd_hook_wp_content($content = ''){
 	if(dd_isThisPageExcluded($content)==true){
@@ -293,7 +300,9 @@ function constructFloatingButtons($url, $title, $id, $commentcount, $dd_global_c
 }
 
 function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$content,$ddFloatDisplay){
-
+	
+	global $dd_floating_bar;
+	
 	$floatButtonsContainer=DD_EMPTY_VALUE;
 	$dd_lazyLoad_jQuery_script =DD_EMPTY_VALUE;
 	$dd_lazyLoad_scheduler_script =DD_EMPTY_VALUE;
@@ -318,8 +327,6 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 	if($floatButtonsContainer != DD_EMPTY_VALUE){
 
 		$floatButtonsContainer = dd_construct_final_floating_buttons($floatButtonsContainer, $ddFloatDisplay);
-		
-		$browserWidthCheckingJS = dd_get_browser_width_checking_script($ddFloatDisplay[DD_EXTRA_OPTION][DD_EXTRA_OPTION_SCREEN_WIDTH]);
 
 		if($dd_lazyLoad_jQuery_script!=DD_EMPTY_VALUE){
 			$dd_lazyLoad_jQuery_script = "<script type=\"text/javascript\">" . $dd_lazyLoad_jQuery_script . "</script>";
@@ -329,10 +336,12 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 			$dd_lazyLoad_scheduler_script = "<script type=\"text/javascript\"> jQuery(document).ready(function($) { " . $dd_lazyLoad_scheduler_script . " }); </script>";
 		}
 		
-		$floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
+		// $floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
 		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 
-		$content =  "<div class='dd_content_wrap'>" . $floatButtonsContainer . "</div>" . $content . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
+		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
+		$dd_anchor = '<a id="dd_start"></a>';
+		$content =  $dd_anchor . $content;
 	
 	}
 
@@ -342,6 +351,8 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 
 function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_for_display,$content,$ddFloatDisplay){
 
+	global $dd_floating_bar;
+	
 	$floatButtonsContainer=DD_EMPTY_VALUE;
 	$dd_lazyLoad_jQuery_script =DD_EMPTY_VALUE;
 	$dd_lazyLoad_scheduler_script =DD_EMPTY_VALUE;
@@ -366,8 +377,6 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 	if($floatButtonsContainer != DD_EMPTY_VALUE){
 
 		$floatButtonsContainer = dd_construct_final_floating_buttons($floatButtonsContainer, $ddFloatDisplay);
-		
-		$browserWidthCheckingJS = dd_get_browser_width_checking_script($ddFloatDisplay[DD_EXTRA_OPTION][DD_EXTRA_OPTION_SCREEN_WIDTH]);
 
 		if($dd_lazyLoad_jQuery_script!=DD_EMPTY_VALUE){
 			$dd_lazyLoad_jQuery_script = "<script type=\"text/javascript\">" . $dd_lazyLoad_jQuery_script . "</script>";
@@ -377,10 +386,13 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 			$dd_lazyLoad_scheduler_script = "<script type=\"text/javascript\">function dd_float_scheduler(){ jQuery(document).ready(function($) { " . $dd_lazyLoad_scheduler_script . " }); }</script>";
 		}
 		
-		$floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
+		// $floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
 		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
-
-		$content =  "<div class='dd_content_wrap'>" . $floatButtonsContainer . "</div>" . $content . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script . $browserWidthCheckingJS;
+		
+		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
+		
+		$dd_anchor = '<a id="dd_start"></a>';
+		$content =  $dd_anchor . $content;
 	
 	}
 
@@ -439,67 +451,6 @@ function dd_is_credit_link_enabled($creditLinkStatus){
 	}else{
 		return true;
 	}
-	
-}
-
-function dd_get_browser_width_checking_script($browserMininumWidth){
-	
-	if(trim($browserMininumWidth)==''){
-		$browserMininumWidth = 0;
-	}
-
-	$browserWidthCheckingJs = "<script type=\"text/javascript\"> jQuery(document).ready(function($) {
-	
-		if($(window).width()> " . $browserMininumWidth . "){ 
-			$('#dd_ajax_float').show()
-		}else{
-			$('#dd_ajax_float').hide()
-		}
-
-		$(window).resize(function() { 
-			
-			if($(window).width()> " . $browserMininumWidth . "){ 
-				$('#dd_ajax_float').show()
-			}else{
-				$('#dd_ajax_float').hide()
-			}
-			
-		});  
-
-	}); ;</script>";
-		
-	return $browserWidthCheckingJs;
-	
-}
-
-
-function dd_get_browser_width_checking_script_footerload($browserMininumWidth){
-	
-	if(trim($browserMininumWidth)==''){
-		$browserMininumWidth = 0;
-	}
-
-	$browserWidthCheckingJs = "<script type=\"text/javascript\">function dd_float_check_browser(){ jQuery(document).ready(function($) {
-	
-		if($(window).width()> " . $browserMininumWidth . "){ 
-			$('#dd_ajax_float').show()
-		}else{
-			$('#dd_ajax_float').hide()
-		}
-
-		$(window).resize(function() { 
-			
-			if($(window).width()> " . $browserMininumWidth . "){ 
-				$('#dd_ajax_float').show()
-			}else{
-				$('#dd_ajax_float').hide()
-			}
-			
-		});  
-
-	}); };</script>";
-		
-	return $browserWidthCheckingJs;
 	
 }
 

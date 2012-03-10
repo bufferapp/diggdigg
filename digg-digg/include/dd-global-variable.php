@@ -258,27 +258,12 @@ define('DD_FLOAT_OPTION', 'dd_float_option');
 define('DD_FLOAT_OPTION_CREDIT','dd_float_option_credit');
 define('DD_FLOAT_OPTION_CREDIT_VALUE','');
 
-define('DD_FLOAT_OPTION_INITIAL_POSITION','dd_float_option_initial_position');
-define('DD_FLOAT_OPTION_INITIAL_POSITION_VALUE','#dd_ajax_float{
-	background:none repeat scroll 0 0 #FFFFFF;
-	border:1px solid #BBBBBB;
-	float:left;
-	margin-left:-120px;
-	margin-right:10px;
-	margin-top:10px;
-	position:absolute;
-	z-index:9999;
-}');
-
 define('DD_EXTRA_OPTION_EMAIL', 'dd_extra_option_email');
 define('DD_EXTRA_OPTION_EMAIL_STATUS','dd_extra_option_email_status');
 define('DD_EXTRA_OPTION_EMAIL_SHARETHIS_PUB_ID','dd_extra_option_email_sharethis');
 
 define('DD_EXTRA_OPTION_PRINT', 'dd_extra_option_print');
 define('DD_EXTRA_OPTION_PRINT_STATUS','dd_extra_option_print_status');
-define('DD_EXTRA_OPTION', 'dd_extra_option');
-define('DD_EXTRA_OPTION_SCREEN_WIDTH', 'dd_extra_option_screen_width');
-define('DD_EXTRA_OPTION_SCREEN_WIDTH_DEFAULT_HIDE', '790');
 
 global $ddFloatDisplay;
 $ddFloatDisplay = array(
@@ -299,8 +284,7 @@ $ddFloatDisplay = array(
 		DD_STATUS_OPTION_DISPLAY =>DD_DISPLAY_ON
 	),
 	DD_FLOAT_OPTION => array(
-		DD_FLOAT_OPTION_CREDIT => DD_FLOAT_OPTION_CREDIT_VALUE,
-		DD_FLOAT_OPTION_INITIAL_POSITION => DD_FLOAT_OPTION_INITIAL_POSITION_VALUE
+		DD_FLOAT_OPTION_CREDIT => DD_FLOAT_OPTION_CREDIT_VALUE
 	),
 	DD_EXTRA_OPTION_EMAIL => array(
 		DD_EXTRA_OPTION_EMAIL_STATUS => DD_DISPLAY_OFF,
@@ -308,9 +292,6 @@ $ddFloatDisplay = array(
 	),
 	DD_EXTRA_OPTION_PRINT => array(
 		DD_EXTRA_OPTION_PRINT_STATUS => DD_DISPLAY_OFF
-	),
-	DD_EXTRA_OPTION => array(
-		DD_EXTRA_OPTION_SCREEN_WIDTH => DD_EXTRA_OPTION_SCREEN_WIDTH_DEFAULT_HIDE
 	)
 );
 

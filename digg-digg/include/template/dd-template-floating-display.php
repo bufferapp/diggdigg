@@ -197,17 +197,6 @@ function checkCategory(){
 				</div>
 				
 			</div>
-			
-			<div class="dd-insider-block" >
-				<?php 
-					$dd_extra_option_default_width = $ddFloatDisplay[DD_EXTRA_OPTION][DD_EXTRA_OPTION_SCREEN_WIDTH];
-				?>
-				<p>
-				2.4 Hide buttons if browser's width less than 
-				<input type="text" size="10" value="<?php echo $dd_extra_option_default_width; ?>" 
-				name="<?php echo DD_EXTRA_OPTION_SCREEN_WIDTH;?>" /> px
-				</p>
-			</div>
 		
 			<div class="dd-button">
 					<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
@@ -335,38 +324,9 @@ function checkCategory(){
 			<div style="clear:both"></div>
 		</div>
 	</div>
-	
-	<div class="dd-block">
-		<div class="dd-title">
-		<h2>5. Ajax Floating Configuration</h2>
-		</div>
-		<div class="dd-insider">
-
-			<p>
-			Due to the different structure and design of different themes, there's a good chance these pre-defined settings are not suitable. So, you may need to configure the <strong>initial position</strong> and <strong>scolling position</strong> below. 
-			</p>
-			
-			<h4>5.1 Initial Position</h4> 
-			
-			<p>
-				This is the position where buttons initially display. If it's too close to your main column or overlapping, decrease this number "<span class="dd-note">margin-left:-120</span>" to suit your theme.
-			</p>
-			<p class="dd-note dd-note-blue">Note : Be sure to edit this value here, not in your CSS</p>
-			<p>
-				<textarea name="<?php echo DD_FLOAT_OPTION_INITIAL_POSITION;?>" rows="10" cols="88" style="background-color:#F9F9F9;"><?php echo $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION]; ?></textarea>
-			</p>
-
-			<div class="dd-button">
-					<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
-			</div>
-			
-			<div style="clear:both"></div>
-			
-		</div>	
-	</div>
 
 	<div class="dd-block">
-		<div class="dd-title"><h2>6. Credit Link</h2></div>
+		<div class="dd-title"><h2>5. Credit Link</h2></div>
 		<div class="dd-insider">
 			<p>Status : 
 			<span><?php if($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_CREDIT]==DD_DISPLAY_ON){
