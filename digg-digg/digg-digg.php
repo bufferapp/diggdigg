@@ -337,9 +337,10 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 		}
 		
 		// $floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
+		$floatingJSOptions = '<script type="text/javascript">var dd_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE).';</script>';
 		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 
-		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
+		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
 		$dd_anchor = '<a id="dd_start"></a>';
 		$content =  $dd_anchor . $content;
 	
@@ -387,9 +388,10 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 		}
 		
 		// $floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
+		$floatingJSOptions = '<script type="text/javascript">var dd_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE).';</script>';
 		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 		
-		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
+		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
 		
 		$dd_anchor = '<a id="dd_start"></a>';
 		$content =  $dd_anchor . $content;

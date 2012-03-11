@@ -1070,7 +1070,7 @@ class DD_FbLike extends BaseIFrameDD{
 	var $buttonLayoutWidthHeight = array(
 		"Like Standard" => "width:500px; height:24px;",
 		"Like Button Count" => "width:92px; height:20px;",
-		"Like Box Count" => "width:50px; height:60px;",
+		"Like Box Count" => "width:50px; height:62px;",
 		"Recommend Standard" => "width:500px; height:24px;",
 		"Recommend Button Count" => "width:130px; height:20px;",
 		"Recommend Box Count" => "width:90px; height:60px;"
@@ -1088,7 +1088,7 @@ class DD_FbLike extends BaseIFrameDD{
     var $buttonLayoutLazyHeight = array(
 		"Like Standard" => "24",
 		"Like Button Count" => "20",
-		"Like Box Count" => "60",
+		"Like Box Count" => "62",
 		"Recommend Standard" => "24",
 		"Recommend Button Count" => "20",
 		"Recommend Box Count" => "60"

@@ -258,6 +258,9 @@ define('DD_FLOAT_OPTION', 'dd_float_option');
 define('DD_FLOAT_OPTION_CREDIT','dd_float_option_credit');
 define('DD_FLOAT_OPTION_CREDIT_VALUE','');
 
+define('DD_FLOAT_OPTION_LEFT', 'dd_float_option_left');
+define('DD_FLOAT_OPTION_LEFT_VALUE', 40);
+
 define('DD_EXTRA_OPTION_EMAIL', 'dd_extra_option_email');
 define('DD_EXTRA_OPTION_EMAIL_STATUS','dd_extra_option_email_status');
 define('DD_EXTRA_OPTION_EMAIL_SHARETHIS_PUB_ID','dd_extra_option_email_sharethis');
@@ -284,7 +287,8 @@ $ddFloatDisplay = array(
 		DD_STATUS_OPTION_DISPLAY =>DD_DISPLAY_ON
 	),
 	DD_FLOAT_OPTION => array(
-		DD_FLOAT_OPTION_CREDIT => DD_FLOAT_OPTION_CREDIT_VALUE
+		DD_FLOAT_OPTION_CREDIT => DD_FLOAT_OPTION_CREDIT_VALUE,
+		DD_FLOAT_OPTION_LEFT => DD_FLOAT_OPTION_LEFT_VALUE
 	),
 	DD_EXTRA_OPTION_EMAIL => array(
 		DD_EXTRA_OPTION_EMAIL_STATUS => DD_DISPLAY_OFF,

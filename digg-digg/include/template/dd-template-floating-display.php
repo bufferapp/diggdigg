@@ -197,6 +197,14 @@ function checkCategory(){
 				</div>
 				
 			</div>
+			
+			<div class="dd-insider-block" id="dd-insider-block-category">
+				<p>
+				2.3 Choose how far from to the left of the content Digg Digg is placed
+				</p>
+				<p><input name=<?php echo DD_FLOAT_OPTION_LEFT; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE); ?>"  size="3" style="width:35px;" maxlength="4"/>px</p>
+				
+			</div>
 		
 			<div class="dd-button">
 					<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />

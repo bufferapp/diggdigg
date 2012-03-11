@@ -115,6 +115,16 @@
 	display: none;
 	left: -120px;
 }
+#dd_ajax_float .dd_button_v {
+	width: auto;
+	height: auto;
+	line-height: 0;
+	padding: 4px 1px;
+}
+#dd_ajax_float iframe {
+	margin: 0;
+}
+
 
 .dd_outer {
 	width: 100%;
@@ -173,10 +183,6 @@
 .dd_button{
 	float:left;
 	padding:4px;
-}
-
-.dd_button_v{
-	padding-bottom:1px;
 }
 
 .dd_fblike_xfbml_ajax_left_float{padding-left:3px;}

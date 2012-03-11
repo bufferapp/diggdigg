@@ -1,4 +1,3 @@
-var dd_offset_from_content = 30;
 var dd_top = 0;
 var dd_left = 0;
 
@@ -9,7 +8,7 @@ $(document).ready(function(){
 	var $dd_outer = $('.dd_outer');
 	
 	dd_top = parseInt($dd_start.offset().top);
-	dd_left = -(dd_offset_from_content + $floating_bar.width());
+	dd_left = -(dd_offset_from_content + 55);
 	
 	dd_adjust_inner_width();
 	dd_position_floating_bar(dd_top, dd_left);
@@ -47,8 +46,9 @@ $(document).ready(function(){
 $(window).load(function(){
 
 	var $dd_start = $('#dd_start');
+	var $floating_bar = $('#dd_ajax_float');
+	
 	dd_top = parseInt($dd_start.offset().top);
-	dd_left = -(dd_offset_from_content + $floating_bar.width());
 	
 	// reposition the floating bar
 	dd_position_floating_bar(dd_top, dd_left);
