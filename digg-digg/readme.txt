@@ -1,9 +1,9 @@
-=== Plugin Name ===
+=== Digg Digg ===
 Contributors: joelg87, flipstorm
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 5.1.2
+Stable tag: 5.2.1
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -42,6 +42,17 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.2.1 - 12/03/2012 =
+* Fixed: An alternate usage of jQuery caused floating bar to not work with certain themes.
+
+= Digg Digg v5.2 - 12/03/2012 =
+* Fixed: Problem on some themes where the floating bar only appeared when you scrolled partly down the page.
+* Fixed: Bug where the words "Buffer" and "Pin It" appeared in the excerpt.
+* Fixed: Width of the floating bar now adjusts to allow for larger buttons.
+* Fixed: Buttons in the floating bar have better vertical spacing.
+* New: Choose the offset of the floating bar from the left of the content.
+* New: The floating bar will automatically hide when it goes off the side of the page.
 
 = Digg Digg v5.1.2 - 07/03/2012 =
 * Fixed: Width of Tweet button is now set by Twitter, instead of fixed by Digg Digg. This allows Tweet buttons of languages other than English to display correctly, and fixes a bug where the count was hidden on the compact button.
