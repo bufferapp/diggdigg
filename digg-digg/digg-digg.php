@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 5.2.1
+ Version: 5.2.2
  Plugin URI: http://bufferapp.com/diggdigg
  Author: Buffer
  Author URI: http://bufferapp.com/
@@ -33,13 +33,6 @@ add_action('wp_head', 'dd_output_css_to_html');
 add_action('wp_head', 'dd_get_thumbnails_for_fb');
 add_filter('the_excerpt', 'dd_hook_wp_content');
 add_filter('the_content', 'dd_hook_wp_content');
-add_action('wp_footer', 'dd_output_floating_bar');
-
-function dd_output_floating_bar()
-{
-	global $dd_floating_bar;
-	echo $dd_floating_bar;
-}
 
 function dd_hook_wp_content($content = ''){
 	if(dd_isThisPageExcluded($content)==true){
@@ -342,7 +335,7 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 
 		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
 		$dd_anchor = '<a id="dd_start"></a>';
-		$content =  $dd_anchor . $content;
+		$content =  $dd_anchor . $content . $dd_floating_bar;
 	
 	}
 
@@ -394,7 +387,7 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
 		
 		$dd_anchor = '<a id="dd_start"></a>';
-		$content =  $dd_anchor . $content;
+		$content =  $dd_anchor . $content . $dd_floating_bar;
 	
 	}
 
