@@ -155,6 +155,7 @@ function checkCategory(){
 			<p>
 			<?php 
 				foreach($ddFloatDisplay[DD_DISPLAY_OPTION] as $key => $value){
+					if($key == DD_DISPLAY_OPTION_HOME) continue;
 		    	
 					echo " <INPUT TYPE=CHECKBOX NAME='" . $key . "'" ;
 					

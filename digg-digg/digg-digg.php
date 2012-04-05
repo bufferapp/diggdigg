@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 5.2.2
+ Version: 5.2.3
  Plugin URI: http://bufferapp.com/diggdigg
  Author: Buffer
  Author URI: http://bufferapp.com/
@@ -238,7 +238,10 @@ function process_floating_button_display($ddFloatDisplay, $content, $url, $title
 function isFloatingButtonAllowDisplay($ddFloatDisplay){
 
 	if($ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY]==DD_DISPLAY_ON){
-		if(dd_IsDisplayAllow($ddFloatDisplay)){
+		if(is_home()){
+			return false;
+		}
+		elseif(dd_IsDisplayAllow($ddFloatDisplay)){
 			return true;
 		}
 	}
