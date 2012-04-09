@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 5.2.3
+ Version: 5.2.4
  Plugin URI: http://bufferapp.com/diggdigg
  Author: Buffer
  Author URI: http://bufferapp.com/
@@ -427,9 +427,9 @@ function dd_construct_final_floating_buttons($floatButtonsContainer, $ddFloatDis
 //http://help.sharethis.com/customization/chicklets
 function dd_get_email_service($ddShareThisPubId){
 	
-	$emailButton = "<div class='dd_button_extra_v'><script type=\"text/javascript\">stLight.options({";
+	$emailButton = "<div class='dd_button_extra_v'><script type=\"text/javascript\">jQuery(document).load(function(){ stLight.options({";
 	$emailButton .= "publisher:'". $ddShareThisPubId ."'";
-	$emailButton .= "});</script><div class=\"st_email_custom\"><span id='dd_email_text'>email</span></div></div><div style='clear:left'></div>";
+	$emailButton .= "}); });</script><div class=\"st_email_custom\"><span id='dd_email_text'>email</span></div></div><div style='clear:left'></div>";
 
 	return $emailButton;
 	

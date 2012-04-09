@@ -131,25 +131,21 @@ function dd_get_thumbnails_for_fb()
 //http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 function dd_enable_required_js_in_wordpress() {
 	
+	$ddFloatDisplay = get_option(DD_FLOAT_DISPLAY_CONFIG);
+	$email_option = ($ddFloatDisplay[DD_EXTRA_OPTION_EMAIL][DD_EXTRA_OPTION_EMAIL_STATUS]==DD_DISPLAY_ON);
+	if(!empty($email_option))
+	{
+		wp_deregister_script('dd_sharethis_js');
+		wp_register_script('dd_sharethis_js', 'http://w.sharethis.com/button/buttons.js');
+		wp_enqueue_script('dd_sharethis_js','http://w.sharethis.com/button/buttons.js',array('sharethis'),'1.0.0',true);
+	}
+	
 	if (!is_admin()) {
 
 		//jQuery need to put on head
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js');
 		wp_enqueue_script('jquery');
-		
-		//load in footer
-		//wp_enqueue_script('jquery','https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js',array('jquery'),'1.6.0',true);
-    	
-		
-		//output to footer
-		$email_option = get_option(DD_EXTRA_OPTION_EMAIL);
-		if(!empty($email_option))
-		{
-			wp_deregister_script('dd_sharethis_js');
-    		wp_register_script('dd_sharethis_js', 'http://w.sharethis.com/button/buttons.js');
-			wp_enqueue_script('dd_sharethis_js','http://w.sharethis.com/button/buttons.js',array('sharethis'),'1.0.0',true);
-		}
 	}
 }
 
