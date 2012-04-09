@@ -44,7 +44,7 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 == Changelog ==
 
 = Digg Digg v5.2.4 - 09/04/2012 =
-* Fixed: Bug where the floating bar would be in the wrong position (over content) and would not stay in place as you scroll.
+* Fixed: Bug where the floating bar would be in the wrong position (over content) and would not stay in place as you scroll. This was caused by a bug with the Email feature.
 * Fixed: Issue where the floating bar would not appear due to an incorrect calculation of where to place it.
 
 = Digg Digg v5.2.3 - 03/04/2012 =
