@@ -1,3 +1,22 @@
+#dd-team {
+}
+#dd-team li {
+	clear: both;
+	margin-bottom: 10px;
+	height: 95px;
+}
+#dd-team li .dd-team-image {
+	float: left;
+}
+
+#dd-team li p {
+	float: right;
+	width: 155px;
+}
+#dd-team li p.name {
+	font-weight: bold;
+}
+
 .dd-not-support{
 	color:#A9A9A9;
 	font-size:0.7em;

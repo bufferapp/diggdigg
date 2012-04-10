@@ -51,213 +51,241 @@ function dd_button_global_setup(){
 function dd_print_global_form($ddGlobalConfig){
 ?>
 
-<div id=msg></div>
-
-<div id="dd_admin_block">
-
-	<div id="dd_head_block">
-		<span id="dd_plugin_title">Digg Digg - Global Configuration</span>
-	</div>
-
-<!-- start of dd_admin_left_block -->
-<div id="dd_admin_left_block">
+<div class="wrap columns-2">
+	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
+	<h2>Digg Digg - Global Configuration</h2>
 	
-	<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" id="<?php echo DD_FORM; ?>">
-	
-	<div class="dd-block">
-		<div class="dd-title"><h2>1. Facebook Like Configuration</h2></div>
-		<div class="dd-insider">
-		
-			<p>
-			1.1 Language (locale) : <input type="text" 
-			value="<?php echo $ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_LOCALE]; ?>" 
-			name="<?php echo DD_GLOBAL_FACEBOOK_OPTION_LOCALE;?>" /> e.g English(en_US), French(fr_FR)...
-			</p>
-			<p class="dd-remark">See all locales supported by Facebook <a href="http://www.facebook.com/translations/FacebookLocales.xml" target="_blank">here</a> (XML).</p>
-			<p class="dd-remark">Copy the locale code from the "&lt;representation&gt;" tag, e.g. &lt;representation&gt;<strong>en_US</strong>&lt;/representation&gt;.</p>
+	<div id="poststuff" class="metabox-holder has-right-sidebar">
+		<?php include("dd-sidebar.php"); ?>
+		<div id="post-body">
+			<div id="post-body-content">
 			
-			<br />
-
-			<p>
-			1.2 Include Send button (XFBML only) : 
-			<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_SEND ?>" 
-			<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_SEND]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-			Enable
-			</p>
+				<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" id="<?php echo DD_FORM; ?>">
 			
-			<br />
-			
-			<p>
-			1.3 Show faces : 
-			<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_FACE ?>" 
-			<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_FACE]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-			Enable
-			</p>
-			
-			<br />
-			
-			<p>
-			1.4 Use post images in Facebook wall thumbnail : 
-			<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_THUMB ?>" 
-			<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_THUMB]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-			Enable
-			
-			</p>
-			
-			<p class="dd-remark">
-				If post's thumbnail is not available, use below default image as your thumbnail.
-				<br />
-				Image URL : <input type="text" 
-				value="<?php echo $ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_DEFAULT_THUMB]; ?>" 
-				name="<?php echo DD_GLOBAL_FACEBOOK_OPTION_DEFAULT_THUMB;?>" size="70" />
-			
-			</p>
-			
-			<br />
-			
-
-			<div class="dd-button">
-				<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+					<div class="stuffbox">
+						<h3><label for="link_name">1. Facebook Like Configuration</label></h3>
+						<div class="inside">
+							<table class="form-table">
+						        <tr valign="top">
+							        <th scope="row">1.1 Language (locale)</th>
+							        <td>
+							        	<input type="text" 
+								value="<?php echo $ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_LOCALE]; ?>" 
+								name="<?php echo DD_GLOBAL_FACEBOOK_OPTION_LOCALE;?>" />
+										<p>See all locales supported by Facebook <a href="http://www.facebook.com/translations/FacebookLocales.xml" target="_blank">here</a> (XML).
+										<br />
+										Copy the locale code from the "&lt;representation&gt;" tag, e.g. &lt;representation&gt;<strong>en_US</strong>&lt;/representation&gt;.</p>
+									</td>
+						        </tr>
+						         
+						        <tr valign="top">
+						        	<th scope="row">1.2 Include Send button (XFBML only)</th>
+						        	<td>
+						        		<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_SEND ?>" 
+							<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_SEND]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
+						        	</td>
+						        </tr>
+						        
+						        <tr valign="top">
+						        	<th scope="row">1.3 Show faces</th>
+						        	<td>
+						        		<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_FACE ?>" 
+							<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_FACE]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
+						        	</td>
+						        </tr>
+						        
+						        <tr valign="top">
+						        	<th scope="row">1.4 Use post images in Facebook wall thumbnail</th>
+						        	<td>
+						        		<INPUT TYPE=CHECKBOX NAME="<?php echo DD_GLOBAL_FACEBOOK_OPTION_THUMB ?>" 
+							<?php echo ($ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_THUMB]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
+						        	</td>
+						        </tr>
+						        
+						        <tr valign="top">
+						        	<th scope="row">1.5 Default thumbnail image</th>
+						        	<td>
+						        		<input type="text" 
+											value="<?php echo $ddGlobalConfig[DD_GLOBAL_FACEBOOK_OPTION][DD_GLOBAL_FACEBOOK_OPTION_DEFAULT_THUMB]; ?>" 
+											name="<?php echo DD_GLOBAL_FACEBOOK_OPTION_DEFAULT_THUMB;?>" size="70" />
+										<p>If post's thumbnail is not available, use the above default image as your thumbnail.</p>
+						        	</td>
+						        </tr>
+						        <!--
+						        <tr valign="top">
+						        	<th scope="row">Some Other Option</th>
+						        	<td>
+						        		<input type="text" name="some_other_option" value="<?php echo get_option('some_other_option'); ?>" />
+						        	</td>
+						        </tr>
+						        -->
+						    </table>
+							
+							<div class="submit">
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+							</div>
+						</div>
+					</div>
+					<!-- End FB Like Config -->
+					
+					
+					
+					<div class="stuffbox">
+						<h3><label for="link_name">2. Official Twitter configuration</label></h3>
+						<div class="inside">
+							<table class="form-table">
+						        <tr valign="top">
+						        	<th scope="row">2.1 Twitter account</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWITTER_OPTION][DD_GLOBAL_TWITTER_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TWITTER_OPTION_SOURCE;?>" />
+						        		<p>This user will be @ mentioned in the suggested tweet.</p>
+						        	</td>
+						        </tr>
+						    </table>
+							
+							<div class="submit">
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+							</div>
+						</div>
+					</div>
+					<!-- End Twitter Config -->
+					
+					
+					<div class="stuffbox">
+						<h3><label for="link_name">3. Buffer configuration</label></h3>
+						<div class="inside">
+							<table class="form-table">
+						        <tr valign="top">
+						        	<th scope="row">3.1 Twitter username</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_BUFFER_OPTION][DD_GLOBAL_BUFFER_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_BUFFER_OPTION_SOURCE;?>" />
+						        		<p>This user will be @ mentioned in the suggested tweet.</p>
+						        	</td>
+						        </tr>
+						    </table>
+							
+							<div class="submit">
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+							</div>
+						</div>
+					</div>
+					<!-- End Buffer Config -->
+					
+					
+					<div class="stuffbox">
+						<h3><label for="link_name">4. Flattr configuration</label></h3>
+						<div class="inside">
+							<table class="form-table">
+						        <tr valign="top">
+						        	<th scope="row">4.1 Flattr username</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_FLATTR_OPTION][DD_GLOBAL_FLATTR_OPTION_UID]; ?>" name="<?php echo DD_GLOBAL_FLATTR_OPTION_UID;?>" />
+						        		<p>This Flattr username will be credited when people use the Flattr button.</p>
+						        	</td>
+						        </tr>
+						    </table>
+							
+							<div class="submit">
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+							</div>
+						</div>
+					</div>
+					<!-- End Flattr Config -->
+					
+					
+					<div class="stuffbox">
+						<h3><label for="link_name">5. TweetMeme configuration</label></h3>
+						<div class="inside">
+							<table class="form-table">
+						        <tr valign="top">
+						        	<th scope="row">5.1 TweetMeme source RT @</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SOURCE;?>" />
+						        		<p>Please use the format of 'yourname', not 'RT @yourname'.</p>
+						        	</td>
+						        </tr>
+						        
+						        
+						        <tr valign="top">
+						        	<th scope="row">5.2 URL Shortener</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SERVICE]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SERVICE;?>" />
+						        		<p>For example, bit.ly, awe.sm...</p>
+						        	</td>
+						        </tr>
+						        
+						        <tr valign="top">
+						        	<th scope="row">5.3 URL Shortener API Key</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SERVICE_API]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SERVICE_API;?>" />
+						        		<p>API Key for use with URL Shortener (If any). Bit.ly Pro requires the API Key to be in the format 'user_name:api_key'.</p>
+						        		<p>Note : If you do not required the URL shortner service, just leave it blank.</p>
+						        	</td>
+						        </tr>
+						    </table>
+							
+							<div class="submit">
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+							</div>
+						</div>
+					</div>
+					<!-- End TweetMeme Config -->
+					
+					
+					<div class="stuffbox">
+						<h3><label for="link_name">6. Topsy configuration</label></h3>
+						<div class="inside">
+							<table class="form-table">
+						        <tr valign="top">
+						        	<th scope="row">6.1 Topsy source</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TOPSY_OPTION][DD_GLOBAL_TOPSY_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TOPSY_OPTION_SOURCE;?>" /> 
+						        		<p>Please put your Twitter username.</p>
+						        	</td>
+						        </tr>
+						        
+						        <tr valign="top">
+						        	<th scope="row">6.2 Theme</th>
+						        	<td>
+						        		<input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TOPSY_OPTION][DD_GLOBAL_TOPSY_OPTION_THEME]; ?>" name="<?php echo DD_GLOBAL_TOPSY_OPTION_THEME;?>" />
+						        		<p>Please <a href="http://labs.topsy.com/button/retweet-button/" target="_blank">check here</a> for all the available Topsy color themes, <strong>default is blue</strong>.</p>
+						        	</td>
+						        </tr>
+						    </table>
+							
+							<div class="submit">
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+							</div>
+						</div>
+					</div>
+					<!-- End Topsy Config -->
+					
+					
+					<div class="stuffbox">
+						<h3><label for="link_name">7. Reset Global Configuration Settings</label></h3>
+						<div class="inside">
+							<p>Reset all "Global Configuration" settings to their default values.</p>
+							<input class="button-primary" onclick="if (confirm('Are you sure you want to reset \'Global Configuration\' settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR; ?>" value="Reset Global Config Settings" type="submit" style="width:200px;"/>
+						</div>
+					</div>
+					<!-- End Reset Global Config -->
+					
+					
+					<?php // XXX: This seems pretty drastic... I doubt many people do this one! ?>
+					<div class="stuffbox">
+						<h3><label for="link_name">8. Reset Everything</label></h3>
+						<div class="inside">
+							<p>Reset all settings (everything) to their default values.</p>
+							<input class="button-primary" onclick="if (confirm('Are you sure you want to reset all settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR_ALL; ?>" value="Reset All Settings" type="submit" style="width:200px;"/>
+						</div>
+					</div>
+					<!-- End Reset All Config -->
+					
+					
+				</form>
 			</div>
-			<div style="clear:both"></div>
-		</div>	
-	</div>
-	
-	<div class="dd-block">
-		<div class="dd-title"><h2>2. Official Twitter configuration</h2></div>
-		<div class="dd-insider">
-			<p>
-			2.1 Twitter account : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWITTER_OPTION][DD_GLOBAL_TWITTER_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TWITTER_OPTION_SOURCE;?>" /> (without @ symbol)
-			</p>
-			<p class="dd-remark">
-			This user will be @ mentioned in the suggested tweet.
-			</p>
-			<div class="dd-button">
-				<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
-			</div>
-			<div style="clear:both"></div>
-		</div>	
-	</div>
-	
-	<div class="dd-block">
-		<div class="dd-title"><h2>3. Buffer configuration</h2></div>
-		<div class="dd-insider">
-			<p>
-			3.1 Twitter username : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_BUFFER_OPTION][DD_GLOBAL_BUFFER_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_BUFFER_OPTION_SOURCE;?>" /> (without @ symbol)
-			</p>
-			<p class="dd-remark">
-			This user will be @ mentioned in the suggested tweet.
-			</p>
-			<div class="dd-button">
-				<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
-			</div>
-			<div style="clear:both"></div>
-		</div>	
-	</div>
-	
-	<div class="dd-block">
-		<div class="dd-title"><h2>4. Flattr configuration</h2></div>
-		<div class="dd-insider">
-			<p>
-			4.1 Flattr username : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_FLATTR_OPTION][DD_GLOBAL_FLATTR_OPTION_UID]; ?>" name="<?php echo DD_GLOBAL_FLATTR_OPTION_UID;?>" />
-			</p>
-			<p class="dd-remark">
-			This Flattr username will be credited when people use the Flattr button.
-			</p>
-			<div class="dd-button">
-				<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
-			</div>
-			<div style="clear:both"></div>
-		</div>	
-	</div>
-	
-	
-	<div class="dd-block">
-		<div class="dd-title"><h2>5. TweetMeme configuration</h2></div>
-		<div class="dd-insider">
-			<p>
-			5.1 TweetMeme source RT @ : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SOURCE;?>" /> 
-			</p>
-			<p class="dd-remark">
-			Please use the format of 'yourname', not 'RT @yourname'.
-			</p>
-			<p>
-			5.2 URL Shortener : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SERVICE]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SERVICE;?>" /></p> 
-			<p class="dd-remark">
-			For example, bit.ly, awe.sm...
-			</p>
-			<p>
-			5.3 URL Shortener API Key : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TWEETMEME_OPTION][DD_GLOBAL_TWEETMEME_OPTION_SERVICE_API]; ?>" name="<?php echo DD_GLOBAL_TWEETMEME_OPTION_SERVICE_API;?>" /> 			
-			</p>
-			<p class="dd-remark">
-			API Key for use with URL Shortener (If any). Bit.ly Pro requires the API Key to be in the format 'user_name:api_key'.
-			</p>
-			<p class="dd-note">
-			Note : If you do not required the URL shortner service, just leave it blank.
-			</p>
-			<div class="dd-button">
-					<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
-			</div>
-			<div style="clear:both"></div>
-		</div>	
-	</div>
-	
-	<div class="dd-block">
-		<div class="dd-title"><h2>6. Topsy configuration</h2></div>
-		<div class="dd-insider">
-			<p>
-			6.1 Topsy source : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TOPSY_OPTION][DD_GLOBAL_TOPSY_OPTION_SOURCE]; ?>" name="<?php echo DD_GLOBAL_TOPSY_OPTION_SOURCE;?>" /> 
-			</p>
-			<p class="dd-remark">
-			Please put your Twitter username.
-			</p>
-			<p>
-			6.2 Theme : <input type="text" value="<?php echo $ddGlobalConfig[DD_GLOBAL_TOPSY_OPTION][DD_GLOBAL_TOPSY_OPTION_THEME]; ?>" name="<?php echo DD_GLOBAL_TOPSY_OPTION_THEME;?>" /></p> 
-			<p class="dd-remark">
-			Please <a href="http://labs.topsy.com/button/retweet-button/" target="_blank">check here</a> for all the available Topsy color themes, <strong>default is blue</strong>.
-			</p>
-			<p>
-			<div class="dd-button">
-					<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
-			</div>
-			<div style="clear:both"></div>
-		</div>	
-	</div>
-	
-	<div class="dd-block">
-		<div class="dd-title"><h2>7. Reset Global Configuration Settings</h2></div>
-		<div class="dd-insider">
-			<p>
-			Reset all "Global Configuration" settings to their default values.
-			</p>
-			<input class="button-primary" onclick="if (confirm('Are you sure you want to reset \'Global Configuration\' settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR; ?>" value="Reset Global Config Settings" type="submit" style="width:200px;"/>
 		</div>
 	</div>
-	
-	<?php // XXX: This seems pretty drastic... I doubt many people do this one! ?>
-	<div class="dd-block">
-		<div class="dd-title"><h2>8. Reset Everything</h2></div>
-		<div class="dd-insider">
-			<p>
-			Reset all settings (everything) to their default values.
-			</p>
-			<input class="button-primary" onclick="if (confirm('Are you sure you want to reset all settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR_ALL; ?>" value="Reset All Settings" type="submit" style="width:200px;"/>
-		</div>
-	</div>
-	
-	</form>
-
-	<!-- start of dd-footer.php -->
-	<?php include("dd-footer.php"); ?>
-	<!-- end of dd-footer.php -->
-	
-</div>
-<!-- end of dd_admin_left_block -->
-
-<!-- start of dd-sidebar.php -->
-<?php include("dd-sidebar.php"); ?>
-<!-- end of dd-sidebar.php -->
-
 </div>
 <?php 
 }
