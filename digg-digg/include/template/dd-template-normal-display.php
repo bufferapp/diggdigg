@@ -217,11 +217,11 @@ function checkCategory(){
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.4 Enable DiggDigg to modify your post excerp.</th>
+						        	<th scope="row">2.4 Enable DiggDigg to modify your post excerpt.</th>
 						        	<td>
 						        		<INPUT TYPE=CHECKBOX NAME="<?php echo DD_EXCERP_OPTION_DISPLAY ?>" 
 										<?php echo ($ddNormalDisplay[DD_EXCERP_OPTION][DD_EXCERP_OPTION_DISPLAY]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-										<p><i>Deselect above setting, if it caused conflict to your existing excerp plugin.</i></p>
+										<p><i>Deselect above setting, if it caused conflict to your existing excerpt plugin.</i></p>
 						        	</td>
 						        </tr>
 								
