@@ -26,14 +26,14 @@
 			<p>We're super excited to make it the most powerful sharing plugin for your blog.</p>
 			<ul id="dd-team">
 				<li>
-					<a href="http://twitter.com/joelgascoigne" class="dd-team-image"><img src="https://si0.twimg.com/profile_images/1343773983/joel-spain-avatar_reasonably_small.png" width="95" height="95" /></a>
+					<a href="http://twitter.com/joelgascoigne" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>../image/joelgascoigne.png" width="95" height="95" /></a>
 					<p class="name">Joel Gascoigne, Founder</p>
-					<p>"I build Buffer and talk to users. I love startups and swimming." - @<a href="http://twitter.com/joelgascoigne">joelgascoigne</a></p>
+					<p>"I build Buffer and talk to users. I love startups and swimming." <br /> @<a href="http://twitter.com/joelgascoigne">joelgascoigne</a></p>
 				</li>
 				<li>
-					<a href="http://twitter.com/LeoWid" class="dd-team-image"><img src="https://si2.twimg.com/profile_images/1291501644/Leo3_reasonably_small.png" width="95" height="95" /></a>
+					<a href="http://twitter.com/LeoWid" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>../image/LeoWid.png" width="95" height="95" /></a>
 					<p class="name">Leo Widrich, Co-founder</p>
-					<p>"I do community, blogging and coverage for Buffer. I love writing and football." - @<a href="http://twitter.com/LeoWid">LeoWid</a></p>
+					<p>"I do community, blogging and coverage for Buffer. I love writing and football." <br /> @<a href="http://twitter.com/LeoWid">LeoWid</a></p>
 				</li>
 			</ul>
 			<div class="clear"></div>
