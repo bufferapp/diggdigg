@@ -106,7 +106,7 @@ function checkCategory(){
 
 
 
-<div class="wrap">
+<div class="wrap dd-wrap">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Floating Button Bar Configuration</h2>
 	

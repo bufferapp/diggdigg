@@ -100,7 +100,7 @@ function checkCategory(){
 
 </script>
 
-<div class="wrap">
+<div class="wrap dd-wrap">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Normal Button Configuration</h2>
 	
@@ -217,11 +217,10 @@ function checkCategory(){
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.4</th>
+						        	<th scope="row">2.4 Enable DiggDigg to modify your post excerp.</th>
 						        	<td>
 						        		<INPUT TYPE=CHECKBOX NAME="<?php echo DD_EXCERP_OPTION_DISPLAY ?>" 
 										<?php echo ($ddNormalDisplay[DD_EXCERP_OPTION][DD_EXCERP_OPTION_DISPLAY]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-										<span> Enable DiggDigg to modify your post excerp.</span>
 										<p><i>Deselect above setting, if it caused conflict to your existing excerp plugin.</i></p>
 						        	</td>
 						        </tr>

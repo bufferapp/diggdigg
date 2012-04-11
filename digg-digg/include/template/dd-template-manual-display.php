@@ -9,7 +9,7 @@ function dd_button_manual_setup(){
 
 function dd_print_manual_form($dd_manual_code){
 ?>
-<div class="wrap">
+<div class="wrap dd-wrap">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Manual Placement</h2>
 	

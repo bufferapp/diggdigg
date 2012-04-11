@@ -51,7 +51,7 @@ function dd_button_global_setup(){
 function dd_print_global_form($ddGlobalConfig){
 ?>
 
-<div class="wrap columns-2">
+<div class="wrap columns-2 dd-wrap">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Global Configuration</h2>
 	
