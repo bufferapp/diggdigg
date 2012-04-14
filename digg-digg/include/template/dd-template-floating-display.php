@@ -106,11 +106,12 @@ function checkCategory(){
 
 
 
-<div class="wrap dd-wrap">
+<div class="wrap dd-wrap columns-2">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Floating Button Bar Configuration</h2>
 	
-	<div id="poststuff" class="metabox-holder">
+	<div id="poststuff" class="metabox-holder has-right-sidebar">
+		<?php include("dd-sidebar.php"); ?>
 		<div id="post-body">
 			<div id="post-body-content">
 				
@@ -207,7 +208,7 @@ function checkCategory(){
 						        
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.3 Choose how far from to the left of the content Digg Digg is placed</th>
+						        	<th scope="row">2.4 Choose how far from to the left of the content Digg Digg is placed</th>
 						        	<td>
 						        		<input name=<?php echo DD_FLOAT_OPTION_LEFT; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE); ?>"  size="3" style="width:35px;" maxlength="4"/>px</p>
 						        	</td>
@@ -303,11 +304,10 @@ function checkCategory(){
 							
 							<table class="form-table">
 								<tr valign="top">
-									<th scope="row">4.1. Email Button</th>
+									<th scope="row">4.1. Enable Email Button</th>
 									<td>
 										<INPUT TYPE=CHECKBOX NAME="<?php echo DD_EXTRA_OPTION_EMAIL_STATUS; ?>" 
 			<?php echo ($ddFloatDisplay[DD_EXTRA_OPTION_EMAIL][DD_EXTRA_OPTION_EMAIL_STATUS]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-										<p>Enable Email Button</p>
 									</td>
 								</tr>
 								
@@ -321,11 +321,10 @@ function checkCategory(){
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">4.2 Print Button</th>
+						        	<th scope="row">4.2 Enable Print Button</th>
 						        	<td>
 						        		<INPUT TYPE=CHECKBOX NAME="<?php echo DD_EXTRA_OPTION_PRINT_STATUS; ?>" 
 			<?php echo ($ddFloatDisplay[DD_EXTRA_OPTION_PRINT][DD_EXTRA_OPTION_PRINT_STATUS]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-										<p>Enable Print Button</p>
 						        	</td>
 						        </tr>
 						    </table>

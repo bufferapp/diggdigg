@@ -9,11 +9,12 @@ function dd_button_manual_setup(){
 
 function dd_print_manual_form($dd_manual_code){
 ?>
-<div class="wrap dd-wrap">
+<div class="wrap dd-wrap columns-2">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Manual Placement</h2>
 	
-	<div id="poststuff" class="metabox-holder">
+	<div id="poststuff" class="metabox-holder has-right-sidebar">
+		<?php include("dd-sidebar.php"); ?>
 		<div id="post-body">
 			<div id="post-body-content">
 			

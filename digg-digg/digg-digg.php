@@ -462,10 +462,10 @@ function dd_admin_generate_menu_link() {
 	
 	$page = add_menu_page('Digg Digg', 'Digg Digg', 'manage_options', 'dd_button_setup');
 	
-	$dd_button_global_setup = add_submenu_page('dd_button_setup', 'Digg Digg --> Global Configuration', 'Global Config', 'manage_options', 'dd_button_setup', 'dd_button_global_setup');
-	$dd_page_for_normal_display = add_submenu_page('dd_button_setup', 'Digg Digg --> Normal Button Configuration ', 'Normal Display', 'manage_options', 'dd_page_for_normal_display', 'dd_page_for_normal_display');
-	$dd_page_for_floating_display = add_submenu_page('dd_button_setup', 'Digg Digg --> Floating Button Configuration', 'Floating Display', 'manage_options', 'dd_page_for_floating_display', 'dd_page_for_floating_display');
-	$dd_button_manual_setup = add_submenu_page('dd_button_setup', 'Digg Digg --> Manual Placement', 'Manual Placement', 'manage_options', 'dd_button_manual_setup', 'dd_button_manual_setup');
+	$dd_button_global_setup = add_submenu_page('dd_button_setup', 'Digg Digg - Global Configuration', 'Global Config', 'manage_options', 'dd_button_setup', 'dd_button_global_setup');
+	$dd_page_for_normal_display = add_submenu_page('dd_button_setup', 'Digg Digg - Normal Button Configuration ', 'Normal Display', 'manage_options', 'dd_page_for_normal_display', 'dd_page_for_normal_display');
+	$dd_page_for_floating_display = add_submenu_page('dd_button_setup', 'Digg Digg - Floating Button Configuration', 'Floating Display', 'manage_options', 'dd_page_for_floating_display', 'dd_page_for_floating_display');
+	$dd_button_manual_setup = add_submenu_page('dd_button_setup', 'Digg Digg - Manual Placement', 'Manual Placement', 'manage_options', 'dd_button_manual_setup', 'dd_button_manual_setup');
 
 	//puts admin css in digg digg admin page only
 	add_action('admin_print_styles-' .$dd_button_global_setup, 'dd_admin_output_admin_css');

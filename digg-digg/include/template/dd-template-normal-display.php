@@ -100,11 +100,12 @@ function checkCategory(){
 
 </script>
 
-<div class="wrap dd-wrap">
+<div class="wrap dd-wrap columns-2">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Normal Button Configuration</h2>
 	
-	<div id="poststuff" class="metabox-holder">
+	<div id="poststuff" class="metabox-holder has-right-sidebar">
+		<?php include("dd-sidebar.php"); ?>
 		<div id="post-body">
 			<div id="post-body-content">
 			
