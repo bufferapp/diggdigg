@@ -143,8 +143,6 @@ function dd_enable_required_js_in_wordpress() {
 	if (!is_admin()) {
 
 		//jQuery need to put on head
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js');
 		wp_enqueue_script('jquery');
 	}
 }
