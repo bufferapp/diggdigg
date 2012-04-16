@@ -123,14 +123,6 @@ function checkCategory(){
 				<?php echo ($ddNormalDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 									</td>
 								</tr>
-						        <!--
-						        <tr valign="top">
-						        	<th scope="row">Some Other Option</th>
-						        	<td>
-						        		<input type="text" name="some_other_option" value="<?php echo get_option('some_other_option'); ?>" />
-						        	</td>
-						        </tr>
-						        -->
 						    </table>
 							
 							<div class="submit">
@@ -225,15 +217,6 @@ function checkCategory(){
 										<p><i>Deselect above setting, if it caused conflict to your existing excerpt plugin.</i></p>
 						        	</td>
 						        </tr>
-								
-						        <!--
-						        <tr valign="top">
-						        	<th scope="row">Some Other Option</th>
-						        	<td>
-						        		<input type="text" name="some_other_option" value="<?php echo get_option('some_other_option'); ?>" />
-						        	</td>
-						        </tr>
-						        -->
 						    </table>
 							
 							<div class="submit">

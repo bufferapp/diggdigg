@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
 	// first, move the floating bar out of the content to avoid position: relative issues
 	$dd_outer.appendTo('body');
 	
-	dd_top = parseInt($dd_start.offset().top);
+	dd_top = parseInt($dd_start.offset().top) + dd_top_offset_from_content;
 	dd_end = parseInt($dd_end.offset().top);
 	dd_left = -(dd_offset_from_content + 55);
 	
@@ -59,7 +59,7 @@ jQuery(window).load(function(){
 	var $dd_start = jQuery('#dd_start');
 	var $floating_bar = jQuery('#dd_ajax_float');
 	
-	dd_top = parseInt($dd_start.offset().top);
+	dd_top = parseInt($dd_start.offset().top) + dd_top_offset_from_content;
 	
 	// reposition the floating bar
 	dd_position_floating_bar(dd_top, dd_left);
@@ -94,9 +94,8 @@ function dd_adjust_inner_width() {
 }
 
 function dd_position_floating_bar(top, left, position) {
-	
 	var $floating_bar = jQuery('#dd_ajax_float');
-	if(top == undefined) top = 0;
+	if(top == undefined) top = 0 + dd_top_offset_from_content;;
 	if(left == undefined) left = 0;
 	if(position == undefined) position = 'absolute';
 	

@@ -129,14 +129,6 @@ function checkCategory(){
 				<?php echo ($ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 									</td>
 								</tr>
-						        <!--
-						        <tr valign="top">
-						        	<th scope="row">Some Other Option</th>
-						        	<td>
-						        		<input type="text" name="some_other_option" value="<?php echo get_option('some_other_option'); ?>" />
-						        	</td>
-						        </tr>
-						        -->
 						    </table>
 							
 							<div class="submit">
@@ -213,15 +205,13 @@ function checkCategory(){
 						        		<input name=<?php echo DD_FLOAT_OPTION_LEFT; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE); ?>"  size="3" style="width:35px;" maxlength="4"/>px</p>
 						        	</td>
 						        </tr>
-								
-						        <!--
+						        
 						        <tr valign="top">
-						        	<th scope="row">Some Other Option</th>
+						        	<th scope="row">2.5 Choose how far from the top of the content Digg Digg is initially placed</th>
 						        	<td>
-						        		<input type="text" name="some_other_option" value="<?php echo get_option('some_other_option'); ?>" />
+						        		<input name=<?php echo DD_FLOAT_OPTION_TOP; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE); ?>"  size="3" style="width:35px;" maxlength="4"/>px</p>
 						        	</td>
 						        </tr>
-						        -->
 						    </table>
 							
 							<div class="submit">
@@ -349,14 +339,6 @@ function checkCategory(){
 			<?php echo ($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_CREDIT]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 									</td>
 								</tr>
-						        <!--
-						        <tr valign="top">
-						        	<th scope="row">Some Other Option</th>
-						        	<td>
-						        		<input type="text" name="some_other_option" value="<?php echo get_option('some_other_option'); ?>" />
-						        	</td>
-						        </tr>
-						        -->
 						    </table>
 							
 							<div class="submit">
