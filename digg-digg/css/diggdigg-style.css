@@ -124,7 +124,7 @@
 #dd_ajax_float iframe {
 	margin: 0;
 }
-#dd_start {
+#dd_start, #dd_end {
 	float: left;
 	clear: both;
 }
