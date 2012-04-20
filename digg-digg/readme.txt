@@ -3,7 +3,7 @@ Contributors: joelg87, flipstorm
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 5.2.4
+Stable tag: 5.2.5
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -42,6 +42,11 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.2.5 - 19/04/2012 =
+* Fixed: Digg Digg no longer forces an old version of jQuery. This should solve a number of different issues.
+* New: Choose the offset of the floating bar from the top of the page.
+* New: The floating bar stops at the comments, so it doesn't overlap.
 
 = Digg Digg v5.2.4 - 09/04/2012 =
 * Fixed: Bug where the floating bar would be in the wrong position (over content) and would not stay in place as you scroll. This was caused by a bug with the Email feature.
