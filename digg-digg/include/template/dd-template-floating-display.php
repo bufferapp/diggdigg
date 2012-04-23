@@ -7,6 +7,9 @@ function dd_page_for_floating_display(){
 		
 		if(isset($_POST[DD_STATUS_OPTION_DISPLAY])) $ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY] = DD_DISPLAY_ON;
 		else $ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY] = DD_DISPLAY_OFF;
+		
+		if(isset($_POST[DD_COMMENT_ANCHOR_OPTION])) $ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS] = DD_DISPLAY_ON;
+		else $ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS] = DD_DISPLAY_OFF;
 
 		foreach(array_keys($ddFloatDisplay) as $key){
 	    	
@@ -210,6 +213,13 @@ function checkCategory(){
 						        	<th scope="row">2.5 Choose how far from the top of the content Digg Digg is initially placed</th>
 						        	<td>
 						        		<input name=<?php echo DD_FLOAT_OPTION_TOP; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE); ?>"  size="3" style="width:35px;" maxlength="4"/>px</p>
+						        	</td>
+						        </tr>
+						        
+						        <tr valign="top">
+						        	<th scope="row">2.6 Let Digg Digg bar float past the end of the post</th>
+						        	<td>
+						        		<input name=<?php echo DD_COMMENT_ANCHOR_OPTION; ?> type="checkbox" <?php echo ($ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 						        	</td>
 						        </tr>
 						    </table>

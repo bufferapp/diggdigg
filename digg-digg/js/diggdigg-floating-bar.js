@@ -13,7 +13,11 @@ jQuery(document).ready(function(){
 	$dd_outer.appendTo('body');
 	
 	dd_top = parseInt($dd_start.offset().top) + dd_top_offset_from_content;
-	dd_end = parseInt($dd_end.offset().top);
+	
+	if($dd_end.length){
+		dd_end = parseInt($dd_end.offset().top);
+	}
+	
 	dd_left = -(dd_offset_from_content + 55);
 	
 	dd_adjust_inner_width();
@@ -29,11 +33,14 @@ jQuery(document).ready(function(){
 		  
 			var scroll_from_top = jQuery(window).scrollTop() + 30;
 			var is_fixed = $dd_outer.css('position') == 'fixed';
-			var dd_ajax_float_bottom = dd_end - ($floating_bar.height() + 30);
+			
+			if($dd_end.length){
+				var dd_ajax_float_bottom = dd_end - ($floating_bar.height() + 30);
+			}
 			
 			if($floating_bar.length > 0)
 			{
-				if(scroll_from_top > dd_ajax_float_bottom){
+				if(scroll_from_top > dd_ajax_float_bottom && $dd_end.length){
 					dd_position_floating_bar(dd_ajax_float_bottom, dd_left);
 					$dd_outer.css('position', 'absolute');
 				} 
