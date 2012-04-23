@@ -61,17 +61,6 @@ jQuery(document).ready(function(){
 	}
 });
 
-jQuery(window).load(function(){
-
-	var $dd_start = jQuery('#dd_start');
-	var $floating_bar = jQuery('#dd_ajax_float');
-	
-	dd_top = parseInt($dd_start.offset().top) + dd_top_offset_from_content;
-	
-	// reposition the floating bar
-	dd_position_floating_bar(dd_top, dd_left);
-	dd_adjust_inner_width();
-});
 
 jQuery(window).resize(function() {
 	dd_adjust_inner_width();
