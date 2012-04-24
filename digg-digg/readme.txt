@@ -3,7 +3,7 @@ Contributors: joelg87, flipstorm
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 5.2.5
+Stable tag: 5.2.6
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -42,6 +42,11 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.2.6 - 24/04/2012 =
+* New: Option to allow Digg Digg to scroll beyond the end of a post, into the comments.
+* Fix: Bug where in some cases Digg Digg buttons in the floating bar were not clickable.
+* Fix: Bug where the Digg Digg floating bar positioning would be wrong if you scroll before the page is fully loaded.
 
 = Digg Digg v5.2.5 - 19/04/2012 =
 * Fixed: Digg Digg no longer forces an old version of jQuery. This should solve a number of different issues.
