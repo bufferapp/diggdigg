@@ -396,8 +396,15 @@ function integrateFloatingButtonsIntoWpContent_footerload($dd_floating_button_fo
 		
 		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
 		
-		$dd_anchor = '<a id="dd_start"></a>';
-		$content =  $dd_anchor . $content . $dd_floating_bar;
+		$dd_start_anchor = '<a id="dd_start"></a>';
+		
+		if(!$ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS]){
+			$dd_end_anchor = '<a id="dd_end"></a>';
+		} else {
+			$dd_end_anchor = '';
+		}
+		
+		$content =  $dd_start_anchor . $content . $dd_end_anchor . $dd_floating_bar;
 	
 	}
 
