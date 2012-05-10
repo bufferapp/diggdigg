@@ -59,6 +59,22 @@ jQuery(document).ready(function(){
 	
 		});
 	}
+	
+	// Load Linked In Sharers
+	if(jQuery('.dd-linkedin-share').length){
+		var linkedinShareURL = jQuery('.dd-linkedin-share div').attr('data-url');
+		var linkedinShareCounter = jQuery('.dd-linkedin-share div').attr('data-counter');
+	
+		var linkedinShare = jQuery('<script>').attr('id', 'dd-unparsed-linkedin').attr('type', 'unparsed-IN/Share').attr('data-url', linkedinShareURL).attr('data-counter', linkedinShareCounter);
+      	
+      	jQuery('.dd-linkedin-share').html(linkedinShare);
+      	
+		IN.Event.on(IN, "systemReady", function() {
+			jQuery('#dd-unparsed-linkedin').attr('type', 'IN/Share');
+			IN.parse();
+		});
+	}
+	
 });
 
 
