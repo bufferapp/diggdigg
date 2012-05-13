@@ -185,7 +185,9 @@ function integrateNormalButtonsIntoWpContent($dd_normal_button_for_display, $con
 		$scheduler = "<script type=\"text/javascript\"> jQuery(document).ready(function($) { " . $dd_scheduler_script . " }); </script>";
 	}
 	
-	$content = $dd_left_float . $dd_right_float . $dd_before_content . $content . $dd_after_content . $scheduler . $dd_jQuery_script . DD_AUTHOR_SITE;
+	$normalBarJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-normal-bar.js?ver=' . DD_VERSION . '"></script>';
+	
+	$content = $dd_left_float . $dd_right_float . $dd_before_content . $content . $dd_after_content . $scheduler . $dd_jQuery_script . $normalBarJS . DD_AUTHOR_SITE;
 
 	return $content;
 	
