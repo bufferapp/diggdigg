@@ -60,18 +60,22 @@ jQuery(document).ready(function(){
 		});
 	}
 	
-	// Load Linked In Sharers
+	// Load Linked In Sharers (Resolves issue with position on page)
 	if(jQuery('.dd-linkedin-share').length){
-		var linkedinShareURL = jQuery('.dd-linkedin-share div').attr('data-url');
-		var linkedinShareCounter = jQuery('.dd-linkedin-share div').attr('data-counter');
-	
-		var linkedinShare = jQuery('<script>').attr('id', 'dd-unparsed-linkedin').attr('type', 'unparsed-IN/Share').attr('data-url', linkedinShareURL).attr('data-counter', linkedinShareCounter);
-      	
-      	jQuery('.dd-linkedin-share').html(linkedinShare);
-      	
-		IN.Event.on(IN, "systemReady", function() {
-			jQuery('#dd-unparsed-linkedin').attr('type', 'IN/Share');
-			IN.parse();
+		jQuery('.dd-linkedin-share div').each(function(index) {
+		    var $linkedinSharer = jQuery(this);
+		    
+		    var linkedinShareURL = $linkedinSharer.attr('data-url');
+			var linkedinShareCounter = $linkedinSharer.attr('data-counter');
+			
+			var linkedinShareCode = jQuery('<script>').attr('type', 'unparsed-IN/Share').attr('data-url', linkedinShareURL).attr('data-counter', linkedinShareCounter);
+			
+			$linkedinSharer.html(linkedinShareCode);
+			
+			IN.Event.on(IN, "systemReady", function() {
+				$linkedinSharer.children('script').first().attr('type', 'IN/Share');
+				IN.parse();
+			});
 		});
 	}
 	
