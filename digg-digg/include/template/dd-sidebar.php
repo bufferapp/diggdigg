@@ -12,11 +12,13 @@
 	</div>
 	
 	<div class="postbox">
-		<h3>Any thoughts on this new version?</h3>
+		<h3>Got Feedback?</h3>
 		<div class="inside">
-			<p>We're the <a href="http://bufferapp.com" target="_blank">Buffer</a> guys and we've taken over development of Digg Digg.</p>
-			<p>We'd love here from you! Do you like our first changes to Digg Digg?</p>
-			<p>Get in touch: <a href="mailto:diggdigg@bufferapp.com">diggdigg@bufferapp.com</a>. We'll be quick to reply :)</p>
+			<p>We're always looking to improve Digg Digg, so if you've spotted an issue, have a feature request or just require some assistance use our feedback form to send us a message.</p>
+			<p>We'd love here from you!</p>
+			<p>
+				<a href="admin.php?page=dd_feedback_setup" class="button">Send us a message</a>
+			</p>
 		</div>
 	</div>
 	
