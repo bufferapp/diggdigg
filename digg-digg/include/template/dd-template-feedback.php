@@ -34,7 +34,7 @@ function dd_feedback_setup(){
 		<?php if(count($dd_feedback_errors) != 0): ?><div class="error"><ul style="padding-top:6px;"><li><?php echo implode('</li><li>',$dd_feedback_errors); ?></li></ul></div><?php endif; ?>
 		
 		<h2>Digg Digg <?php echo DD_VERSION; ?> Feedback</h2>
-		<p>Welcome to the feedback page for Digg Digg. Here you can quickly and easily send messages to the plugin developers. If you are having trouble getting something to work, would like to know how to perform a certain action or have a new feature request just use the form below to get in touch.</p>
+		<p>Awesome to see you have some feedback for us here at Digg Digg. With the form below, you can easily send us any ideas, support requests, bug reports or also just a friendly hello to chat. To reach us super fast, you can also try <a href="http://www.twitter.com/DiggDiggWP">@DiggDiggWP</a> on Twitter.</p>
 		
 		<form method="post" action="">
 			<table class="form-table">
