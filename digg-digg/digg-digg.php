@@ -461,9 +461,9 @@ function dd_get_print_service(){
 function dd_is_credit_link_enabled($creditLinkStatus){
 	
 	if($creditLinkStatus==DD_DISPLAY_ON){
-		return false;
-	}else{
 		return true;
+	}else{
+		return false;
 	}
 	
 }
