@@ -8,6 +8,7 @@ function dd_feedback_setup(){
 		$dd_feedback_email = $_POST['object']['email'];
 		$dd_feedback_message = $_POST['object']['message'];
 		$dd_feedback_diagnostics = $_POST['object']['diagnostics'];
+		$dd_feedback_url = $_POST['object']['include_url'];
 	
 		if($dd_feedback_name=='') $dd_feedback_errors[] = 'Please make sure you have entered a name.';
 		if($dd_feedback_email=='') $dd_feedback_errors[] = 'Please make sure you have entered a valid email address.';
@@ -15,10 +16,16 @@ function dd_feedback_setup(){
 		if($dd_feedback_message == '') $dd_feedback_errors[] = 'Please make sure you have entered a message.';
 		if(strlen($dd_feedback_message)>2500) $dd_feedback_errors[] = 'Please make sure your message is less than 2500 characters in length.';
 		
+		
 		if(count($dd_feedback_errors)==0) {
 			// Send email to diggdigg@bufferapp.com
 			$dd_feedback_subject = "Digg Digg Feedback ". DD_VERSION;
-			$dd_feedback_message = "Name: $dd_feedback_name.\n\n Email: $dd_feedback_email.\n\n Message: $dd_feedback_message\n\n Diagnostics: $dd_feedback_diagnostics";
+			$dd_feedback_message = "Name: $dd_feedback_name.\n\n Email: $dd_feedback_email.\n\n Message: $dd_feedback_message\n\n Diagnostics: $dd_feedback_diagnostics\n\n";
+			
+			if($dd_feedback_url){
+				$dd_feedback_message .= "URL: ".get_bloginfo('url');
+			}
+			
 			wp_mail("diggdigg@bufferapp.com", $dd_feedback_subject, $dd_feedback_message); 
 			
 			dd_feedback_success();
@@ -79,6 +86,14 @@ function dd_feedback_setup(){
 						</td>
 					</tr>
 				<?php endif; ?>
+				
+				
+				<tr>
+					<th></th>
+					<td colspan="2">
+						<label><input type="checkbox" name="object[include_url]" value="include" /> Include URL to website in message.</label>
+					</td>
+				</tr>
 				
 			</table>
 			<div class="submit">
