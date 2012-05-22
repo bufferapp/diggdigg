@@ -1,6 +1,6 @@
 === Digg Digg ===
 Contributors: joelg87, andy7629
-Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
+Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis
 Requires at least: 2.3
 Tested up to: 3.3.1
 Stable tag: 5.2.7
