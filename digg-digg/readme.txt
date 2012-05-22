@@ -1,9 +1,9 @@
 === Digg Digg ===
-Contributors: joelg87, flipstorm
+Contributors: joelg87, flipstorm, andy7629
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
-Stable tag: 5.2.6
+Stable tag: 5.2.7
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -43,10 +43,16 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 
 == Changelog ==
 
+= Digg Digg v5.2.7 - 22/05/2012 =
+* New: Feedback page to allow plugin users to email the developers directly from the WordPress admin.
+* Fixed: LinkedIn Button positioned correctly rather than bottom left corner of site.
+* Fixed: Digg Digg Credit is enabled on correct checkbox state rather than unticked for enabled and ticked for disabled.
+* Fixed: Mentions with Buffer button now add @ symbol unless already added in admin field.
+
 = Digg Digg v5.2.6 - 24/04/2012 =
 * New: Option to allow Digg Digg to scroll beyond the end of a post, into the comments.
-* Fix: Bug where in some cases Digg Digg buttons in the floating bar were not clickable.
-* Fix: Bug where the Digg Digg floating bar positioning would be wrong if you scroll before the page is fully loaded.
+* Fixed: Bug where in some cases Digg Digg buttons in the floating bar were not clickable.
+* Fixed: Bug where the Digg Digg floating bar positioning would be wrong if you scroll before the page is fully loaded.
 
 = Digg Digg v5.2.5 - 19/04/2012 =
 * Fixed: Digg Digg no longer forces an old version of jQuery. This should solve a number of different issues.
