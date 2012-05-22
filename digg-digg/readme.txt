@@ -1,5 +1,5 @@
 === Digg Digg ===
-Contributors: joelg87, flipstorm, andy7629
+Contributors: joelg87, andy7629
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest
 Requires at least: 2.3
 Tested up to: 3.3.1
