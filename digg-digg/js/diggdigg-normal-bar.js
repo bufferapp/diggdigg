@@ -5,6 +5,10 @@ jQuery(document).ready(function(){
 		jQuery('.dd-linkedin-share div').each(function(index) {
 		    var $linkedinSharer = jQuery(this);
 		    
+		    if($linkedinSharer.hasClass('parsed')){
+		    	return;
+		    }
+		    
 		    var linkedinShareURL = $linkedinSharer.attr('data-url');
 			var linkedinShareCounter = $linkedinSharer.attr('data-counter');
 			
@@ -16,6 +20,8 @@ jQuery(document).ready(function(){
 				$linkedinSharer.children('script').first().attr('type', 'IN/Share');
 				IN.parse();
 			});
+			
+			$linkedinSharer.addClass('parsed');
 		});
 	}
 	
