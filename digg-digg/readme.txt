@@ -43,7 +43,7 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 
 == Changelog ==
 
-= Digg Digg v5.2.7 - 22/05/2012 =
+= Digg Digg v5.2.7 - 24/05/2012 =
 * New: Feedback page to allow plugin users to email the developers directly from the WordPress admin.
 * Fixed: LinkedIn Button positioned correctly rather than bottom left corner of site.
 * Fixed: Digg Digg Credit is enabled on correct checkbox state rather than unticked for enabled and ticked for disabled.
