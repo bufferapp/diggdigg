@@ -12,17 +12,6 @@
 	</div>
 	
 	<div class="postbox">
-		<h3>Got Feedback?</h3>
-		<div class="inside">
-			<p>We're always looking to improve Digg Digg, so if you've spotted an issue, have a feature request or just require some assistance use our feedback form to send us a message.</p>
-			<p>We'd love here from you!</p>
-			<p>
-				<a href="admin.php?page=dd_feedback_setup" class="button">Send us a message</a>
-			</p>
-		</div>
-	</div>
-	
-	<div class="postbox">
 		<h3>Meet the Team</h3>
 		<div class="inside">
 			<p>We're super excited to make it the most powerful sharing plugin for your blog.</p>
