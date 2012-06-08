@@ -133,8 +133,10 @@ function dd_linkedin_generate($buttonDesign='Normal'){
     
     $dd_linkedin = new DD_Linkedin();
     $dd_linkedin->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'], false);
-			
-	echo $dd_linkedin->finalURL;
+	
+	$dd_linkedinJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-linkedin.js?ver=' . DD_VERSION . '"></script>';
+	
+	echo $dd_linkedinJS.' '.$dd_linkedin->finalURL;
 }	
 
 function dd_reddit_generate($buttonDesign='Normal'){
