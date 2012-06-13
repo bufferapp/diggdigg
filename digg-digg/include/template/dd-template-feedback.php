@@ -43,6 +43,8 @@ function dd_feedback_setup(){
 		<h2>Digg Digg <?php echo DD_VERSION; ?> Feedback</h2>
 		<p>Awesome to see you have some feedback for us here at Digg Digg. With the form below, you can easily send us any ideas, support requests, bug reports or also just a friendly hello to chat. To reach us super fast, you can also try <a href="http://www.twitter.com/DiggDiggWP">@DiggDiggWP</a> on Twitter.</p>
 		
+		<p>Before you fire us an email, please check <a href="http://wordpress.org/extend/plugins/digg-digg/faq/" target="_blank">our FAQs</a> to see if your question has already been answered there.</p>
+		
 		<form method="post" action="">
 			<table class="form-table">
 				<tr>
