@@ -263,8 +263,10 @@ function dd_print_global_form($ddGlobalConfig){
 						<div class="stuffbox">
 							<h3><label for="link_name">7. Reset Global Configuration Settings</label></h3>
 							<div class="inside">
+								<br />
 								<p>Reset all "Global Configuration" settings to their default values.</p>
 								<input class="button-primary" onclick="if (confirm('Are you sure you want to reset \'Global Configuration\' settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR; ?>" value="Reset Global Config Settings" type="submit" style="width:200px;"/>
+								<br /><br />
 							</div>
 						</div>
 						<!-- End Reset Global Config -->
@@ -274,8 +276,10 @@ function dd_print_global_form($ddGlobalConfig){
 						<div class="stuffbox">
 							<h3><label for="link_name">8. Reset Everything</label></h3>
 							<div class="inside">
+								<br />
 								<p>Reset all settings (everything) to their default values.</p>
 								<input class="button-primary" onclick="if (confirm('Are you sure you want to reset all settings to their default values?'))return true;return false" name="<?php echo DD_FORM_CLEAR_ALL; ?>" value="Reset All Settings" type="submit" style="width:200px;"/>
+								<br /><br />
 							</div>
 						</div>
 						<!-- End Reset All Config -->
