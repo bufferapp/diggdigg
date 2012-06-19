@@ -2,8 +2,8 @@
 Contributors: joelg87, andy7629
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis
 Requires at least: 2.3
-Tested up to: 3.3.1
-Stable tag: 5.2.7
+Tested up to: 3.4
+Stable tag: 5.2.8
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -35,6 +35,32 @@ Post Installation
 == Frequently Asked Questions ==
 If you have any questions, we'd love to hear from you. Email us: diggdigg@bufferapp.com
 
+
+= How can I disable the Digg Digg Floating Bar on a particular page? =
+
+To disable the bar on a particular page add the following few lines to your themes functions.php file, changing the conditional tags to ones that fit your requirement.
+
+`if(is_page('page-slug-1') || is_page('page-slug-2')) {
+	remove_filter('the_excerpt', 'dd_hook_wp_content');
+	remove_filter('the_content', 'dd_hook_wp_content');
+}`
+
+
+= How can I add the Digg Digg Floating Bar on a particular page? =
+
+To add the bar to a particular page add the following few lines to your themes functions.php file, changing the conditional tags to ones that fit your requirement.
+
+`if(is_page('page-slug-1') || is_page('page-slug-2')) {
+	add_filter('the_excerpt', 'dd_hook_wp_content');
+	add_filter('the_content', 'dd_hook_wp_content');
+}`
+
+
+= How can I change the order of sharers throughout Digg Digg? =
+
+In both Normal Display and Floating Display settings pages you can change the weight of a sharer. The highest weighted sharer will be displayed first, the lowest weighted sharer will be displayed last.
+
+
 == Screenshots ==
 1. Floating Bar
 2. Normal Bar with Large Buttons at Top
@@ -42,6 +68,10 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.2.8 - 19/06/2012 =
+* Fixed: Support for latest version of WordPress, resolves issue with Digg Digg admin layout.
+* New: Link to FAQ on WordPress.org before Feedback form.
 
 = Digg Digg v5.2.7 - 24/05/2012 =
 * New: Feedback page to allow plugin users to email the developers directly from the WordPress admin.
