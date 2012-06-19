@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 5.2.7
+ Version: 5.2.8
  Plugin URI: http://bufferapp.com/diggdigg
  Author: Buffer
  Author URI: http://bufferapp.com/
@@ -317,8 +317,8 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 			$dd_lazyLoad_jQuery_script.=$obj->finalURL_lazy_script;
 			$dd_lazyLoad_scheduler_script.=$obj->final_scheduler_lazy_script;
 		}
-
-		$floatButtonsContainer .= "<div class='dd_button_v " . $obj->dd_twitter_ajax_left_float . "'>" . $finalURL . "</div><div style='clear:left'></div>";
+		
+		$floatButtonsContainer .= "<div class='dd_button_v'>" . $finalURL . "</div><div style='clear:left'></div>";
 
 	}
 
@@ -338,7 +338,7 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 		$floatingJSOptions = '<script type="text/javascript">var dd_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE).'; var dd_top_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE).';</script>';
 		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '../js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 
-		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingCSS . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
+		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;
 		$dd_start_anchor = '<a id="dd_start"></a>';
 		
 		if(!$ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS]){
