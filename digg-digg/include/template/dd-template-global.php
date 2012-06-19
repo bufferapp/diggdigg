@@ -54,13 +54,11 @@ function dd_print_global_form($ddGlobalConfig){
 <div class="wrap columns-2 dd-wrap">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
 	<h2>Digg Digg - Global Configuration</h2>
-	
-	<div id="dd-admin-wrapper" class="metabox-holder">
-		<div id="dd-admin-left">
-			<div id="post-body">
-				<div id="post-body-content">
-					<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" id="<?php echo DD_FORM; ?>">
-				
+	<div id="poststuff" class="metabox-holder has-right-sidebar">
+		<?php include("dd-sidebar.php"); ?>
+		<div id="post-body">
+			<div id="post-body-content">
+				<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" id="<?php echo DD_FORM; ?>">
 						<div class="stuffbox">
 							<h3><label for="link_name">1. Facebook Like Configuration</label></h3>
 							<div class="inside">
@@ -286,11 +284,7 @@ function dd_print_global_form($ddGlobalConfig){
 						
 						
 					</form>
-				</div>
 			</div>
-		</div>
-		<div id="dd-admin-right">
-			<?php include("dd-sidebar.php"); ?>
 		</div>
 	</div>
 </div>
