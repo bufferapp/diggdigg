@@ -440,15 +440,8 @@ class DD_Buffer extends BaseDD{
 
     	if($lazy==DD_EMPTY_VALUE || $lazy==false){
     		//format twitter source
-    		if (substr($buffer_source, 0, 1)!="@" && $buffer_source){
-    			$buffer_source = "@".$buffer_source;
-				$this->baseURL = str_replace(self::VOTE_BUFFER_SOURCE,$buffer_source,$this->baseURL);
-			} else{
-				$this->baseURL = str_replace(self::VOTE_BUFFER_SOURCE,$buffer_source,$this->baseURL);
-			}
-    		
-    		$this->constructNormalURL($url, $title,$button, $postId);
-    		
+			$this->baseURL = str_replace(self::VOTE_BUFFER_SOURCE,$buffer_source,$this->baseURL);
+    		$this->constructNormalURL($url, $title,$button, $postId);   		
     	}else{
     		//format twitter source
     		$this->baseURL_lazy = str_replace(self::VOTE_BUFFER_SOURCE,$buffer_source,$this->baseURL_lazy);

@@ -71,6 +71,8 @@ In both Normal Display and Floating Display settings pages you can change the we
 
 = Digg Digg v5.2.8 - 19/06/2012 =
 * Fixed: Support for latest version of WordPress, resolves issue with Digg Digg admin layout.
+* Fixed: Issue with LinkedIn not displaying when using Manual Display.
+* Fixed: Issue with Buffer button adding two @ symbols in front of username.
 * New: Link to FAQ on WordPress.org before Feedback form.
 
 = Digg Digg v5.2.7 - 24/05/2012 =
