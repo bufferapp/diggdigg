@@ -863,7 +863,7 @@ class DD_Pinterest extends BaseDD{
 		$finalURL = str_replace(parent::POST_ID,$postId,$finalURL);
 		$finalURL = str_replace(parent::VOTE_TITLE,$title,$finalURL);
     	$finalURL = str_replace(parent::VOTE_URL,$url,$finalURL);
-		if(current_theme_supports('post-thumbnails')) $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'thumbnail' );
+		if(current_theme_supports('post-thumbnails')) $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'full' );
 		else $thumb = false;
 		if($thumb) $image = $thumb[0];
 		else $image = '';
@@ -878,7 +878,7 @@ class DD_Pinterest extends BaseDD{
     	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
 		$finalURL_lazy = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy);
     	$finalURL_lazy = str_replace(parent::VOTE_URL,$url,$finalURL_lazy);
-		if(current_theme_supports('post-thumbnails')) $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'thumbnail' );
+		if(current_theme_supports('post-thumbnails')) $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($postId), 'full' );
 		else $thumb = false;
 		if($thumb) $image = $thumb[0];
 		else $image = '';
@@ -1247,6 +1247,53 @@ class DD_Digg extends BaseDD{
     }
     
 }
+
+
+
+/******************************************************************************************
+ *  
+ * http://www.tumblr.com/
+ *
+ */
+ /*
+class DD_Tumblr extends BaseDD{
+	
+	const NAME = "Tumblr";
+	const URL_WEBSITE = "http://www.tumblr.com";
+	const URL_API = "http://www.tumblr.com/docs/en/buttons";
+	const DEFAULT_BUTTON_WEIGHT = "98";
+	
+	const BASEURL = "<a href='http://www.tumblr.com/share/link?url=VOTE_URL&name=VOTE_TITLE&description=VOTE_TITLE' title='Share on Tumblr' style='display:inline-block; text-indent:-9999px; overflow:hidden; width:61px; height:20px; background:url('http://platform.tumblr.com/v1/share_2.png') top left no-repeat;'>Share on Tumblr</a><script type='text/javascript' src='http://platform.tumblr.com/v1/share.js'></script>";
+	
+	const OPTION_APPEND_TYPE = "dd_tumblr_appendType";
+	const OPTION_BUTTON_DESIGN = "dd_tumblr_buttonDesign";
+	const OPTION_BUTTON_WEIGHT = "dd_tumblr_button_weight";
+	const OPTION_AJAX_LEFT_FLOAT = "dd_tumblr_ajax_left_float";
+	const OPTION_LAZY_LOAD = "dd_tumblr_lazy_load";
+	
+	var $islazyLoadAvailable = false;
+	var $isEncodeRequired = false;
+	
+	var $buttonLayout = array(
+		"Normal" => "Normal"
+	);
+	
+    public function DD_Tumblr() {
+    	
+		$this->option_append_type = self::OPTION_APPEND_TYPE;
+		$this->option_button_design = self::OPTION_BUTTON_DESIGN;
+		$this->option_button_weight = self::OPTION_BUTTON_WEIGHT;
+		$this->option_ajax_left_float = self::OPTION_AJAX_LEFT_FLOAT;
+		$this->option_lazy_load = self::OPTION_LAZY_LOAD;
+		
+		$this->button_weight_value = self::DEFAULT_BUTTON_WEIGHT;
+		
+        parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
+      
+    }
+}
+*/
+
 
 
 
