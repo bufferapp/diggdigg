@@ -205,14 +205,14 @@ function checkCategory(){
 						        <tr valign="top">
 						        	<th scope="row">2.4 Choose how far from to the left of the content Digg Digg is placed</th>
 						        	<td>
-						        		<input name=<?php echo DD_FLOAT_OPTION_LEFT; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE); ?>"  size="3" style="width:35px;" maxlength="4"/>px</p>
+						        		<input name=<?php echo DD_FLOAT_OPTION_LEFT; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE); ?>"  size="5" style="width:50px;" maxlength="4"/>px</p>
 						        	</td>
 						        </tr>
 						        
 						        <tr valign="top">
 						        	<th scope="row">2.5 Choose how far from the top of the content Digg Digg is initially placed</th>
 						        	<td>
-						        		<input name=<?php echo DD_FLOAT_OPTION_TOP; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE); ?>"  size="3" style="width:35px;" maxlength="4"/>px</p>
+						        		<input name=<?php echo DD_FLOAT_OPTION_TOP; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE); ?>"  size="5" style="width:50px;" maxlength="4"/>px</p>
 						        	</td>
 						        </tr>
 						        
