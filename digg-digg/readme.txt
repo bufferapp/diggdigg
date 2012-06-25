@@ -69,6 +69,10 @@ In both Normal Display and Floating Display settings pages you can change the we
 
 == Changelog ==
 
+= Digg Digg v5.2.9 - 21/06/2012 =
+* Fixed: Pinterest button selects full image rather than thumbnail.
+* New: If post thumbnails aren't used Digg Digg will select the first image attached to a post.
+
 = Digg Digg v5.2.8 - 19/06/2012 =
 * Fixed: Issue with LinkedIn not displaying when using Manual Display.
 * Fixed: Issue with Buffer button adding two @ symbols in front of username.
