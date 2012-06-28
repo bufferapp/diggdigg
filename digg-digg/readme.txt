@@ -3,7 +3,7 @@ Contributors: joelg87, andy7629
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis
 Requires at least: 2.3
 Tested up to: 3.4
-Stable tag: 5.2.8
+Stable tag: 5.2.9
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -69,7 +69,7 @@ In both Normal Display and Floating Display settings pages you can change the we
 
 == Changelog ==
 
-= Digg Digg v5.2.9 - 21/06/2012 =
+= Digg Digg v5.2.9 - 28/06/2012 =
 * Fixed: Pinterest button selects full image rather than thumbnail.
 * Fixed: Increase size of offset inputs so number isn't cut off in various browsers.
 * New: If post thumbnails aren't used Digg Digg will select the first image attached to a post.
