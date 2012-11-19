@@ -114,8 +114,8 @@ $dd_manual_code = array(
 		"Compact" => "dd_pinterest_generate('Compact')"
 	),
 	"Flattr" => array(
-		"Normal" => "dd_flattr_generate('Normal')",
-		"Compact" => "dd_flattr_generate('Compact')"
+		"Normal" => "dd_flattr_generate('Normal','flattr_username')",
+		"Compact" => "dd_flattr_generate('Compact','flattr_username')"
 	),
 );		
 	
@@ -350,11 +350,14 @@ function dd_pinterest_generate($buttonDesign='Normal'){
 	echo $dd_pinterest->finalURL;
 }
 
-function dd_flattr_generate($buttonDesign='Normal'){
+function dd_flattr_generate($buttonDesign='Normal', $uid=''){
 	$post_data = dd_getPostData();
     
+	global $globalcfg;
+	$globalcfg[DD_GLOBAL_FLATTR_OPTION][DD_GLOBAL_FLATTR_OPTION_UID] = $uid;
+	
     $dd_flattr = new DD_Flattr();
-    $dd_flattr->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false);
+    $dd_flattr->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false,$globalcfg);
     
 	echo $dd_flattr->finalURL;
 }
