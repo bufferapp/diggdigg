@@ -1,97 +1,80 @@
-.FBConnectButton_Small, .FBConnectButton_RTL_Small {
-	background-position:-5px -232px !important;
+.FBConnectButton_Small,.FBConnectButton_RTL_Small {
 	border-left:1px solid #1a356e;
 	width:54px;
-}
-.FBConnectButton_Small .FBConnectButton_Text {
-	margin-left:12px!important;
+	background:-5px -232px!important
 }
 
-.dd-digg-ajax-load,.dd-reddit-ajax-load,.dd-dzone-ajax-load,.dd-ybuzz-ajax-load,
-.dd-twitter-ajax-load,.dd-fbshare-ajax-load,.dd-fblike-ajax-load,.dd-delicious-ajax-load,
-.dd-sphinn-ajax-load,.dd-gbuzz-ajax-load,.dd-fbshareme-ajax-load,.dd-tweetmeme-ajax-load,
-.dd-linkedin-ajax-load, .dd-google1-ajax-load{
-	background-image:url(../image/ajax-loader.gif);
-    background-repeat: no-repeat;
-	background-position: center ;
+.FBConnectButton_Small .FBConnectButton_Text {
+	margin-left:12px!important
+}
+
+.dd-digg-ajax-load,.dd-reddit-ajax-load,.dd-dzone-ajax-load,.dd-ybuzz-ajax-load,.dd-twitter-ajax-load,.dd-fbshare-ajax-load,.dd-fblike-ajax-load,.dd-delicious-ajax-load,.dd-sphinn-ajax-load,.dd-gbuzz-ajax-load,.dd-fbshareme-ajax-load,.dd-tweetmeme-ajax-load,.dd-linkedin-ajax-load,.dd-google1-ajax-load {
 	width:50px;
 	height:22px;
+	background:url(../image/ajax-loader.gif) no-repeat center
 }
 
-.dd_delicious{
-	display:block; 
-	color:#000; 
-	font:normal 16px arial; 
-	text-decoration:none; 
-	width:50px; 
-	height:60px; 
+.dd_delicious {
+	display:block;
+	color:#000;
+	font:16px arial;
+	text-decoration:none;
+	width:50px;
+	height:60px;
+	text-align:center
+}
+
+.dd_delicious a:link,.dd_delicious a:visited,.dd_delicious a:active,.dd_delicious a:hover {
+	text-decoration:none;
+	color:#000
+}
+
+.dd_delicious_normal_image {
 	text-align:center;
-}
-
-.dd_delicious a:link, .dd_delicious a:visited, .dd_delicious a:active, .dd_delicious a:hover{
-    text-decoration:none;
-    color:#000;
-}
-
-.dd_delicious_normal_image{
-	background-image:url(../image/delicious.png); 
-    background-repeat: no-repeat;
-    text-align:center;
 	height:60px;
 	margin-top:3px;
 	padding:0;
 	text-align:center;
 	width:50px;
 	display:block;
+	background:url(../image/delicious.png) no-repeat
 }
 
-
-.dd_delicious_compact_image{
-	background-image:url(../image/delicious-compact.png); 
-    background-repeat: no-repeat;
-    text-align:center;
+.dd_delicious_compact_image {
+	text-align:center;
 	height:22px;
-	/*margin-top:3px;*/
 	padding:0;
 	text-align:center;
 	width:50px;
 	display:block;
+	background:url(../image/delicious-compact.png) no-repeat
 }
 
-
-.dd_delicious_compact_image span{
-	font-size:10px;
+.dd_delicious_compact_image span {
+	font-size:10px
 }
 
 .dd_comments {
-	background-image:url(../image/comments-link.png); 
-    background-repeat: no-repeat;
-    text-align:center;
+	text-align:center;
 	height:16px;
 	margin-top:3px;
 	padding:0;
 	text-align:center;
 	width:50px;
 	display:block;
+	background:url(../image/comments-link.png) no-repeat
 }
 
-
-.dd_button a:link,
-.dd_button a:visited,
-.dd_button a:active{
+.dd_button a:link,.dd_button a:visited,.dd_button a:active {
 	text-decoration:none;
-	color:#000000;
+	color:#000
 }
 
-#dd_ajax_float{
+#dd_ajax_float {
 	text-align:center;
-	line-height:16px;
-	font-size:10px;
-	font-family:Arial;
 	border:1px solid #bbb;
 	min-width:55px;
-	width: auto;
-	background-color:#fff;
+	width:auto;
 	-webkit-border-top-right-radius:5px;
 	-webkit-border-bottom-right-radius:5px;
 	-webkit-border-bottom-left-radius:5px;
@@ -106,116 +89,129 @@
 	border-top-left-radius:5px;
 	-moz-background-clip:padding;
 	-webkit-background-clip:padding-box;
-	background-clip:padding-box;
-	-webkit-box-shadow:1px 0px 15px rgba(0,0,0,0.2);
-	-moz-box-shadow:1px 0px 15px rgba(0,0,0,0.2);
-	box-shadow:1px 0px 15px rgba(0,0,0,0.2);
+	-webkit-box-shadow:1px 0 15px rgba(0,0,0,.2);
+	-moz-box-shadow:1px 0 15px rgba(0,0,0,.2);
+	box-shadow:1px 0 15px rgba(0,0,0,.2);
 	padding:5px;
-	position: absolute;
-	display: none;
-	left: -120px;
-}
-#dd_ajax_float .dd_button_v {
-	width: auto;
-	height: auto;
-	line-height: 0;
-	padding: 4px 1px;
-}
-#dd_ajax_float iframe {
-	margin: 0;
-}
-#dd_start, #dd_end {
-	float: left;
-	clear: both;
+	position:absolute;
+	display:none;
+	left:-120px;
+	font:10px/16px Arial;
+	background:padding-box #fff
 }
 
+#dd_ajax_float .dd_button_v {
+	width:auto;
+	height:auto;
+	line-height:0;
+	padding:4px 1px
+}
+
+#dd_ajax_float iframe {
+	margin:0
+}
+
+#dd_start,#dd_end {
+	float:left;
+	clear:both
+}
 
 .dd_outer {
-	width: 100%;
-	height: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 9999;
+	width:100%;
+	height:0;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:9999
 }
+
 .dd_inner {
-	margin: 0 auto;
-	position: relative;
+	margin:0 auto;
+	position:relative
 }
 
-.dd_post_share{
-	padding:0px;
+.dd_post_share {
+	padding:0;
 	margin-bottom:6px;
-	display:block;
+	display:block
 }
 
-.dd_post_share_left{
-	float:left;
+.dd_post_share_left {
+	float:left
 }
 
-.dd_post_share_right{
-	float:right;
+.dd_post_share_right {
+	float:right
 }
 
-.dd_buttons img{
+.dd_buttons img {
 	border:none;
-	border-width:0px;
-	border-color:#000000;
-	border-style:none;
+	border-width:0;
+	border-color:#000;
+	border-style:none
 }
 
-#dd_name{
-	color:#A9A9A9;
+#dd_name {
+	color:#a9a9a9;
 	font-size:8px;
 	text-align:center;
-	margin:8px 0 6px 0;
+	margin:8px 0 6px;
 	padding:0;
-	line-height:0px;
+	line-height:0
 }
 
-#dd_name a:link, #dd_name a:visited, #dd_name a:active {
-    text-decoration:none;
-    color:#A9A9A9;
-    border:0;
+#dd_name a:link,#dd_name a:visited,#dd_name a:active {
+	text-decoration:none;
+	color:#a9a9a9;
+	border:0
 }
 
 #dd_name a:hover {
-    text-decoration:underline;
-    color:#A9A9A9;
-    border:0;
+	text-decoration:underline;
+	color:#a9a9a9;
+	border:0
 }
 
-.dd_button{
+.dd_button {
 	float:left;
-	padding:4px;
+	padding:4px
 }
 
-.dd_fblike_xfbml_ajax_left_float{padding-left:3px;}
-.dd_google1_ajax_left_float{margin-left:-1px;}
-.dd_linkedin_ajax_left_float{margin-left:-2px;margin-bottom:-5px;}
-html{overflow-y:scroll;}
-
-.dd_button_spacer{
-	padding-top:8px;
+.dd_fblike_xfbml_ajax_left_float {
+	padding-left:3px
 }
 
-#dd_comments{
-	clear:both !important;
-    width:50px;
-    height:60px;
-    font-family:arial;
+.dd_google1_ajax_left_float {
+	margin-left:-1px
 }
 
-#dd_comments a:link, #dd_comments a:visited, #dd_comments a:active, #dd_comments a:hover {
-    text-decoration:none;
+.dd_linkedin_ajax_left_float {
+	margin-left:-2px;
+	margin-bottom:-5px
 }
 
-#dd_comments .clcount{
-	background-image:url(../image/comments-count.png);
-    background-repeat: no-repeat;
-    background-position: left top;
-    text-align:center;
-	color:#444444;
+html {
+	overflow-y:scroll
+}
+
+.dd_button_spacer {
+	padding-top:8px
+}
+
+#dd_comments {
+	clear:both!important;
+	width:50px;
+	height:60px;
+	font-family:arial
+}
+
+#dd_comments a:link,#dd_comments a:visited,#dd_comments a:active,#dd_comments a:hover {
+	text-decoration:none
+}
+
+#dd_comments .clcount {
+	text-align:center;
+	color:#444;
 	display:block;
 	font-size:20px;
 	height:34px;
@@ -224,70 +220,65 @@ html{overflow-y:scroll;}
 	text-align:center;
 	width:50px;
 	line-height:24px;
+	background:url(../image/comments-count.png) no-repeat left top
 }
 
-#dd_comments .ccount{
-	color:#444444;
+#dd_comments .ccount {
+	color:#444;
 	font-size:17px;
 	text-align:center;
-	text-decoration:none;
+	text-decoration:none
 }
 
-#dd_comments .clink{
-	background-image:url(../image/comments-link.png); 
-    background-repeat: no-repeat;
-    text-align:center;
+#dd_comments .clink {
+	text-align:center;
 	height:16px;
 	margin-top:3px;
 	padding:0;
 	text-align:center;
 	width:50px;
 	display:block;
+	background:url(../image/comments-link.png) no-repeat
 }
 
-/******************Extra Services*****************/
-.dd_button_extra_v{
-	padding:1px 4px;
+.dd_button_extra_v {
+	padding:1px 4px
 }
 
-.st_email_custom{
-	background-image:url(../image/email.png);
-    background-repeat: no-repeat;
-    background-position: 3px 4px;
-	padding: 2px 4px 3px;
-	border: 1px solid #DDDDDD;
-	-moz-border-radius: 2px;
+.st_email_custom {
+	padding:2px 4px 3px;
+	border:1px solid #ddd;
+	-moz-border-radius:2px;
 	cursor:pointer;
 	margin-bottom:2px;
+	background:url(../image/email.png) no-repeat 3px 4px
 }
 
-#dd_print_button{
-	background-image:url(../image/print.png);
-    background-repeat: no-repeat;
-    background-position: 3px 2px;
-	padding: 1px 4px 3px;
-	border: 1px solid #DDDDDD;
-	-moz-border-radius: 2px;
+#dd_print_button {
+	padding:1px 4px 3px;
+	border:1px solid #ddd;
+	-moz-border-radius:2px;
 	cursor:pointer;
 	margin-bottom:2px;
+	background:url(../image/print.png) no-repeat 3px 2px
 }
 
-#dd_email_text{
+#dd_email_text {
 	padding:0 0 0 18px;
-	font-size:10px;
+	font-size:10px
 }
 
-#dd_print_text{
+#dd_print_text {
 	padding:0 0 0 14px;
-	font-size:10px;
+	font-size:10px
 }
 
-#dd_print_text a:link, #dd_print_text a:visited, #dd_print_text a:active {
+#dd_print_text a:link,#dd_print_text a:visited,#dd_print_text a:active {
 	color:#000;
-    text-decoration:none;
+	text-decoration:none
 }
 
-#dd_print_text a:hover{
-	color:#0000FF;
-	text-decoration:underline;
+#dd_print_text a:hover {
+	color:#00f;
+	text-decoration:underline
 }

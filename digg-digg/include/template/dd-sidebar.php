@@ -17,12 +17,12 @@
 			<p>We're super excited to make it the most powerful sharing plugin for your blog.</p>
 			<ul id="dd-team">
 				<li>
-					<a href="http://twitter.com/joelgascoigne" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>../image/joelgascoigne.png" width="95" height="95" /></a>
+					<a href="http://twitter.com/joelgascoigne" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>/image/joelgascoigne.png" width="95" height="95" /></a>
 					<p class="name">Joel Gascoigne, Founder</p>
 					<p>"I build Buffer and talk to users. I love startups and swimming." <br /> @<a href="http://twitter.com/joelgascoigne">joelgascoigne</a></p>
 				</li>
 				<li>
-					<a href="http://twitter.com/LeoWid" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>../image/LeoWid.png" width="95" height="95" /></a>
+					<a href="http://twitter.com/LeoWid" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>/image/LeoWid.png" width="95" height="95" /></a>
 					<p class="name">Leo Widrich, Co-founder</p>
 					<p>"I do community, blogging and coverage for Buffer. I love writing and football." <br /> @<a href="http://twitter.com/LeoWid">LeoWid</a></p>
 				</li>
