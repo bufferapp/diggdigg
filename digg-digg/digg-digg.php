@@ -18,6 +18,11 @@ error_reporting(E_ALL);
 // fix for the W3 Total Cache bug (fixed in Digg Digg 5.1)
 if(function_exists('w3tc_objectcache_flush')) w3tc_objectcache_flush();
 
+// Define the file path
+if (!defined("WP_CONTENT_URL")) define("WP_CONTENT_URL", get_option("siteurl") . "/wp-content");
+if (!defined("WP_PLUGIN_URL"))  define("WP_PLUGIN_URL", WP_CONTENT_URL . "/plugins");
+define('DD_PLUGIN_URL',WP_PLUGIN_URL . '/' . plugin_basename(dirname(__FILE__)).'/');
+
 require_once 'include/dd-global-variable.php';
 require_once 'include/dd-printform.php';
 require_once 'include/dd-helper.php';
