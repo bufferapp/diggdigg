@@ -99,7 +99,7 @@ function dd_clear_form_float_display($type=""){
 
 function dd_output_css_to_html()
 {
-	echo '<link rel="stylesheet" href="' . DD_PLUGIN_URL . '../css/diggdigg-style.css?ver=' . DD_VERSION . '" type="text/css" media="screen" />';
+	echo '<link rel="stylesheet" href="' . DD_PLUGIN_URL . 'css/diggdigg-style.css?ver=' . DD_VERSION . '" type="text/css" media="screen" />';
 }
 
 function dd_get_thumbnails_for_fb()
