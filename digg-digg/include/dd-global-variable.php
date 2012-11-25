@@ -41,10 +41,6 @@ define('DD_SELECT_BEFORE_CONTENT','before_content');
 define('DD_SELECT_AFTER_CONTENT','after_content');
 define('DD_FORM_BUTTON_SAVE','Save Changes');
 
-if (!defined("WP_CONTENT_URL")) define("WP_CONTENT_URL", get_option("siteurl") . "/wp-content");
-if (!defined("WP_PLUGIN_URL"))  define("WP_PLUGIN_URL", WP_CONTENT_URL . "/plugins");
-define('DD_PLUGIN_URL',WP_PLUGIN_URL . '/' . plugin_basename(dirname(__FILE__)).'/');
-
 //for delicious only
 define('DD_PLUGIN_STYLE_DELICIOUS', 'dd_delicious_normal_image');
 define('DD_PLUGIN_STYLE_DELICIOUS_COMPACT', 'dd_delicious_compact_image');
