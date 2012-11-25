@@ -12,21 +12,14 @@
 	</div>
 	
 	<div class="postbox">
-		<h3>Meet the Team</h3>
+		<h3>Want to contribute?</h3>
 		<div class="inside">
-			<p>We're super excited to make it the most powerful sharing plugin for your blog.</p>
-			<ul id="dd-team">
-				<li>
-					<a href="http://twitter.com/joelgascoigne" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>../image/joelgascoigne.png" width="95" height="95" /></a>
-					<p class="name">Joel Gascoigne, Founder</p>
-					<p>"I build Buffer and talk to users. I love startups and swimming." <br /> @<a href="http://twitter.com/joelgascoigne">joelgascoigne</a></p>
-				</li>
-				<li>
-					<a href="http://twitter.com/LeoWid" class="dd-team-image"><img src="<?php echo DD_PLUGIN_URL ?>../image/LeoWid.png" width="95" height="95" /></a>
-					<p class="name">Leo Widrich, Co-founder</p>
-					<p>"I do community, blogging and coverage for Buffer. I love writing and football." <br /> @<a href="http://twitter.com/LeoWid">LeoWid</a></p>
-				</li>
-			</ul>
+			<p>We've completely open-sourced Digg Digg and made it very easy to find, browse the code and submit pull-requests by putting it on GitHub.</p>
+			<p>We'll be actively monitoring GitHub and we're keen to pull in some great contributions to push Digg Digg forward.</p>
+			<br />
+			<div class="signup">
+				<a href="https://github.com/bufferapp/diggdigg" class="button" target="_blank">Contribute to Digg Digg on GitHub</a>
+			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
@@ -38,6 +31,7 @@
 			<p>
 				Alongside Digg Digg, we also build Buffer. It's a new way to Tweet and share Facebook posts at optimal times and with more impact. Give it a try:
 			</p>
+			<br />
 			<div class="signup">
 				<a href="http://bufferapp.com/?utm_source=diggdigg-admin&utm_medium=button&utm_campaign=diggdigg-admin-try-buffer" class="button" target="_blank">Sign up for free</a>
 			</div>
