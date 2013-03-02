@@ -213,7 +213,6 @@ global $ddNormalButtons;
 $ddNormalButtons = array(
 	DD_NORMAL_BUTTON_DISPLAY => array(
 		DD_BUTTON_REDDIT => new DD_Reddit(),
-		DD_BUTTON_GBUZZ => new DD_GBuzz(),
 		DD_BUTTON_DZONE => new DD_DZone(),
 		DD_BUTTON_FBSHARE => new DD_FbShare(),
 		DD_BUTTON_DELICIOUS => new DD_Delicious(),
@@ -308,7 +307,6 @@ global $ddFloatButtons;
 $ddFloatButtons = array(
 	DD_FLOAT_BUTTON_DISPLAY => array(
 		DD_BUTTON_REDDIT => new DD_Reddit(),
-		DD_BUTTON_GBUZZ => new DD_GBuzz(),
 		DD_BUTTON_DZONE => new DD_DZone(),
 		DD_BUTTON_FBSHARE => new DD_FbShare(),
 		DD_BUTTON_DELICIOUS => new DD_Delicious(),

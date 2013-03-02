@@ -84,10 +84,6 @@ $dd_manual_code = array(
 		"Normal" => "dd_delicious_generate('Normal')",
 		"Compact" => "dd_delicious_generate('Compact')"
 	),
-	"Google Buzz" => array(
-		"Normal" => "dd_gbuzz_generate('Normal')",
-		"Compact" => "dd_gbuzz_generate('Compact')"
-	),
 	"The Web Blend" => array(
 		"Normal" => "dd_thewebblend_generate('Normal')",
 		"Compact" => "dd_thewebblend_generate('Compact')"
