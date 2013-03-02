@@ -40,11 +40,6 @@ $dd_manual_code = array(
 		"Compact" => "dd_linkedin_generate('Compact')",
 		"NoCount" => "dd_linkedin_generate('NoCount')"
 	),
-	"Digg" => array(
-		"Normal" => "dd_digg_generate('Normal')",
-		"Compact" => "dd_digg_generate('Compact')",
-		"Icon" => "dd_digg_generate('Icon')"
-	),
 	"Reddit" => array(
 		"Normal" => "dd_reddit_generate('Normal')",
 		"Compact" => "dd_reddit_generate('Compact')",

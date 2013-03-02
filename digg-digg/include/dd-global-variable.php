@@ -93,7 +93,6 @@ define('DD_FLOAT_BUTTON_DISPLAY','dd_float_button_display');
 define('DD_FLOAT_BUTTON_FINAL','dd_float_button_final'); //store what display only, increase performance  
 
 // XXX: NEW BUTTONS: Define a new constant here
-define('DD_BUTTON_DIGG','dd_button_digg');
 define('DD_BUTTON_LINKEDIN','dd_button_linkedin');
 define('DD_BUTTON_REDDIT','dd_button_reddit');
 define('DD_BUTTON_GBUZZ','dd_button_gbuzz');
@@ -213,7 +212,6 @@ $ddNormalDisplay = array(
 global $ddNormalButtons;
 $ddNormalButtons = array(
 	DD_NORMAL_BUTTON_DISPLAY => array(
-		DD_BUTTON_DIGG => new DD_Digg(),
 		DD_BUTTON_REDDIT => new DD_Reddit(),
 		DD_BUTTON_GBUZZ => new DD_GBuzz(),
 		DD_BUTTON_DZONE => new DD_DZone(),
@@ -309,7 +307,6 @@ $ddFloatDisplay = array(
 global $ddFloatButtons;
 $ddFloatButtons = array(
 	DD_FLOAT_BUTTON_DISPLAY => array(
-		DD_BUTTON_DIGG => new DD_Digg(),
 		DD_BUTTON_REDDIT => new DD_Reddit(),
 		DD_BUTTON_GBUZZ => new DD_GBuzz(),
 		DD_BUTTON_DZONE => new DD_DZone(),
