@@ -38,7 +38,11 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 
 = How can I disable the Digg Digg Floating Bar on a particular page? =
 
-To disable the bar on a particular page add the following few lines to your themes functions.php file, changing the conditional tags to ones that fit your requirement.
+You can insert the following within the HTML editor anywhere when editing a post and it will disable Digg Digg on that page.
+
+`<!-- Digg Digg Disabled -->`
+
+Another method to disable the bar on a particular page add the following few lines to your themes functions.php file, changing the conditional tags to ones that fit your requirement.
 
 `function dd_exclude_from_pages() {
 if(is_page(1)) {
@@ -48,6 +52,7 @@ if(is_page(1)) {
 }
 add_action('template_redirect', 'dd_exclude_from_pages');`
 
+More details here... http://www.eugenoprea.com/code-snippets/exclude-diggdigg-from-specific-pages/
 
 = How can I add the Digg Digg Floating Bar on a particular page? =
 
