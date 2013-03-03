@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Digg Digg
- Version: 5.3.0
+ Version: 5.3.1
  Plugin URI: http://bufferapp.com/diggdigg
  Author: Buffer
  Author URI: http://bufferapp.com/
