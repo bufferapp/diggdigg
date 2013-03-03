@@ -40,10 +40,13 @@ If you have any questions, we'd love to hear from you. Email us: diggdigg@buffer
 
 To disable the bar on a particular page add the following few lines to your themes functions.php file, changing the conditional tags to ones that fit your requirement.
 
-`if(is_page('page-slug-1') || is_page('page-slug-2')) {
-	remove_filter('the_excerpt', 'dd_hook_wp_content');
-	remove_filter('the_content', 'dd_hook_wp_content');
-}`
+`function dd_exclude_from_pages() {
+if(is_page(1)) {
+      remove_filter('the_excerpt', 'dd_hook_wp_content');
+    	remove_filter('the_content', 'dd_hook_wp_content');
+	}
+}
+add_action('template_redirect', 'dd_exclude_from_pages');`
 
 
 = How can I add the Digg Digg Floating Bar on a particular page? =
