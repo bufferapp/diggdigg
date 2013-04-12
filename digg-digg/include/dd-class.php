@@ -2119,4 +2119,101 @@ class DD_Serpd extends BaseDD{
         parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
     }    
 }
+
+
+/******************************************************************************************
+ * 
+ * Pocket
+ * 
+ */
+class DD_Pocket extends BaseDD{
+	var $append_type = 'left_float';
+	var $button_design = 'Normal';
+	var $lazy_load = false;
+	
+	const NAME = "Pocket";
+	const URL_WEBSITE = "http://www.getpocket.com";
+	const URL_API = "https://getpocket.com/publisher/button";
+	const DEFAULT_BUTTON_WEIGHT = "93";
+
+	const BASEURL ="<a data-pocket-label=\"pocket\" data-pocket-count=\"VOTE_BUTTON_DESIGN\" data-save-url=\"VOTE_URL\" class=\"pocket-btn\" data-lang=\"en\"></a><script type=\"text/javascript\">!function(d,i){if(!d.getElementById(i)){var j=d.createElement(\"script\");j.id=i;j.src=\"https://widgets.getpocket.com/v1/j/btn.js?v=1\";var w=d.getElementById(i);d.body.appendChild(j);}}(document,\"pocket-btn-js\");</script>";
+	
+	const OPTION_APPEND_TYPE = "dd_pocket_appendType";
+	const OPTION_BUTTON_DESIGN = "dd_pocket_buttonDesign";
+	const OPTION_BUTTON_WEIGHT = "dd_pocket_button_weight";
+	const OPTION_AJAX_LEFT_FLOAT = "dd_pocket_ajax_left_float";
+	const OPTION_LAZY_LOAD = "dd_pocket_lazy_load";
+	
+	const BASEURL_LAZY ="<div class='dd-pocket-ajax-load dd-pocket-POST_ID'></div><a data-pocket-label=\"pocket\" data-pocket-count=\"VOTE_BUTTON_DESIGN\" class=\"pocket-btn\" data-lang=\"en\"></a>";
+	const BASEURL_LAZY_SCRIPT = " function loadPocket_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-pocket-POST_ID').remove();\$.getScript('https://widgets.getpocket.com/v1/j/btn.js?v=1'); }); }";
+	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadPocket_POST_ID()',SCHEDULER_TIMER);";
+	const SCHEDULER_LAZY_TIMER = "1000";
+
+	var $buttonLayout = array(
+		"Normal" => "vertical",
+		"Compact" => "horizontal",
+		"No Count" => "none"
+	);
+	
+	var $buttonLayoutLazy = array(
+		"Normal" => "vertical",
+		"Compact" => "horizontal",
+		"No Count" => "none"
+	);
+	
+	var $isEncodeRequired = false;
+	
+	const VOTE_SOURCE = "VOTE_SOURCE";
+	
+    public function DD_Pocket() {
+    	
+		$this->option_append_type = self::OPTION_APPEND_TYPE;
+		$this->option_button_design = self::OPTION_BUTTON_DESIGN;
+		$this->option_button_weight = self::OPTION_BUTTON_WEIGHT;
+		$this->option_ajax_left_float = self::OPTION_AJAX_LEFT_FLOAT;
+		$this->option_lazy_load = self::OPTION_LAZY_LOAD;
+		
+		$this->baseURL_lazy = self::BASEURL_LAZY;
+    	$this->baseURL_lazy_script = self::BASEURL_LAZY_SCRIPT;
+    	$this->scheduler_lazy_script = self::SCHEDULER_LAZY_SCRIPT;
+    	$this->scheduler_lazy_timer = self::SCHEDULER_LAZY_TIMER;
+    	
+		$this->button_weight_value = self::DEFAULT_BUTTON_WEIGHT;
+		
+        parent::BaseDD(self::NAME, self::URL_WEBSITE, self::URL_API, self::BASEURL);
+        
+    }
+    
+    public function constructNormalURL($url, $title, $button, $postId){
+		
+    	$finalURL = $this->baseURL;
+    	$finalURL = str_replace(self::VOTE_BUTTON_DESIGN,$this->getButtonDesign($button),$finalURL);
+    	$finalURL = str_replace(self::VOTE_TITLE,$title,$finalURL);
+    	$finalURL = str_replace(self::VOTE_URL,$url,$finalURL);
+		$finalURL = str_replace(parent::POST_ID,$postId,$finalURL);
+    	$this->finalURL = $finalURL;
+    }
+
+	public function constructLazyLoadURL($url, $title,$button, $postId){
+    	
+    	$finalURL_lazy = $this->baseURL_lazy;
+    	$finalURL_lazy = str_replace(parent::VOTE_URL,$url,$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::VOTE_BUTTON_DESIGN,$this->getButtonDesignLazy($button),$finalURL_lazy);
+    	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
+    	$this->finalURL_lazy = $finalURL_lazy;
+    	
+    	$finalURL_lazy_script = $this->baseURL_lazy_script;
+    	$finalURL_lazy_script = str_replace(parent::POST_ID,$postId,$finalURL_lazy_script);
+    	$this->finalURL_lazy_script = $finalURL_lazy_script;
+    	
+    	$final_scheduler_lazy_script = $this->scheduler_lazy_script;
+    	$final_scheduler_lazy_script = str_replace(parent::SCHEDULER_TIMER,$this->scheduler_lazy_timer,$final_scheduler_lazy_script);
+    	$final_scheduler_lazy_script = str_replace(parent::POST_ID,$postId,$final_scheduler_lazy_script);
+    	$this->final_scheduler_lazy_script =  $final_scheduler_lazy_script;
+    	
+    }
+}
+
+
+
 ?>
