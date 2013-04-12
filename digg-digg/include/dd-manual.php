@@ -108,6 +108,13 @@ $dd_manual_code = array(
 		"Normal" => "dd_flattr_generate('Normal','flattr_username')",
 		"Compact" => "dd_flattr_generate('Compact','flattr_username')"
 	),
+	"Pocket" => array(
+		"Normal" => "dd_pocket_generate('Normal')",
+		"Compact" => "dd_pocket_generate('Compact')"
+	),
+	"Tumblr" => array(
+		"Normal" => "dd_tumblr_generate('Normal')",
+	),
 );		
 	
 function dd_digg_generate($buttonDesign='Normal'){
@@ -349,6 +356,24 @@ function dd_flattr_generate($buttonDesign='Normal', $uid=''){
     $dd_flattr->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false,$globalcfg);
     
 	echo $dd_flattr->finalURL;
+}
+
+function dd_pocket_generate($buttonDesign='Normal'){
+	$post_data = dd_getPostData();
+    
+    $dd_pocket = new DD_Pocket();
+    $dd_pocket->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false);
+    
+	echo $dd_pocket->finalURL;
+}
+
+function dd_tumblr_generate($buttonDesign='Normal'){
+	$post_data = dd_getPostData();
+    
+    $dd_tumblr = new DD_Tumblr();
+    $dd_tumblr->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false);
+    
+	echo $dd_tumblr->finalURL;
 }
 
 function dd_getPostData() {
