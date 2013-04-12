@@ -2,8 +2,8 @@
 Contributors: joelg87, andy7629
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis
 Requires at least: 2.3
-Tested up to: 3.5.1
-Stable tag: 5.3.1
+Tested up to: 3.5.2
+Stable tag: 5.3.2
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -77,8 +77,13 @@ In both Normal Display and Floating Display settings pages you can change the we
 
 == Changelog ==
 
+= Digg Digg v5.3.2 - 12/04/2013 =
+* New: Added Pocket Publisher Button
+* New: Added Tumblr Share Button
+* New: Buffer button now uses the post title rather than grabbing content from the page title.
+
 = Digg Digg v5.3.1 - 03/03/2013 =
-* Added: Extra documentation for excluding Digg Digg from certain pages within the FAQ.
+* New: Extra documentation for excluding Digg Digg from certain pages within the FAQ.
 * Fixed: Issue with duplicate LinkedIn buttons.
 * Fixed: Issue with HTTPS CSS, thanks desrosj.
 * Removed: Old buttons that are no longer available. Google Buzz, Digg.
