@@ -379,9 +379,9 @@ class DD_Buffer extends BaseDD{
 	
 	var $isEncodeRequired = false;
 	
-	const BASEURL = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>';
+	const BASEURL = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-text="VOTE_TITLE" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a><script type="text/javascript" src="http://static.bufferapp.com/js/button.js"></script>';
 
-	const BASEURL_LAZY = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a>';
+	const BASEURL_LAZY = '<a href="http://bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-text="VOTE_TITLE" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a>';
 	const BASEURL_LAZY_SCRIPT = "function loadBuffer_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-buffer-POST_ID').remove();\$.getScript('http://static.bufferapp.com/js/button.js'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadBuffer_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";
