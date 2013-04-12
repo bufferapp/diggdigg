@@ -1,6 +1,6 @@
 === Digg Digg ===
 Contributors: joelg87, andy7629
-Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis
+Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis, pocket, tumblr
 Requires at least: 2.3
 Tested up to: 3.5.2
 Stable tag: 3.5.2
@@ -12,7 +12,7 @@ With Digg Digg by Buffer, you have an all in one social sharing plugin for your 
 
 = Features =
 
-* Display all popular social sharing buttons with count, such as Twitter, Buffer, Facebook Share, Facebook Like, Digg, LinkedIn, Google +1, Reddit, dZone, TweetMeme, Topsy, Yahoo Buzz, StumbleUpon, Del.icio.us, Sphinn, Designbump, WebBlend, BlogEngage and Serpd, Pinterest.
+* Display all popular social sharing buttons with count, such as Twitter, Buffer, Facebook Share, Facebook Like, Digg, LinkedIn, Google +1, Reddit, dZone, TweetMeme, Topsy, Yahoo Buzz, StumbleUpon, Del.icio.us, Sphinn, Designbump, WebBlend, BlogEngage, Serpd, Pinterest, Pocket and Tumblr.
 * Facebook Like (Iframe or XFBML), support thumbnail generation, multiple languages, show faces and send button.
 * Great customization options. Choose a floating bar like here: http://blog.bufferapp.com or sharing buttons at the top or bottom of the post.
 * Lazy loading to increase website performance.
