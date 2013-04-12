@@ -117,6 +117,7 @@ define('DD_BUTTON_BUFFER','dd_button_buffer');
 define('DD_BUTTON_PINTEREST','dd_button_pinterest');
 define('DD_BUTTON_FLATTR','dd_button_flattr');
 define('DD_BUTTON_POCKET', 'dd_button_pocket');
+define('DD_BUTTON_TUMBLR', 'dd_button_tumblr');
 
 /****************************************
  * Digg Digg Global Display (Start)
@@ -235,7 +236,8 @@ $ddNormalButtons = array(
 		DD_BUTTON_BUFFER => new DD_Buffer(),
 		DD_BUTTON_PINTEREST => new DD_Pinterest(),
 		DD_BUTTON_FLATTR => new DD_Flattr(),
-		DD_BUTTON_POCKET => new DD_Pocket()	
+		DD_BUTTON_POCKET => new DD_Pocket(),
+		DD_BUTTON_TUMBLR => new DD_Tumblr()
 	),
 	DD_NORMAL_BUTTON_FINAL => array()
 );
@@ -330,7 +332,8 @@ $ddFloatButtons = array(
 		DD_BUTTON_BUFFER => new DD_Buffer(),
 		DD_BUTTON_PINTEREST => new DD_Pinterest(),
 		DD_BUTTON_FLATTR => new DD_Flattr(),
-		DD_BUTTON_POCKET => new DD_Pocket()		
+		DD_BUTTON_POCKET => new DD_Pocket(),
+		DD_BUTTON_TUMBLR => new DD_Tumblr()
 	),
 	DD_FLOAT_BUTTON_FINAL => array()
 );
