@@ -330,8 +330,21 @@ function integrateFloatingButtonsIntoWpContent($dd_floating_button_for_display,$
 			$dd_lazyLoad_scheduler_script = "<script type=\"text/javascript\"> jQuery(document).ready(function($) { " . $dd_lazyLoad_scheduler_script . " }); </script>";
 		}
 
+        // See if the post has custom meta tags to override the position of the top/y coord
+        global $wp_query;
+        $post = $wp_query->post; //get post content
+        $id = $post->ID; //get post id
+
+        $dd_override_start_anchor_id = get_post_meta( $id, 'dd_override_start_anchor_id', true );
+        $dd_override_top_offset = get_post_meta( $id, 'dd_override_top_offset', true );
+
 		// $floatingCSS = '<style type="text/css" media="screen">' . $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_POSITION] . '</style>';
-		$floatingJSOptions = '<script type="text/javascript">var dd_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE).'; var dd_top_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE).';</script>';
+        $floatingJSOptions = '<script type="text/javascript">';
+		$floatingJSOptions .= 'var dd_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]) ? ($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]) : DD_FLOAT_OPTION_LEFT_VALUE).';';
+        $floatingJSOptions .= 'var dd_top_offset_from_content = '.(!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]) ? ($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]) : DD_FLOAT_OPTION_TOP_VALUE).';';
+        $floatingJSOptions .= 'var dd_override_start_anchor_id = "'. $dd_override_start_anchor_id . '";';
+        $floatingJSOptions .= 'var dd_override_top_offset = "'. $dd_override_top_offset . '";';
+        $floatingJSOptions .= '</script>';
 		$floatingJS = '<script type="text/javascript" src="' . DD_PLUGIN_URL . '/js/diggdigg-floating-bar.js?ver=' . DD_VERSION . '"></script>';
 
 		$dd_floating_bar = "<div class='dd_outer'><div class='dd_inner'>" . $floatButtonsContainer . "</div></div>" . $floatingJSOptions . $floatingJS . $dd_lazyLoad_scheduler_script . $dd_lazyLoad_jQuery_script;

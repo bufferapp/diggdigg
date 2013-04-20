@@ -5,13 +5,21 @@ jQuery(document).ready(function(){
 
 	var $floating_bar = jQuery('#dd_ajax_float');
 	
-	var $dd_start = jQuery('#dd_start');
+    var dd_anchorId = 'dd_start';
+    if ( typeof dd_override_start_anchor_id !== 'undefined' && dd_override_start_anchor_id.length > 0 ) {
+        dd_anchorId = dd_override_start_anchor_id;
+    }
+
+	var $dd_start = jQuery( '#' + dd_anchorId );
 	var $dd_end = jQuery('#dd_end');
 	var $dd_outer = jQuery('.dd_outer');
 	
 	// first, move the floating bar out of the content to avoid position: relative issues
 	$dd_outer.appendTo('body');
 	
+    if ( typeof dd_override_top_offset !== 'undefined' && dd_override_top_offset.length > 0 ) {
+        dd_top_offset_from_content = parseInt( dd_override_top_offset );
+    }
 	dd_top = parseInt($dd_start.offset().top) + dd_top_offset_from_content;
 	
 	if($dd_end.length){
