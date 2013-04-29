@@ -267,7 +267,7 @@ class DD_Twitter extends BaseDD{
 	const URL_API = "http://twitter.com/goodies/tweetbutton";
 	const DEFAULT_BUTTON_WEIGHT = "110";
 
-	const BASEURL ="<a href=\"http://twitter.com/share\" class=\"twitter-share-button\" data-url=\"VOTE_URL\" data-count=\"VOTE_BUTTON_DESIGN\" data-text=\"VOTE_TITLE\" data-via=\"VOTE_SOURCE\" ></a><script type=\"text/javascript\" src=\"http://platform.twitter.com/widgets.js\"></script>";
+	const BASEURL ="<a href=\"http://twitter.com/share\" class=\"twitter-share-button\" data-url=\"VOTE_URL\" data-count=\"VOTE_BUTTON_DESIGN\" data-text=\"VOTE_TITLE\" data-via=\"VOTE_SOURCE\" ></a><script type=\"text/javascript\" src=\"//platform.twitter.com/widgets.js\"></script>";
 	
 	const OPTION_APPEND_TYPE = "dd_twitter_appendType";
 	const OPTION_BUTTON_DESIGN = "dd_twitter_buttonDesign";
@@ -497,7 +497,7 @@ class DD_FbLike_XFBML extends BaseDD{
 	const URL_WEBSITE = "http://www.facebook.com";
 	const URL_API = "http://developers.facebook.com/docs/reference/plugins/like";
 
-	const BASEURL = "<script src=\"http://connect.facebook.net/FACEBOOK_LOCALE/all.js#xfbml=1\"></script><fb:like href=\"VOTE_URL\" FACEBOOK_SEND FACEBOOK_SHOW_FACE VOTE_BUTTON_DESIGN ></fb:like>";
+	const BASEURL = "<script src=\"//connect.facebook.net/FACEBOOK_LOCALE/all.js#xfbml=1\"></script><fb:like href=\"VOTE_URL\" FACEBOOK_SEND FACEBOOK_SHOW_FACE VOTE_BUTTON_DESIGN ></fb:like>";
 		
 	const FB_LOCALES = "http://www.facebook.com/translations/FacebookLocales.xml";
 	const DEFAULT_BUTTON_WEIGHT = "96";
