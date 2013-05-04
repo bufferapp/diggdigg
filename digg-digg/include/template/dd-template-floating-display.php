@@ -222,6 +222,14 @@ function checkCategory(){
 						        		<input name=<?php echo DD_COMMENT_ANCHOR_OPTION; ?> type="checkbox" <?php echo ($ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 						        	</td>
 						        </tr>
+						        
+						        <tr valign="top">
+						        	<th scope="row">2.7 Override initial floating bar location</th>
+						        	<td>
+										Element : #<input type="text" value="<?php echo $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_ELEMENT] ?>" 
+											name="<?php echo DD_FLOAT_OPTION_INITIAL_ELEMENT;?>" /> (without preceding #)
+						        	</td>
+						        </tr>
 						    </table>
 							
 							<div class="submit">
