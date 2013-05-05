@@ -464,6 +464,7 @@ class DD_Buffer extends BaseDD{
 	public function constructLazyLoadURL($url, $title,$button, $postId){
     	
     	$finalURL_lazy = $this->baseURL_lazy;
+    	$finalURL_lazy = str_replace(parent::VOTE_TITLE,$title,$finalURL_lazy);
     	$finalURL_lazy = str_replace(parent::VOTE_URL,$url,$finalURL_lazy);
     	$finalURL_lazy = str_replace(parent::VOTE_BUTTON_DESIGN,$this->getButtonDesignLazy($button),$finalURL_lazy);
     	$finalURL_lazy = str_replace(parent::POST_ID,$postId,$finalURL_lazy);
