@@ -2,8 +2,8 @@
 Contributors: joelg87, andy7629
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis, pocket, tumblr
 Requires at least: 2.3
-Tested up to: 5.3.3
-Stable tag: 5.3.3
+Tested up to: 3.5.1
+Stable tag: 5.3.4
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -76,6 +76,14 @@ In both Normal Display and Floating Display settings pages you can change the we
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.3.4 - 05/05/2013 =
+* Added: Support for both HTTP and HTTPS URL Schemes. Thanks Maks3w.
+* Added: Extra flexibility over the position of the Digg Digg Floating Bar, allowing you to set a specific DOM element per post using Custom Fields. Thanks DaveBurns.
+* Added: Site wide customisation of the specific DOM element that Digg Digg uses to set its initial position. Thanks again DaveBurns for inspiration for adding this.
+* Fixed: Facebook Like XFMBL no longer requires URL Encoding. Thanks to various people in the support forum for pointing this out.
+* Fixed: Various other small bug fixes.
+* Note: As always if you have a bugfix or a feature and want to help make Digg Digg better then you can contribute via GitHub here... https://github.com/bufferapp/diggdigg
 
 = Digg Digg v5.3.3 - 12/04/2013 =
 * Fixed: Critical issue with updating Digg Digg where the plugin would disappear completely. Sorry about that guys!
