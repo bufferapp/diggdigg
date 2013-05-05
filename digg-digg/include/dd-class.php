@@ -550,8 +550,8 @@ class DD_FbLike_XFBML extends BaseDD{
 	public function constructURL($url, $title,$button, $postId, $lazy, $globalcfg = ''){
     	
  		if($this->isEncodeRequired){
- 			$title = rawurlencode($title);
-    		$url = rawurlencode($url);
+ 			//$title = rawurlencode($title);
+    		//$url = rawurlencode($url);
  		}
  	
  		$fb_locale = '';
