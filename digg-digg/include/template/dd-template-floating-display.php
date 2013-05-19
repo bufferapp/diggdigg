@@ -3,7 +3,7 @@ function dd_page_for_floating_display(){
 	
 	global $ddFloatDisplay,$ddFloatButtons;
 	
-	if (isset($_POST[DD_FORM_SAVE])) {
+	if (isset($_POST[DD_FORM_SAVE]) && check_admin_referer('digg_digg_floating_save','digg_digg_floating_nonce')) {
 		
 		if(isset($_POST[DD_STATUS_OPTION_DISPLAY])) $ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY] = DD_DISPLAY_ON;
 		else $ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY] = DD_DISPLAY_OFF;
@@ -378,7 +378,7 @@ function checkCategory(){
 					</div>
 					<!-- End Reset Floating Display Settings -->
 					
-					
+					<?php wp_nonce_field('digg_digg_floating_save','digg_digg_floating_nonce'); ?>
 				</form>
 				
 			</div>

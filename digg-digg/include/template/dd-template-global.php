@@ -4,7 +4,7 @@ function dd_button_global_setup(){
 	
 	global $ddGlobalConfig;
 	
-	if (isset($_POST[DD_FORM_SAVE])) {
+	if (isset($_POST[DD_FORM_SAVE]) && check_admin_referer('digg_digg_global_save','digg_digg_global_nonce')) {
 
 		//update global settings options
 		foreach(array_keys($ddGlobalConfig) as $key){
@@ -282,7 +282,7 @@ function dd_print_global_form($ddGlobalConfig){
 						</div>
 						<!-- End Reset All Config -->
 						
-						
+						<?php wp_nonce_field('digg_digg_global_save','digg_digg_global_nonce'); ?>
 					</form>
 			</div>
 		</div>

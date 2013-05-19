@@ -4,7 +4,7 @@ function dd_page_for_normal_display(){
 	
 	global $ddNormalDisplay,$ddNormalButtons;
 	
-	if (isset($_POST[DD_FORM_SAVE])) {
+	if (isset($_POST[DD_FORM_SAVE]) && check_admin_referer('digg_digg_normal_save','digg_digg_normal_nonce')) {
 
 		foreach(array_keys($ddNormalDisplay) as $key){
 	    	
@@ -326,6 +326,8 @@ function checkCategory(){
 						</div>
 					</div>
 					<!-- End Reset Floating Display Settings -->
+					
+					<?php wp_nonce_field('digg_digg_normal_save','digg_digg_normal_nonce'); ?>
 				</form>					
 			</div>
 		</div>
