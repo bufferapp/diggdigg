@@ -3,7 +3,7 @@ Contributors: joelg87, andy7629
 Tags: digg digg, buffer, digg, google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis, pocket, tumblr
 Requires at least: 2.3
 Tested up to: 3.5.1
-Stable tag: 5.3.4
+Stable tag: 5.3.5
 
 Your all in one share buttons plugin. Add a floating bar with share buttons to your blog. Just like Mashable!
 
@@ -76,6 +76,9 @@ In both Normal Display and Floating Display settings pages you can change the we
 4. Normal Bar with Small Buttons at Top
 
 == Changelog ==
+
+= Digg Digg v5.3.5 - 19/05/2013 =
+* Added: Support for WordPress nonce fields. Prevents cross-site request forgery. Credit to Charlie Eriksen via Secunia SVCRP for finding and reporting.
 
 = Digg Digg v5.3.4 - 05/05/2013 =
 * Added: Support for both HTTP and HTTPS URL Schemes. Thanks Maks3w.
