@@ -27,7 +27,7 @@ require_once 'include/dd-upgrade.php';
 register_activation_hook( __FILE__, 'dd_run_when_plugin_activated' );
 
 add_action('init', 'dd_enable_required_js_in_wordpress' );
-add_action( 'wp_head', 'dd_wp_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'dd_wp_enqueue_styles' );
 add_action( 'wp_head', 'dd_get_thumbnails_for_fb' );
 add_filter( 'the_excerpt', 'dd_hook_wp_content' );
 add_filter( 'the_content', 'dd_hook_wp_content' );
