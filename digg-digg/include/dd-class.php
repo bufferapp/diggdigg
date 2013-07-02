@@ -692,7 +692,7 @@ class DD_Linkedin extends BaseDD{
 	const URL_API = "http://www.linkedin.com/publishers";
 	const DEFAULT_BUTTON_WEIGHT = "94";
 	
-	const BASEURL = "<script src='//platform.linkedin.com/in.js' type='text/javascript'></script><script type='IN/Share' date-url='VOTE_URL' data-counter='VOTE_BUTTON_DESIGN'></script>";
+	const BASEURL = "<script src='//platform.linkedin.com/in.js' type='text/javascript'></script><script type='IN/Share' data-url='VOTE_URL' data-counter='VOTE_BUTTON_DESIGN'></script>";
 	const BASEURL_LAZY = "<div class='dd-linkedin-ajax-load dd-linkedin-POST_ID'></div><script type='IN/share' data-url='VOTE_URL' data-counter='VOTE_BUTTON_DESIGN'></script>";
 	const BASEURL_LAZY_SCRIPT = " function loadLinkedin_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-linkedin-POST_ID').remove();\$.getScript('http://platform.linkedin.com/in.js'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadLinkedin_POST_ID()',SCHEDULER_TIMER);";
