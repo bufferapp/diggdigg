@@ -1585,7 +1585,7 @@ class DD_Delicious extends BaseDD{
 		
 		$count = '';
     	$shareUrl = urlencode($url);
-		$deliciousStats = json_decode(file_get_contents('http://feeds.delicious.com/v2/json/urlinfo/data?url='.$shareUrl));
+		$deliciousStats = json_decode(wp_remote_retrieve_body(wp_remote_get('http://feeds.delicious.com/v2/json/urlinfo/data?url='.$shareUrl)));
 		
 		if(!empty($deliciousStats)){
 			if($deliciousStats->total_posts == 0) {
