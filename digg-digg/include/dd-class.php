@@ -777,9 +777,9 @@ class DD_Pinterest extends BaseDD{
 	const URL_API = "http://pinterest.com/about/goodies/#button_for_websites";
 	const DEFAULT_BUTTON_WEIGHT = "10";
 
-	const BASEURL = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button" count-layout="VOTE_BUTTON_DESIGN"></a><script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>';
-	const BASEURL_LAZY = '<a href="http://pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button dd-pinterest-ajax-load dd-pinterest-POST_ID" count-layout="VOTE_BUTTON_DESIGN"></a>';
-	const BASEURL_LAZY_SCRIPT = "function loadPinterest_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('http://assets.pinterest.com/js/pinit.js'); }); }";
+	const BASEURL = '<a href="//pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button" count-layout="VOTE_BUTTON_DESIGN"></a><script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>';
+	const BASEURL_LAZY = '<a href="//pinterest.com/pin/create/button/?url=VOTE_URL&description=VOTE_TITLE&media=VOTE_IMAGE" class="pin-it-button dd-pinterest-ajax-load dd-pinterest-POST_ID" count-layout="VOTE_BUTTON_DESIGN"></a>';
+	const BASEURL_LAZY_SCRIPT = "function loadPinterest_POST_ID(){ jQuery(document).ready(function(\$) { \$.getScript('//assets.pinterest.com/js/pinit.js'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadPinterest_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";
     
