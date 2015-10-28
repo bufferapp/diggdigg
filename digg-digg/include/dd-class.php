@@ -363,7 +363,7 @@ class DD_Twitter extends BaseDD{
 
 /******************************************************************************************
  * Buffer Button
- * http://bufferapp.com/goodies/button
+ * https://buffer.com/extras
  *
  */
 class DD_Buffer extends BaseDD{
@@ -373,15 +373,15 @@ class DD_Buffer extends BaseDD{
 	var $lazy_load = false;
 	
 	const NAME = "Buffer";
-	const URL_WEBSITE = "http://bufferapp.com/";
-	const URL_API = "//bufferapp.com/goodies/button/";
+	const URL_WEBSITE = "https://buffer.com/";
+	const URL_API = "//buffer.com/extras";
 	const DEFAULT_BUTTON_WEIGHT = "99";
 	
 	var $isEncodeRequired = false;
 	
-	const BASEURL = '<a href=//bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-text="VOTE_TITLE" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a><script type="text/javascript" src="//static.bufferapp.com/js/button.js"></script>';
+	const BASEURL = '<a href=//buffer.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-text="VOTE_TITLE" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a><script type="text/javascript" src="//static.bufferapp.com/js/button.js"></script>';
 
-	const BASEURL_LAZY = '<a href="//bufferapp.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-text="VOTE_TITLE" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a>';
+	const BASEURL_LAZY = '<a href="//buffer.com/add" class="buffer-add-button" data-count="VOTE_BUTTON_DESIGN" data-text="VOTE_TITLE" data-url="VOTE_URL" data-via="VOTE_BUFFER_SOURCE"></a>';
 	const BASEURL_LAZY_SCRIPT = "function loadBuffer_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-buffer-POST_ID').remove();\$.getScript('//static.bufferapp.com/js/button.js'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadBuffer_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";

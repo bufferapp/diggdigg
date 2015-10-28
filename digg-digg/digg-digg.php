@@ -2,9 +2,9 @@
 /*
  Plugin Name: Digg Digg
  Version: 5.3.6
- Plugin URI: http://bufferapp.com/diggdigg
+ Plugin URI: https://buffer.com/diggdigg
  Author: Buffer
- Author URI: http://bufferapp.com/
+ Author URI: https://buffer.com/
  Description: Add a floating bar with share buttons to your blog. Just like Mashable!
               Help your posts get more shares, help yourself get more traffic.
               Simply Activate Digg Digg now to enhance your posts.

@@ -14,7 +14,7 @@ With Digg Digg by Buffer, you have an all in one social sharing plugin for your 
 
 * Display all popular social sharing buttons with count, such as Twitter, Buffer, Facebook Share, Facebook Like, Digg, LinkedIn, Google +1, Reddit, dZone, TweetMeme, Topsy, Yahoo Buzz, StumbleUpon, Del.icio.us, Sphinn, Designbump, WebBlend, BlogEngage, Serpd, Pinterest, Pocket and Tumblr.
 * Facebook Like (Iframe or XFBML), support thumbnail generation, multiple languages, show faces and send button.
-* Great customization options. Choose a floating bar like here: http://blog.bufferapp.com or sharing buttons at the top or bottom of the post.
+* Great customization options. Choose a floating bar like here: https://blog.buffer.com or sharing buttons at the top or bottom of the post.
 * Lazy loading to increase website performance.
 * Left or right scrolling effect like Mashable.com.
 * Support in excerpt mode.
