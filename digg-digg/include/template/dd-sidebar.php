@@ -5,7 +5,7 @@
 		<div class="inside">
 			<p>Name : Digg Digg v<?php echo DD_VERSION ?></p>
 			<p>Author : Buffer</p>
-			<p>Website : <a href="http://bufferapp.com" target="_blank">bufferapp.com</a></p>
+			<p>Website : <a href="https://buffer.com" target="_blank">buffer.com</a></p>
 			<p>Email : <a href="mailto:diggdigg@bufferapp.com" target="_blank">diggdigg@bufferapp.com</a></p>
 			<p>Twitter : @<a href="http://twitter.com/diggdiggwp" target="_blank">diggdiggwp</a></p>
 		</div>
@@ -33,7 +33,7 @@
 			</p>
 			<br />
 			<div class="signup">
-				<a href="http://bufferapp.com/?utm_source=diggdigg-admin&utm_medium=button&utm_campaign=diggdigg-admin-try-buffer" class="button" target="_blank">Sign up for free</a>
+				<a href="https://buffer.com/?utm_source=diggdigg-admin&utm_medium=button&utm_campaign=diggdigg-admin-try-buffer" class="button" target="_blank">Sign up for free</a>
 			</div>
 		</div>
 	</div>
