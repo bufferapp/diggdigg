@@ -1365,7 +1365,7 @@ class DD_FbShare extends BaseDD{
 	const NAME = "Facebook Share";
 	const URL_WEBSITE = "http://www.facebook.com";
 	const URL_API = "http://www.facebook.com/share/";
-	const BASEURL = "<a name='fb_share' type='VOTE_BUTTON_DESIGN' share_url='VOTE_URL' href='http://www.facebook.com/sharer.php'></a><script src='http://static.ak.fbcdn.net/connect.php/js/FB.Share' type='text/javascript'></script>";
+	const BASEURL = "<a name='fb_share' type='VOTE_BUTTON_DESIGN' share_url='VOTE_URL' href='http://www.facebook.com/sharer.php'></a><script src='https://s-static.ak.fbcdn.net/connect.php/js/FB.Share' type='text/javascript'></script>";
 	const DEFAULT_BUTTON_WEIGHT = "95";
 	
 	const OPTION_APPEND_TYPE = "dd_fbshare_appendType";
@@ -1375,7 +1375,7 @@ class DD_FbShare extends BaseDD{
 	const OPTION_LAZY_LOAD = "dd_fbshare_lazy_load";
 	
 	const BASEURL_LAZY = "<div class='dd-fbshare-ajax-load dd-fbshare-POST_ID'></div><a class='DD_FBSHARE_AJAX_POST_ID' name='fb_share' type='VOTE_BUTTON_DESIGN' share_url='VOTE_URL' href='http://www.facebook.com/sharer.php'></a>";
-	const BASEURL_LAZY_SCRIPT = " function loadFBShare_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-fbshare-POST_ID').remove(); \$.getScript('http://static.ak.fbcdn.net/connect.php/js/FB.Share'); }); }";
+	const BASEURL_LAZY_SCRIPT = " function loadFBShare_POST_ID(){ jQuery(document).ready(function(\$) { \$('.dd-fbshare-POST_ID').remove(); \$.getScript('https://s-static.ak.fbcdn.net/connect.php/js/FB.Share'); }); }";
 	const SCHEDULER_LAZY_SCRIPT = "window.setTimeout('loadFBShare_POST_ID()',SCHEDULER_TIMER);";
 	const SCHEDULER_LAZY_TIMER = "1000";
 	
